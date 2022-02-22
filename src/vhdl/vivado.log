@@ -1,0 +1,173 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Feb 22 21:49:52 2022
+# Process ID: 2898577
+# Current directory: /home/nm/mmwave-fpga-streamer/src/vhdl
+# Command line: vivado
+# Log file: /home/nm/mmwave-fpga-streamer/src/vhdl/vivado.log
+# Journal file: /home/nm/mmwave-fpga-streamer/src/vhdl/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project mmwave_streamer /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer -part xczu3eg-sbva484-1-i
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2020.2/data/ip'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+set_property board_part avnet.com:ultra96v2:part0:1.2 [current_project]
+add_files -norecurse {/home/nm/mmwave-fpga-streamer/src/vhdl/data_parser.vhd /home/nm/mmwave-fpga-streamer/src/vhdl/NOT_gate.vhd /home/nm/mmwave-fpga-streamer/src/vhdl/points_RAM.vhd /home/nm/mmwave-fpga-streamer/src/vhdl/AND_gate.vhd /home/nm/mmwave-fpga-streamer/src/vhdl/uart_RX.vhd}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+create_bd_design "design_1"
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.srcs/sources_1/bd/design_1/design_1.bd> 
+update_compile_order -fileset sources_1
+create_bd_cell -type module -reference NOT_gate NOT_gate_0
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+create_bd_cell -type module -reference points_RAM points_RAM_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'i_Rst' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'i_Clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'i_Clk': Added interface parameter 'ASSOCIATED_RESET' with value 'i_Rst'.
+WARNING: [IP_Flow 19-5661] Bus Interface 'i_Clk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+create_bd_cell -type module -reference points_RAM points_RAM_1
+delete_bd_objs [get_bd_cells points_RAM_1]
+create_bd_cell -type module -reference data_parser data_parser_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'i_Rst' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'i_Clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'i_Clk': Added interface parameter 'ASSOCIATED_RESET' with value 'i_Rst'.
+WARNING: [IP_Flow 19-5661] Bus Interface 'i_Clk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+create_bd_cell -type module -reference AND_gate AND_gate_0
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+create_bd_cell -type module -reference UART_RX UART_RX_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'i_Clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+WARNING: [IP_Flow 19-5661] Bus Interface 'i_Clk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+set_property location {1 102 -152} [get_bd_cells NOT_gate_0]
+startgroup
+make_bd_pins_external  [get_bd_pins NOT_gate_0/i_in]
+endgroup
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+set_property  ip_repo_paths  /home/nm/mmwave-fpga-streamer [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer'.
+WARNING: [IP_Flow 19-3656] If you move the project, the path for repository '/home/nm/mmwave-fpga-streamer' may become invalid. A better location for the repository would be in a path adjacent to the project. (Current project location is '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer'.)
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:AND_gate:1.0'. The one found in IP location '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/AND_gate' will take precedence over the same IP in location /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/AND_gate
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:NOT_gate:1.0'. The one found in IP location '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/NOT_gate' will take precedence over the same IP in location /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/NOT_gate
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:points_RAM:1.0'. The one found in IP location '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/points_RAM' will take precedence over the same IP in location /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/points_RAM
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:UART_RX:1.0'. The one found in IP location '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/UART_RX' will take precedence over the same IP in location /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/UART_RX
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:data_parser:1.0'. The one found in IP location '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/data_parser' will take precedence over the same IP in location /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/data_parser
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:hls:mmWaveStreamer:1.0'. The one found in IP location '/home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/impl/ip' will take precedence over the same IP in location /home/nm/mmwave-fpga-streamer/src/hls/ip
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+update_ip_catalog -rebuild
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer'.
+WARNING: [IP_Flow 19-3656] If you move the project, the path for repository '/home/nm/mmwave-fpga-streamer' may become invalid. A better location for the repository would be in a path adjacent to the project. (Current project location is '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer'.)
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:AND_gate:1.0'. The one found in IP location '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/AND_gate' will take precedence over the same IP in location /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/AND_gate
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:NOT_gate:1.0'. The one found in IP location '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/NOT_gate' will take precedence over the same IP in location /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/NOT_gate
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:points_RAM:1.0'. The one found in IP location '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/points_RAM' will take precedence over the same IP in location /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/points_RAM
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:UART_RX:1.0'. The one found in IP location '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/UART_RX' will take precedence over the same IP in location /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/UART_RX
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:data_parser:1.0'. The one found in IP location '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/data_parser' will take precedence over the same IP in location /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/data_parser
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:hls:mmWaveStreamer:1.0 mmWaveStreamer_0
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins mmWaveStreamer_0/stream_out_V_TREADY]
+WARNING: [BD 41-1306] The connection to interface pin </mmWaveStreamer_0/stream_out_V_TREADY> is being overridden by the user with net <stream_out_V_TREADY_0_1>. This pin will not be connected as a part of interface connection <stream_out_V>.
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins UART_RX_0/i_Clk]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins UART_RX_0/i_RX_Serial]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins points_RAM_0/o_data_out]
+endgroup
+connect_bd_net [get_bd_ports i_Clk_0] [get_bd_pins points_RAM_0/i_Clk]
+connect_bd_net [get_bd_ports i_Clk_0] [get_bd_pins mmWaveStreamer_0/ap_clk]
+connect_bd_net [get_bd_ports i_Clk_0] [get_bd_pins data_parser_0/i_Clk]
+connect_bd_net [get_bd_ports i_in_0] [get_bd_pins mmWaveStreamer_0/ap_rst_n]
+connect_bd_net [get_bd_pins data_parser_0/i_Rst] [get_bd_pins NOT_gate_0/o_out]
+connect_bd_net [get_bd_pins points_RAM_0/i_Rst] [get_bd_pins NOT_gate_0/o_out]
+connect_bd_net [get_bd_pins UART_RX_0/o_RX_DV] [get_bd_pins data_parser_0/i_Ena]
+connect_bd_net [get_bd_pins UART_RX_0/o_RX_Byte] [get_bd_pins data_parser_0/i_RX_Byte]
+connect_bd_net [get_bd_pins mmWaveStreamer_0/ap_idle] [get_bd_pins AND_gate_0/i_b]
+WARNING: [BD 41-1306] The connection to interface pin </mmWaveStreamer_0/ap_idle> is being overridden by the user with net <mmWaveStreamer_0_ap_idle>. This pin will not be connected as a part of interface connection <ap_ctrl>.
+connect_bd_net [get_bd_ports stream_out_V_TREADY_0] [get_bd_pins AND_gate_0/i_a]
+connect_bd_net [get_bd_pins AND_gate_0/o_out] [get_bd_pins mmWaveStreamer_0/ap_start]
+WARNING: [BD 41-1306] The connection to interface pin </mmWaveStreamer_0/ap_start> is being overridden by the user with net <AND_gate_0_o_out>. This pin will not be connected as a part of interface connection <ap_ctrl>.
+delete_bd_objs [get_bd_nets points_RAM_0_o_data_out] [get_bd_ports o_data_out_0]
+connect_bd_net [get_bd_pins points_RAM_0/o_data_out] [get_bd_pins mmWaveStreamer_0/points_in_q0]
+connect_bd_net [get_bd_pins mmWaveStreamer_0/points_in_address0] [get_bd_pins points_RAM_0/i_point_addr]
+connect_bd_net [get_bd_pins data_parser_0/o_data_out] [get_bd_pins points_RAM_0/i_data_in]
+connect_bd_net [get_bd_pins data_parser_0/o_set_and_rdy] [get_bd_pins points_RAM_0/i_set_and_rdy]
+connect_bd_net [get_bd_pins mmWaveStreamer_0/points_in_ce0] [get_bd_pins points_RAM_0/i_ce_dummy]
+connect_bd_net [get_bd_pins points_RAM_0/i_idle] [get_bd_pins mmWaveStreamer_0/ap_idle]
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins mmWaveStreamer_0/stream_out_V]
+endgroup
+regenerate_bd_layout
+regenerate_bd_layout
+validate_bd_design
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+ipx::package_project -root_dir /home/nm/mmwave-fpga-streamer/src/vhdl/ip -vendor user.org -library user -taxonomy /UserIP -module design_1 -import_files
+INFO: [BD 41-1662] The design 'design_1.bd' is already validated. Therefore parameter propagation will not be re-run.
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+VHDL Output written to : /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/design_1/synth/design_1.v
+VHDL Output written to : /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block NOT_gate_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block points_RAM_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block data_parser_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block AND_gate_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block UART_RX_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block mmWaveStreamer_0 .
+Exporting to file /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/design_1/synth/design_1.hwdef
+WARNING: [IP_Flow 19-4963] design_1_NOT_gate_0_0 has board value specified. The packaged IP will be restricted to usage with board 'avnet.com:ultra96v2:part0:1.2'
+INFO: [IP_Flow 19-7067] Note that bus interface 'CLK.I_CLK_0' has a fixed FREQ_HZ of '100000000'. This value will be respected whenever this IP is instantiated in IP Integrator.
+INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
+INFO: [IP_Flow 19-2187] The Product Guide file is missing.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+set_property core_revision 2 [ipx::find_open_core DIII:DIII:design_1:1.0]
+ipx::create_xgui_files [ipx::find_open_core DIII:DIII:design_1:1.0]
+ipx::update_checksums [ipx::find_open_core DIII:DIII:design_1:1.0]
+ipx::check_integrity [ipx::find_open_core DIII:DIII:design_1:1.0]
+INFO: [IP_Flow 19-7067] Note that bus interface 'CLK.I_CLK_0' has a fixed FREQ_HZ of '100000000'. This value will be respected whenever this IP is instantiated in IP Integrator.
+INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
+INFO: [IP_Flow 19-2187] The Product Guide file is missing.
+INFO: [Ipptcl 7-1486] check_integrity: Integrity check passed.
+ipx::save_core [ipx::find_open_core DIII:DIII:design_1:1.0]
+update_ip_catalog -rebuild -repo_path /home/nm/mmwave-fpga-streamer
+INFO: [IP_Flow 19-725] Reloaded user IP repository '/home/nm/mmwave-fpga-streamer'
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:AND_gate:1.0'. The one found in IP location '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/AND_gate' will take precedence over the same IP in location /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/AND_gate
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:NOT_gate:1.0'. The one found in IP location '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/NOT_gate' will take precedence over the same IP in location /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/NOT_gate
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:points_RAM:1.0'. The one found in IP location '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/points_RAM' will take precedence over the same IP in location /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/points_RAM
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:UART_RX:1.0'. The one found in IP location '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/UART_RX' will take precedence over the same IP in location /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/UART_RX
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:data_parser:1.0'. The one found in IP location '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/data_parser' will take precedence over the same IP in location /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/data_parser
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+ipx::check_integrity -quiet [ipx::find_open_core DIII:DIII:design_1:1.0]
+ipx::archive_core /home/nm/mmwave-fpga-streamer/src/vhdl/ip/DIII_DIII_design_1_1.0.zip [ipx::find_open_core DIII:DIII:design_1:1.0]
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Feb 22 22:03:30 2022...
