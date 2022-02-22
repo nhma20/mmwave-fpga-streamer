@@ -39,8 +39,8 @@ entity data_parser is
            i_Ena        : in STD_LOGIC;
            i_Rst        : in std_logic ;
            o_data_out   : out std_logic_vector(127 downto 0) := (others => '0');
-           o_set_and_rdy: out std_logic_vector(1 downto 0);
-           o_Debug      : out std_logic_vector(7 downto 0) := (others => '0')  
+           o_set_and_rdy: out std_logic_vector(1 downto 0)
+           --o_Debug      : out std_logic_vector(7 downto 0) := (others => '0')  
     );
 end data_parser;
 
@@ -307,14 +307,14 @@ begin
 ----------------------------------------------------------------------------------            
 -- Output port assignments
 ----------------------------------------------------------------------------------            
-o_Debug(0) <= '1' when current_state = s_rst else '0';  
-o_Debug(1) <= '1' when current_state = s_magic_word else '0';  
-o_Debug(2) <= '1' when current_state = s_frame_hdr else '0';  
-o_Debug(3) <= '1' when current_state = s_tlv_hdr else '0';  
-o_Debug(4) <= '1' when current_state = s_tlv_points  else '0'; 
-o_Debug(5) <= '1' when current_state = s_tlv_other   else '0'; 
-o_Debug(6) <= '1' when current_state = s_error else '0'; 
-o_Debug(7) <= '1';
+--o_Debug(0) <= '1' when current_state = s_rst else '0';  
+--o_Debug(1) <= '1' when current_state = s_magic_word else '0';  
+--o_Debug(2) <= '1' when current_state = s_frame_hdr else '0';  
+--o_Debug(3) <= '1' when current_state = s_tlv_hdr else '0';  
+--o_Debug(4) <= '1' when current_state = s_tlv_points  else '0'; 
+--o_Debug(5) <= '1' when current_state = s_tlv_other   else '0'; 
+--o_Debug(6) <= '1' when current_state = s_error else '0'; 
+--o_Debug(7) <= '1';
 
 
 o_set_and_rdy <= rdy_sig;
