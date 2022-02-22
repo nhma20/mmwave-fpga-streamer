@@ -5,7 +5,7 @@
 `timescale 1 ns / 1 ps
 module mmWaveStreamer_points_buffer_V_ram (addr0, ce0, d0, we0, q0,  clk);
 
-parameter DWIDTH = 32;
+parameter DWIDTH = 128;
 parameter AWIDTH = 5;
 parameter MEM_SIZE = 32;
 
@@ -43,7 +43,7 @@ module mmWaveStreamer_points_buffer_V(
     d0,
     q0);
 
-parameter DataWidth = 32'd32;
+parameter DataWidth = 32'd128;
 parameter AddressRange = 32'd32;
 parameter AddressWidth = 32'd5;
 input reset;

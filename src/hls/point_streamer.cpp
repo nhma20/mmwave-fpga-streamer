@@ -14,9 +14,14 @@ void load_buffer(point_t points_in[BUFFER_SIZE], point_t points_buffer[BUFFER_SI
 
 void stream_points(hls::stream<uint32_t> & stream_out, point_t points_buffer[BUFFER_SIZE])
 {
-	stream_points_loop: for (int i = 0; i < BUFFER_SIZE; i++)
+
+	stream_points_inner_loop: for (int i = 0; i < BUFFER_SIZE; i++)
 	{
-		stream_out.write(points_buffer[i]);
+		stream_points_outer_loop: for (int j = 0; j < 4; j++)
+		{
+			uint32_t tmp_var = (uint32_t) points_buffer[i](31+j*32, j*32); // split 128bits into 4x 32bits
+			stream_out.write(tmp_var);
+		}
 	}
 }
 
@@ -30,7 +35,7 @@ void mmWaveStreamer(point_t points_in[BUFFER_SIZE], hls::stream<uint32_t> & stre
 
 	load_buffer(points_in, points_buffer);
 
-	stream_points(stream_out, points_buffer); //, wr_ptr);
+	stream_points(stream_out, points_buffer);
 }
 
 
