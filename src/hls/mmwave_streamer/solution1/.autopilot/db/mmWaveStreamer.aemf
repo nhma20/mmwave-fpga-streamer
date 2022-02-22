@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1645562604488">
+  <ports id="1" name="points_in" type="PortType" coreName="RAM" coreId="0" bitwidth="128" iftype="IfTypeRegister" arraysize="32">
+    <dataOutputObjs>getelementptr</dataOutputObjs>
+  </ports>
+  <ports id="2" name="stream_out_V" type="PortType" originalName="stream_out" coreId="1419064121" bitwidth="32" direction="DirOut">
+    <dataInputObjs>write</dataInputObjs>
+    <dataInputObjs>write</dataInputObjs>
+    <dataInputObjs>write</dataInputObjs>
+    <dataInputObjs>write</dataInputObjs>
+  </ports>
+  <edges id="54" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges id="55" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="56" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="59" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="60" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="63" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="66" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="67" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="68" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="69" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.0" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="70" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="71" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="74" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="75" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="77" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="78" source_obj="//@regions.0/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="79" source_obj="//@regions.0/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
+  <edges id="80" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
+  <edges id="81" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.5"/>
+  <edges id="82" source_obj="//@regions.1/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="83" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.1" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="85" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.0"/>
+  <edges id="86" source_obj="//@regions.1/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.1"/>
+  <edges id="88" source_obj="//@regions.1/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.2"/>
+  <edges id="90" source_obj="//@regions.1/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.3"/>
+  <edges id="91" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.1" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.3"/>
+  <edges id="92" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.3"/>
+  <edges id="93" source_obj="//@regions.1/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.0"/>
+  <edges id="94" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.1"/>
+  <edges id="96" source_obj="//@regions.1/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.1"/>
+  <edges id="97" source_obj="//@regions.1/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.2"/>
+  <edges id="98" source_obj="//@regions.1/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.3"/>
+  <edges id="101" source_obj="//@regions.1/@basic_blocks.1/@node_objs.4" sink_obj="//@ports.1"/>
+  <edges id="102" source_obj="//@regions.1/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.4"/>
+  <edges id="105" source_obj="//@regions.1/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.5"/>
+  <edges id="111" source_obj="//@regions.1/@basic_blocks.1/@node_objs.6" sink_obj="//@ports.1"/>
+  <edges id="112" source_obj="//@regions.1/@basic_blocks.1/@node_objs.5" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.6"/>
+  <edges id="114" source_obj="//@regions.1/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.7"/>
+  <edges id="120" source_obj="//@regions.1/@basic_blocks.1/@node_objs.8" sink_obj="//@ports.1"/>
+  <edges id="121" source_obj="//@regions.1/@basic_blocks.1/@node_objs.7" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.8"/>
+  <edges id="123" source_obj="//@regions.1/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.9"/>
+  <edges id="129" source_obj="//@regions.1/@basic_blocks.1/@node_objs.10" sink_obj="//@ports.1"/>
+  <edges id="130" source_obj="//@regions.1/@basic_blocks.1/@node_objs.9" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.10"/>
+  <edges id="131" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.0" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.11"/>
+  <edges id="240" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0"/>
+  <edges id="241" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="242" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1"/>
+  <edges id="243" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0" is_back_edge="1"/>
+  <edges id="244" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.1/@basic_blocks.0"/>
+  <edges id="245" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.0" sink_obj="//@blocks.2"/>
+  <edges id="246" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.0" sink_obj="//@regions.1/@basic_blocks.1"/>
+  <edges id="247" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.1" sink_obj="//@regions.1/@basic_blocks.0" is_back_edge="1"/>
+  <edges id="248" edge_type="VirtEdge" source_obj="//@regions.1/@basic_blocks.1/@node_objs.8" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.10"/>
+  <edges id="249" edge_type="VirtEdge" source_obj="//@regions.1/@basic_blocks.1/@node_objs.6" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.8"/>
+  <edges id="250" edge_type="VirtEdge" source_obj="//@regions.1/@basic_blocks.1/@node_objs.4" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.6"/>
+  <edges id="2147483647" source_obj="//@regions.1/@basic_blocks.1/@node_objs.10" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.4" is_back_edge="1"/>
+  <blocks id="11" name="block_11" type="BlockType">
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>block_18</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="9" name="points_buffer_V" lineNumber="34" originalName="points_buffer.V" fileName="point_streamer.cpp" fileDirectory=".." rtlName="points_buffer_V_U" coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="83" contextFuncName="mmWaveStreamer" bitwidth="128" opcode="alloca" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="point_streamer.cpp" linenumber="34" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="mmWaveStreamer"/>
+      <dataOutputObjs>getelementptr</dataOutputObjs>
+      <dataOutputObjs>getelementptr</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="10" name="br_ln11" lineNumber="11" fileName="point_streamer.cpp" fileDirectory=".." coreId="2415919232" contextFuncName="load_buffer" opcode="br" m_display="0" m_delay="0.48" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="point_streamer.cpp" linenumber="11" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="load_buffer"/>
+      <controlInputObjs>block_18</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="point_streamer.cpp">
+      <validLinenumbers>34</validLinenumbers>
+      <validLinenumbers>11</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="28" name="_Z11load_bufferP7ap_uintILi128EES1_.exit.preheader" type="BlockType">
+    <controlInputObjs>block_18</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>_Z11load_bufferP7ap_uintILi128EES1_.exit</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="27" name="br_ln0" coreId="132" opcode="br" nodeLabel="3.0" m_display="0" m_delay="0.48" m_topoIndex="13" m_clusterGroupNumber="-1">
+      <controlInputObjs>_Z11load_bufferP7ap_uintILi128EES1_.exit</controlInputObjs>
+    </node_objs>
+  </blocks>
+  <blocks id="51" name="_Z13stream_pointsRN3hls6streamIjLi0EEEP7ap_uintILi128EE.exit" type="BlockType">
+    <controlInputObjs>_Z11load_bufferP7ap_uintILi128EES1_.exit</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="50" name="_ln39" lineNumber="39" fileName="point_streamer.cpp" fileDirectory=".." coreId="1419127992" contextFuncName="mmWaveStreamer" opcode="ret" nodeLabel="10.0" m_display="0" m_topoIndex="30" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="point_streamer.cpp" linenumber="39" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="mmWaveStreamer"/>
+    </node_objs>
+    <fileValidLineNumbers fileName="point_streamer.cpp">
+      <validLinenumbers>39</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="202" pipe_depth="2" RegionName="points_in_loop">
+    <basic_blocks id="18" name="block_18" type="BlockType">
+      <controlInputObjs>block_11</controlInputObjs>
+      <controlInputObjs>.split4</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>_Z11load_bufferP7ap_uintILi128EES1_.exit.preheader</controlOutputObjs>
+      <controlOutputObjs>.split4</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="12" name="i" lineNumber="11" originalName="i" fileName="point_streamer.cpp" fileDirectory=".." coreId="1601" contextFuncName="load_buffer" bitwidth="6" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="point_streamer.cpp" linenumber="11" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="load_buffer"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+        <controlInputObjs>.split4</controlInputObjs>
+        <controlInputObjs>block_11</controlInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="13" name="add_ln11" lineNumber="11" fileName="point_streamer.cpp" fileDirectory=".." rtlName="add_ln11_fu_134_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="load_buffer" bitwidth="6" opcode="add" nodeLabel="1.0" m_display="0" m_delay="0.88" m_topoIndex="4" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="point_streamer.cpp" linenumber="11" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="load_buffer"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="15" name="icmp_ln11" lineNumber="11" fileName="point_streamer.cpp" fileDirectory=".." rtlName="icmp_ln11_fu_140_p2" opType="icmp" coreId="132" contextFuncName="load_buffer" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="0.87" m_topoIndex="5" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="point_streamer.cpp" linenumber="11" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="load_buffer"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="br_ln11" lineNumber="11" fileName="point_streamer.cpp" fileDirectory=".." coreId="0" contextFuncName="load_buffer" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="point_streamer.cpp" linenumber="11" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="load_buffer"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <controlInputObjs>.split4</controlInputObjs>
+        <controlInputObjs>_Z11load_bufferP7ap_uintILi128EES1_.exit.preheader</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="point_streamer.cpp">
+        <validLinenumbers>11</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="26" name=".split4" type="BlockType">
+      <controlInputObjs>block_18</controlInputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>block_18</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="19" name="i_cast" lineNumber="11" fileName="point_streamer.cpp" fileDirectory=".." rtlName="i_cast_fu_146_p1" coreId="0" contextFuncName="load_buffer" bitwidth="64" opcode="zext" nodeLabel="1.0" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="point_streamer.cpp" linenumber="11" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="load_buffer"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>getelementptr</dataOutputObjs>
+        <dataOutputObjs>getelementptr</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="21" name="points_buffer_V_addr" lineNumber="12" fileName="point_streamer.cpp" fileDirectory=".." coreId="0" contextFuncName="load_buffer" bitwidth="5" opcode="getelementptr" nodeLabel="2.0" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="point_streamer.cpp" linenumber="12" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="load_buffer"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="22" name="points_in_addr" lineNumber="12" fileName="point_streamer.cpp" fileDirectory=".." coreId="49" contextFuncName="load_buffer" bitwidth="5" opcode="getelementptr" nodeLabel="1.0" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="point_streamer.cpp" linenumber="12" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="load_buffer"/>
+        <dataInputObjs>points_in</dataInputObjs>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>load</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="23" name="points_in_load" lineNumber="12" fileName="point_streamer.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="83" contextFuncName="load_buffer" bitwidth="128" opcode="load" nodeLabel="1.0" nodeLatency="1" m_display="0" m_delay="1.35" m_topoIndex="9" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="point_streamer.cpp" linenumber="12" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="load_buffer"/>
+        <dataInputObjs>getelementptr</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="24" name="points_buffer_V_addr_write_ln12" lineNumber="12" fileName="point_streamer.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="83" contextFuncName="load_buffer" opcode="store" nodeLabel="2.0" m_display="0" m_delay="1.35" m_topoIndex="11" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="point_streamer.cpp" linenumber="12" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="load_buffer"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataInputObjs>getelementptr</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="25" name="br_ln0" coreId="0" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+        <controlInputObjs>block_18</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="point_streamer.cpp">
+        <validLinenumbers>11</validLinenumbers>
+        <validLinenumbers>12</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <regions anchor_node="-1" region_type="8" interval="4" typeName="Pipeline" id="203" pipe_depth="6" RegionName="stream_points_inner_loop">
+    <basic_blocks id="35" name="_Z11load_bufferP7ap_uintILi128EES1_.exit" type="BlockType">
+      <controlInputObjs>_Z11load_bufferP7ap_uintILi128EES1_.exit.preheader</controlInputObjs>
+      <controlInputObjs>.split2</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>_Z13stream_pointsRN3hls6streamIjLi0EEEP7ap_uintILi128EE.exit</controlOutputObjs>
+      <controlOutputObjs>.split2</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="29" name="i_1" lineNumber="18" originalName="i" fileName="point_streamer.cpp" fileDirectory=".." coreId="0" contextFuncName="stream_points" bitwidth="6" opcode="phi" nodeLabel="4.0" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="point_streamer.cpp" linenumber="18" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="stream_points"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+        <controlInputObjs>.split2</controlInputObjs>
+        <controlInputObjs>_Z11load_bufferP7ap_uintILi128EES1_.exit.preheader</controlInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="30" name="add_ln18" lineNumber="18" fileName="point_streamer.cpp" fileDirectory=".." rtlName="add_ln18_fu_151_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="stream_points" bitwidth="6" opcode="add" nodeLabel="4.0" m_display="0" m_delay="0.88" m_topoIndex="15" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="point_streamer.cpp" linenumber="18" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="stream_points"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="icmp_ln18" lineNumber="18" fileName="point_streamer.cpp" fileDirectory=".." rtlName="icmp_ln18_fu_157_p2" opType="icmp" coreId="1419028328" contextFuncName="stream_points" bitwidth="1" opcode="icmp" nodeLabel="4.0" m_display="0" m_delay="0.87" m_topoIndex="16" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="point_streamer.cpp" linenumber="18" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="stream_points"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="34" name="br_ln18" lineNumber="18" fileName="point_streamer.cpp" fileDirectory=".." coreId="49" contextFuncName="stream_points" opcode="br" nodeLabel="4.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="point_streamer.cpp" linenumber="18" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="stream_points"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <controlInputObjs>.split2</controlInputObjs>
+        <controlInputObjs>_Z13stream_pointsRN3hls6streamIjLi0EEEP7ap_uintILi128EE.exit</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="point_streamer.cpp">
+        <validLinenumbers>18</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="49" name=".split2" type="BlockType">
+      <controlInputObjs>_Z11load_bufferP7ap_uintILi128EES1_.exit</controlInputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>_Z11load_bufferP7ap_uintILi128EES1_.exit</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="36" name="i_1_cast" lineNumber="18" fileName="point_streamer.cpp" fileDirectory=".." rtlName="i_1_cast_fu_163_p1" coreId="0" contextFuncName="stream_points" bitwidth="64" opcode="zext" nodeLabel="4.0" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="point_streamer.cpp" linenumber="18" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="stream_points"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>getelementptr</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="38" name="points_buffer_V_addr_1" lineNumber="18" fileName="point_streamer.cpp" fileDirectory=".." coreId="1419117680" contextFuncName="stream_points" bitwidth="5" opcode="getelementptr" nodeLabel="4.0" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="point_streamer.cpp" linenumber="18" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="stream_points"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>load</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="39" name="p_Val2_s" lineNumber="18" originalName="__Val2__" fileName="point_streamer.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="83" contextFuncName="stream_points" bitwidth="128" opcode="load" nodeLabel="4.0" nodeLatency="1" m_display="0" m_delay="1.35" m_topoIndex="20" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="point_streamer.cpp" linenumber="18" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="stream_points"/>
+        <dataInputObjs>getelementptr</dataInputObjs>
+        <dataOutputObjs>trunc</dataOutputObjs>
+        <dataOutputObjs>partselect</dataOutputObjs>
+        <dataOutputObjs>partselect</dataOutputObjs>
+        <dataOutputObjs>partselect</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="40" name="trunc_ln708" lineNumber="708" fileName="/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="trunc_ln708_fu_168_p1" coreId="2415919232" contextFuncName="to_uint64" bitwidth="32" opcode="trunc" nodeLabel="5.0" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_int_ref.h" linenumber="708" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="to_uint64"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>write</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="41" name="stream_out_V_write_ln174" lineNumber="174" fileName="/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h" fileDirectory=".." coreName="axis" implIndex="axi4stream" control="auto" opType="adapter" coreId="123" contextFuncName="write" opcode="write" nodeLabel="5.0" nodeLatency="1" m_display="1" m_isLCDNode="true" m_isStartOfPath="true" m_topoIndex="22" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h" linenumber="174" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="write"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataInputObjs>write</dataInputObjs>
+        <dataOutputObjs>stream_out_V</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="42" name="p_Result_1" lineNumber="708" fileName="/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="p_Result_1_reg_241" coreId="132" contextFuncName="to_uint64" bitwidth="32" opcode="partselect" nodeLabel="5.0" m_display="0" m_topoIndex="23" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_int_ref.h" linenumber="708" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="to_uint64"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>write</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="43" name="stream_out_V_write_ln174" lineNumber="174" fileName="/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h" fileDirectory=".." coreName="axis" implIndex="axi4stream" control="auto" opType="adapter" coreId="123" contextFuncName="write" opcode="write" nodeLabel="6.0" nodeLatency="1" m_display="1" m_isLCDNode="true" m_topoIndex="26" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h" linenumber="174" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="write"/>
+        <dataInputObjs>partselect</dataInputObjs>
+        <dataOutputObjs>stream_out_V</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="44" name="p_Result_2" lineNumber="708" fileName="/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="p_Result_2_reg_246" coreId="132" contextFuncName="to_uint64" bitwidth="32" opcode="partselect" nodeLabel="5.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_int_ref.h" linenumber="708" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="to_uint64"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>write</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="stream_out_V_write_ln174" lineNumber="174" fileName="/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h" fileDirectory=".." coreName="axis" implIndex="axi4stream" control="auto" opType="adapter" coreId="123" contextFuncName="write" opcode="write" nodeLabel="7.0" nodeLatency="1" m_display="1" m_isLCDNode="true" m_topoIndex="27" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h" linenumber="174" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="write"/>
+        <dataInputObjs>partselect</dataInputObjs>
+        <dataOutputObjs>stream_out_V</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="46" name="p_Result_3" lineNumber="708" fileName="/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="p_Result_3_reg_251" coreId="49" contextFuncName="to_uint64" bitwidth="32" opcode="partselect" nodeLabel="5.0" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_int_ref.h" linenumber="708" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="to_uint64"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>write</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="47" name="stream_out_V_write_ln174" lineNumber="174" fileName="/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h" fileDirectory=".." coreName="axis" implIndex="axi4stream" control="auto" opType="adapter" coreId="123" contextFuncName="write" opcode="write" nodeLabel="8.0" nodeLatency="1" m_display="1" m_isLCDNode="true" m_topoIndex="28" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h" linenumber="174" fileDirectory="/home/nm/mmwave-fpga-streamer/src/hls" functionName="write"/>
+        <dataInputObjs>partselect</dataInputObjs>
+        <dataOutputObjs>stream_out_V</dataOutputObjs>
+        <dataOutputObjs>write</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="48" name="br_ln0" coreId="132" opcode="br" nodeLabel="9.0" m_display="0" m_topoIndex="29" m_clusterGroupNumber="-1">
+        <controlInputObjs>_Z11load_bufferP7ap_uintILi128EES1_.exit</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h">
+        <validLinenumbers>174</validLinenumbers>
+      </fileValidLineNumbers>
+      <fileValidLineNumbers fileName="point_streamer.cpp">
+        <validLinenumbers>18</validLinenumbers>
+      </fileValidLineNumbers>
+      <fileValidLineNumbers fileName="/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_int_ref.h">
+        <validLinenumbers>708</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <ScheduleInfo time="3"/>
+  <ScheduleInfo time="4"/>
+  <ScheduleInfo time="5"/>
+  <ScheduleInfo time="6"/>
+  <ScheduleInfo time="7"/>
+  <ScheduleInfo time="8"/>
+  <ScheduleInfo time="9"/>
+  <ScheduleInfo time="10"/>
+  <regnodes realName="p_Result_3_reg_251">
+    <nodeIds>46</nodeIds>
+  </regnodes>
+  <regnodes realName="i_cast_reg_212">
+    <nodeIds>19</nodeIds>
+  </regnodes>
+  <regnodes realName="add_ln11_reg_203">
+    <nodeIds>13</nodeIds>
+  </regnodes>
+  <regnodes realName="i_reg_112">
+    <nodeIds>12</nodeIds>
+  </regnodes>
+  <regnodes realName="p_Result_2_reg_246">
+    <nodeIds>44</nodeIds>
+  </regnodes>
+  <regnodes realName="points_in_addr_reg_217">
+    <nodeIds>22</nodeIds>
+  </regnodes>
+  <regnodes realName="i_1_reg_123">
+    <nodeIds>29</nodeIds>
+  </regnodes>
+  <regnodes realName="add_ln18_reg_222">
+    <nodeIds>30</nodeIds>
+  </regnodes>
+  <regnodes realName="trunc_ln708_reg_236">
+    <nodeIds>40</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln18_reg_227">
+    <nodeIds>32</nodeIds>
+  </regnodes>
+  <regnodes realName="points_buffer_V_addr_1_reg_231">
+    <nodeIds>38</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln11_reg_208">
+    <nodeIds>15</nodeIds>
+  </regnodes>
+  <regnodes realName="p_Result_1_reg_241">
+    <nodeIds>42</nodeIds>
+  </regnodes>
+  <expressionNodes realName="i_1_phi_fu_127">
+    <nodeIds>29</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_1_cast_fu_163">
+    <nodeIds>36</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_phi_fu_116">
+    <nodeIds>12</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln11_fu_140">
+    <nodeIds>15</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln18_fu_157">
+    <nodeIds>32</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln18_fu_151">
+    <nodeIds>30</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="points_buffer_V_alloca_fu_68">
+    <nodeIds>9</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="points_buffer_V_addr_gep_fu_92">
+    <nodeIds>21</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln11_fu_134">
+    <nodeIds>13</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_Result_2_fu_183">
+    <nodeIds>44</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="points_buffer_V_addr_1_gep_fu_105">
+    <nodeIds>38</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_Result_3_fu_193">
+    <nodeIds>46</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="points_in_addr_gep_fu_79">
+    <nodeIds>22</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_cast_fu_146">
+    <nodeIds>19</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_Result_1_fu_173">
+    <nodeIds>42</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln708_fu_168">
+    <nodeIds>40</nodeIds>
+  </expressionNodes>
+  <ioNodes realName="grp_write_fu_72">
+    <nodeIds>41</nodeIds>
+    <nodeIds>43</nodeIds>
+    <nodeIds>45</nodeIds>
+    <nodeIds>47</nodeIds>
+  </ioNodes>
+  <memoryPorts dataString="points_buffer_V">
+    <nodeIds>24</nodeIds>
+    <nodeIds>39</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="points_in">
+    <nodeIds>23</nodeIds>
+  </memoryPorts>
+  <ioPorts name="points_in(p0)">
+    <contents name="load">
+      <nodeIds>23</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="stream_out_V">
+    <contents name="write">
+      <nodeIds>41</nodeIds>
+      <nodeIds>43</nodeIds>
+      <nodeIds>45</nodeIds>
+      <nodeIds>47</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="3" stage="1" latency="1"/>
+      <operations id="4" stage="1" latency="1"/>
+      <operations id="5" stage="1" latency="1"/>
+      <operations id="6" stage="1" latency="1"/>
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="8" stage="1" latency="1"/>
+      <operations id="9" stage="1" latency="1"/>
+      <operations id="10" stage="1" latency="1"/>
+    </states>
+    <states id="2">
+      <operations id="12" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="23" stage="2" latency="2"/>
+    </states>
+    <states id="3">
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="2"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+    </states>
+    <states id="4">
+      <operations id="27" stage="1" latency="1"/>
+    </states>
+    <states id="5">
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
+      <operations id="31" stage="1" latency="1"/>
+      <operations id="32" stage="1" latency="1"/>
+      <operations id="33" stage="1" latency="1"/>
+      <operations id="34" stage="1" latency="1"/>
+      <operations id="36" stage="1" latency="1"/>
+      <operations id="38" stage="1" latency="1"/>
+      <operations id="39" stage="2" latency="2"/>
+    </states>
+    <states id="6">
+      <operations id="39" stage="1" latency="2"/>
+      <operations id="40" stage="1" latency="1"/>
+      <operations id="41" stage="2" latency="2"/>
+      <operations id="42" stage="1" latency="1"/>
+      <operations id="44" stage="1" latency="1"/>
+      <operations id="46" stage="1" latency="1"/>
+    </states>
+    <states id="7">
+      <operations id="41" stage="1" latency="2"/>
+      <operations id="43" stage="2" latency="2"/>
+    </states>
+    <states id="8">
+      <operations id="43" stage="1" latency="2"/>
+      <operations id="45" stage="2" latency="2"/>
+    </states>
+    <states id="9">
+      <operations id="45" stage="1" latency="2"/>
+      <operations id="47" stage="2" latency="2"/>
+    </states>
+    <states id="10">
+      <operations id="37" stage="1" latency="1"/>
+      <operations id="47" stage="1" latency="2"/>
+      <operations id="48" stage="1" latency="1"/>
+    </states>
+    <states id="11">
+      <operations id="50" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="4" outState="5">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="3" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="4">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="6" outState="7">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="7" outState="8">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="8" outState="9">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="9" outState="10">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="10" outState="5">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="5" outState="11">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="5" outState="6">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="mmWaveStreamer" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="165" mMaxLatency="165">
+      <subRegions>2</subRegions>
+      <subRegions>3</subRegions>
+      <subRegions>4</subRegions>
+      <subRegions>5</subRegions>
+      <subRegions>6</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>11</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="3" mTag="points_in_loop" mII="1" mDepth="2" mMinTripCount="32" mMaxTripCount="32" mMinLatency="32" mMaxLatency="32" mType="1">
+      <basicBlocks>18</basicBlocks>
+      <basicBlocks>26</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="4" mTag="Region 1" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>28</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="5" mTag="stream_points_inner_loop" mII="4" mDepth="6" mMinTripCount="32" mMaxTripCount="32" mMinLatency="129" mMaxLatency="129" mType="1">
+      <basicBlocks>35</basicBlocks>
+      <basicBlocks>49</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="6" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>51</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

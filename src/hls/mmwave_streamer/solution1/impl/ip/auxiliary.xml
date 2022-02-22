@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="mmWaveStreamer" xd:componentRef="mmWaveStreamer" xd:initiationInterval="166" xd:clockPeriod="10.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="ap_ctrl" xd:busTypeRef="acc_handshake" xd:type="acc_handshake"/>
+  <xd:arg xd:name="stream_out" xd:originalName="stream_out" xd:direction="out" xd:interfaceRef="stream_out_V" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:arg xd:name="points_in_q0" xd:originalName="points_in_q0" xd:direction="in" xd:interfaceRef="points_in_q0" xd:busTypeRef="ap_memory" xd:arraySize="1" xd:dataWidth="128"/>
+  <xd:latencyEstimates xd:best-case="165" xd:worst-case="165" xd:average-case="165"/>
+  <xd:resourceEstimates xd:LUT="226" xd:FF="135" xd:BRAM="4" xd:DSP="0"/>
+</xd:acceleratorMap>
