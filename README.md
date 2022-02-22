@@ -4,6 +4,7 @@ mmWave FPGA Streamer
 Reads and parses data from IWR6843AOP and streams it 
 ----------------------------------------------------------------------------
 
+Partially derived from: https://github.com/nhma20/ultra96_mmwave_interface
 
 ### Prerequisites
 - Ultra96V2 board (other FPGAs supported with slight modifications)
