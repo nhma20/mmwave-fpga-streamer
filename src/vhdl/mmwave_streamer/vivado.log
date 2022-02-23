@@ -1,0 +1,28 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Feb 23 08:34:51 2022
+# Process ID: 2918344
+# Current directory: /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer
+# Command line: vivado mmwave_streamer.xpr
+# Log file: /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/vivado.log
+# Journal file: /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project mmwave_streamer.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer'.
+WARNING: [IP_Flow 19-3656] If you move the project, the path for repository '/home/nm/mmwave-fpga-streamer' may become invalid. A better location for the repository would be in a path adjacent to the project. (Current project location is '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer'.)
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2020.2/data/ip'.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:AND_gate:1.0'. The one found in IP location '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/AND_gate' will take precedence over the same IP in location /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/AND_gate
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:NOT_gate:1.0'. The one found in IP location '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/NOT_gate' will take precedence over the same IP in location /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/NOT_gate
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:points_RAM:1.0'. The one found in IP location '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/points_RAM' will take precedence over the same IP in location /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/points_RAM
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:UART_RX:1.0'. The one found in IP location '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/UART_RX' will take precedence over the same IP in location /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/UART_RX
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:data_parser:1.0'. The one found in IP location '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/data_parser' will take precedence over the same IP in location /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave_streamer/mmwave_streamer.gen/sources_1/bd/mref/data_parser
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 23 08:36:44 2022...
