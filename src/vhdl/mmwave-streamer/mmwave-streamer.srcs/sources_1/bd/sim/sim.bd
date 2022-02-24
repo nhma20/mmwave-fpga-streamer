@@ -1,0 +1,341 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x8952E8B68D07994A",
+      "device": "xczu3eg-sbva484-1-i",
+      "gen_directory": "../../../../mmwave-streamer.gen/sources_1/bd/sim",
+      "name": "sim",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2020.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "stream_controller_0": "",
+      "points_RAM_0": "",
+      "mmWaveStreamer_0": "",
+      "NOT_gate_0": ""
+    },
+    "interface_ports": {
+      "stream_out": {
+        "mode": "Master",
+        "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "sim_clk_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "HAS_TKEEP": {
+            "value": "1",
+            "value_src": "const_prop"
+          },
+          "HAS_TLAST": {
+            "value": "1",
+            "value_src": "const_prop"
+          },
+          "HAS_TREADY": {
+            "value": "1",
+            "value_src": "const_prop"
+          },
+          "HAS_TSTRB": {
+            "value": "1",
+            "value_src": "const_prop"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          },
+          "TDATA_NUM_BYTES": {
+            "value": "4",
+            "value_src": "const_prop"
+          },
+          "TDEST_WIDTH": {
+            "value": "0",
+            "value_src": "const_prop"
+          },
+          "TID_WIDTH": {
+            "value": "0",
+            "value_src": "const_prop"
+          },
+          "TUSER_WIDTH": {
+            "value": "0",
+            "value_src": "const_prop"
+          }
+        }
+      }
+    },
+    "ports": {
+      "clk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_BUSIF": {
+            "value": "stream_out"
+          },
+          "ASSOCIATED_RESET": {
+            "value": "i_in_0:rst_n",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "sim_clk_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "rst_n": {
+        "direction": "I"
+      },
+      "i_data_in": {
+        "direction": "I",
+        "left": "127",
+        "right": "0"
+      },
+      "i_set_and_rdy": {
+        "direction": "I",
+        "left": "1",
+        "right": "0"
+      },
+      "ready": {
+        "direction": "I"
+      }
+    },
+    "components": {
+      "stream_controller_0": {
+        "vlnv": "xilinx.com:module_ref:stream_controller:1.0",
+        "xci_name": "sim_stream_controller_0_0",
+        "xci_path": "ip/sim_stream_controller_0_0/sim_stream_controller_0_0.xci",
+        "inst_hier_path": "stream_controller_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "stream_controller",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "sim_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "start": {
+            "direction": "O"
+          },
+          "idle": {
+            "direction": "I"
+          },
+          "ready": {
+            "direction": "I"
+          }
+        }
+      },
+      "points_RAM_0": {
+        "vlnv": "xilinx.com:module_ref:points_RAM:1.0",
+        "xci_name": "sim_points_RAM_0_0",
+        "xci_path": "ip/sim_points_RAM_0_0/sim_points_RAM_0_0.xci",
+        "inst_hier_path": "points_RAM_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "points_RAM",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_Clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "i_Rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "sim_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "i_Rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "i_data_in": {
+            "direction": "I",
+            "left": "127",
+            "right": "0"
+          },
+          "i_point_addr": {
+            "direction": "I",
+            "left": "4",
+            "right": "0",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "i_set_and_rdy": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "i_ce": {
+            "direction": "I"
+          },
+          "o_data_out": {
+            "direction": "O",
+            "left": "127",
+            "right": "0"
+          }
+        }
+      },
+      "mmWaveStreamer_0": {
+        "vlnv": "xilinx.com:hls:mmWaveStreamer:1.0",
+        "xci_name": "sim_mmWaveStreamer_0_0",
+        "xci_path": "ip/sim_mmWaveStreamer_0_0/sim_mmWaveStreamer_0_0.xci",
+        "inst_hier_path": "mmWaveStreamer_0"
+      },
+      "NOT_gate_0": {
+        "vlnv": "xilinx.com:module_ref:NOT_gate:1.0",
+        "xci_name": "sim_NOT_gate_0_0",
+        "xci_path": "ip/sim_NOT_gate_0_0/sim_NOT_gate_0_0.xci",
+        "inst_hier_path": "NOT_gate_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "NOT_gate",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_in": {
+            "direction": "I"
+          },
+          "o_out": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "interface_nets": {
+      "mmWaveStreamer_0_stream_out": {
+        "interface_ports": [
+          "stream_out",
+          "mmWaveStreamer_0/stream_out"
+        ]
+      }
+    },
+    "nets": {
+      "points_RAM_0_o_data_out": {
+        "ports": [
+          "points_RAM_0/o_data_out",
+          "mmWaveStreamer_0/points_in_q0"
+        ]
+      },
+      "clk_0_1": {
+        "ports": [
+          "clk",
+          "stream_controller_0/clk",
+          "mmWaveStreamer_0/ap_clk",
+          "points_RAM_0/i_Clk"
+        ]
+      },
+      "i_in_0_1": {
+        "ports": [
+          "rst_n",
+          "NOT_gate_0/i_in",
+          "mmWaveStreamer_0/ap_rst_n",
+          "stream_controller_0/rst_n"
+        ]
+      },
+      "NOT_gate_0_o_out": {
+        "ports": [
+          "NOT_gate_0/o_out",
+          "points_RAM_0/i_Rst"
+        ]
+      },
+      "i_data_in_0_1": {
+        "ports": [
+          "i_data_in",
+          "points_RAM_0/i_data_in"
+        ]
+      },
+      "mmWaveStreamer_0_points_in_address0": {
+        "ports": [
+          "mmWaveStreamer_0/points_in_address0",
+          "points_RAM_0/i_point_addr"
+        ]
+      },
+      "mmWaveStreamer_0_points_in_ce0": {
+        "ports": [
+          "mmWaveStreamer_0/points_in_ce0",
+          "points_RAM_0/i_ce"
+        ]
+      },
+      "i_set_and_rdy_0_1": {
+        "ports": [
+          "i_set_and_rdy",
+          "points_RAM_0/i_set_and_rdy"
+        ]
+      },
+      "ready_0_1": {
+        "ports": [
+          "ready",
+          "stream_controller_0/ready",
+          "mmWaveStreamer_0/stream_out_TREADY"
+        ]
+      },
+      "stream_controller_0_start": {
+        "ports": [
+          "stream_controller_0/start",
+          "mmWaveStreamer_0/ap_start"
+        ]
+      },
+      "mmWaveStreamer_0_ap_idle": {
+        "ports": [
+          "mmWaveStreamer_0/ap_idle",
+          "stream_controller_0/idle"
+        ]
+      }
+    }
+  }
+}

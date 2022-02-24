@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'mmWaveStreamer'
 ================================================================
 + General Information: 
-    * Date:           Tue Feb 22 21:43:24 2022
+    * Date:           Thu Feb 24 09:22:08 2022
     * Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
     * Project:        mmwave_streamer
     * Solution:       solution1 (Vivado IP Flow Target)
@@ -19,8 +19,8 @@
     |           Modules           | Issue|       | Latency |  Latency  | Iteration|         | Trip |          |         |    |           |           |     |
     |           & Loops           | Type | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM   | DSP|     FF    |    LUT    | URAM|
     +-----------------------------+------+-------+---------+-----------+----------+---------+------+----------+---------+----+-----------+-----------+-----+
-    |+ mmWaveStreamer             |     -|  -4.60|      165|  1.650e+03|         -|      166|     -|        no|  4 (~0%)|   -|  135 (~0%)|  226 (~0%)|    -|
+    |+ mmWaveStreamer             |     -|  -4.60|      165|  1.650e+03|         -|      166|     -|        no|  4 (~0%)|   -|  136 (~0%)|  250 (~0%)|    -|
     | o points_in_loop            |     -|  -7.30|       32|    320.000|         2|        1|    32|       yes|        -|   -|          -|          -|    -|
-    | o stream_points_inner_loop  |    II|  -7.30|      129|  1.290e+03|         6|        4|    32|       yes|        -|   -|          -|          -|    -|
+    | o stream_points_outer_loop  |    II|  -7.30|      129|  1.290e+03|         6|        4|    32|       yes|        -|   -|          -|          -|    -|
     +-----------------------------+------+-------+---------+-----------+----------+---------+------+----------+---------+----+-----------+-----------+-----+
 

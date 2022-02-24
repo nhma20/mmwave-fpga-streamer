@@ -36,20 +36,20 @@
                 <PipelineII>1</PipelineII>
                 <PipelineDepth>2</PipelineDepth>
             </points_in_loop>
-            <stream_points_inner_loop>
+            <stream_points_outer_loop>
                 <TripCount>32</TripCount>
                 <Latency>129</Latency>
                 <AbsoluteTimeLatency>1290</AbsoluteTimeLatency>
                 <PipelineII>4</PipelineII>
                 <PipelineDepth>6</PipelineDepth>
-            </stream_points_inner_loop>
+            </stream_points_outer_loop>
         </SummaryOfLoopLatency>
     </PerformanceEstimates>
     <AreaEstimates>
         <Resources>
             <BRAM_18K>4</BRAM_18K>
-            <FF>135</FF>
-            <LUT>226</LUT>
+            <FF>136</FF>
+            <LUT>250</LUT>
             <DSP>0</DSP>
             <URAM>0</URAM>
         </Resources>
@@ -165,8 +165,8 @@
             <CType>int</CType>
         </RtlPorts>
         <RtlPorts>
-            <name>stream_out_V_TDATA</name>
-            <Object>stream_out_V</Object>
+            <name>stream_out_TDATA</name>
+            <Object>stream_out_V_data_V</Object>
             <Type>pointer</Type>
             <Scope/>
             <IOProtocol>axis</IOProtocol>
@@ -177,8 +177,8 @@
             <CType>int</CType>
         </RtlPorts>
         <RtlPorts>
-            <name>stream_out_V_TVALID</name>
-            <Object>stream_out_V</Object>
+            <name>stream_out_TVALID</name>
+            <Object>stream_out_V_last_V</Object>
             <Type>pointer</Type>
             <Scope/>
             <IOProtocol>axis</IOProtocol>
@@ -189,8 +189,8 @@
             <CType>int</CType>
         </RtlPorts>
         <RtlPorts>
-            <name>stream_out_V_TREADY</name>
-            <Object>stream_out_V</Object>
+            <name>stream_out_TREADY</name>
+            <Object>stream_out_V_last_V</Object>
             <Type>pointer</Type>
             <Scope/>
             <IOProtocol>axis</IOProtocol>
@@ -198,6 +198,42 @@
             <Dir>in</Dir>
             <Bits>1</Bits>
             <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>stream_out_TLAST</name>
+            <Object>stream_out_V_last_V</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>axis</IOProtocol>
+            <IOConfig>register, both mode</IOConfig>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>stream_out_TKEEP</name>
+            <Object>stream_out_V_keep_V</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>axis</IOProtocol>
+            <IOConfig>register, both mode</IOConfig>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>stream_out_TSTRB</name>
+            <Object>stream_out_V_strb_V</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>axis</IOProtocol>
+            <IOConfig>register, both mode</IOConfig>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>data</Attribute>
             <CType>int</CType>
         </RtlPorts>
     </InterfaceSummary>
@@ -234,14 +270,14 @@
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>2</PipelineDepth>
                     </points_in_loop>
-                    <stream_points_inner_loop>
-                        <Name>stream_points_inner_loop</Name>
+                    <stream_points_outer_loop>
+                        <Name>stream_points_outer_loop</Name>
                         <TripCount>32</TripCount>
                         <Latency>129</Latency>
                         <AbsoluteTimeLatency>1.290 us</AbsoluteTimeLatency>
                         <PipelineII>4</PipelineII>
                         <PipelineDepth>6</PipelineDepth>
-                    </stream_points_inner_loop>
+                    </stream_points_outer_loop>
                 </SummaryOfLoopLatency>
             </PerformanceEstimates>
             <AreaEstimates>
@@ -249,10 +285,10 @@
                     <BRAM_18K>4</BRAM_18K>
                     <AVAIL_BRAM>432</AVAIL_BRAM>
                     <UTIL_BRAM>~0</UTIL_BRAM>
-                    <FF>135</FF>
+                    <FF>136</FF>
                     <AVAIL_FF>141120</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>226</LUT>
+                    <LUT>250</LUT>
                     <AVAIL_LUT>70560</AVAIL_LUT>
                     <UTIL_LUT>~0</UTIL_LUT>
                     <DSP>0</DSP>
@@ -367,8 +403,8 @@
                     <CType>int</CType>
                 </RtlPorts>
                 <RtlPorts>
-                    <name>stream_out_V_TDATA</name>
-                    <Object>stream_out_V</Object>
+                    <name>stream_out_TDATA</name>
+                    <Object>stream_out_V_data_V</Object>
                     <Type>pointer</Type>
                     <Scope/>
                     <IOProtocol>axis</IOProtocol>
@@ -379,8 +415,8 @@
                     <CType>int</CType>
                 </RtlPorts>
                 <RtlPorts>
-                    <name>stream_out_V_TVALID</name>
-                    <Object>stream_out_V</Object>
+                    <name>stream_out_TVALID</name>
+                    <Object>stream_out_V_last_V</Object>
                     <Type>pointer</Type>
                     <Scope/>
                     <IOProtocol>axis</IOProtocol>
@@ -391,8 +427,8 @@
                     <CType>int</CType>
                 </RtlPorts>
                 <RtlPorts>
-                    <name>stream_out_V_TREADY</name>
-                    <Object>stream_out_V</Object>
+                    <name>stream_out_TREADY</name>
+                    <Object>stream_out_V_last_V</Object>
                     <Type>pointer</Type>
                     <Scope/>
                     <IOProtocol>axis</IOProtocol>
@@ -400,6 +436,42 @@
                     <Dir>in</Dir>
                     <Bits>1</Bits>
                     <Attribute>control</Attribute>
+                    <CType>int</CType>
+                </RtlPorts>
+                <RtlPorts>
+                    <name>stream_out_TLAST</name>
+                    <Object>stream_out_V_last_V</Object>
+                    <Type>pointer</Type>
+                    <Scope/>
+                    <IOProtocol>axis</IOProtocol>
+                    <IOConfig>register, both mode</IOConfig>
+                    <Dir>out</Dir>
+                    <Bits>1</Bits>
+                    <Attribute>data</Attribute>
+                    <CType>int</CType>
+                </RtlPorts>
+                <RtlPorts>
+                    <name>stream_out_TKEEP</name>
+                    <Object>stream_out_V_keep_V</Object>
+                    <Type>pointer</Type>
+                    <Scope/>
+                    <IOProtocol>axis</IOProtocol>
+                    <IOConfig>register, both mode</IOConfig>
+                    <Dir>out</Dir>
+                    <Bits>4</Bits>
+                    <Attribute>data</Attribute>
+                    <CType>int</CType>
+                </RtlPorts>
+                <RtlPorts>
+                    <name>stream_out_TSTRB</name>
+                    <Object>stream_out_V_strb_V</Object>
+                    <Type>pointer</Type>
+                    <Scope/>
+                    <IOProtocol>axis</IOProtocol>
+                    <IOConfig>register, both mode</IOConfig>
+                    <Dir>out</Dir>
+                    <Bits>4</Bits>
+                    <Attribute>data</Attribute>
                     <CType>int</CType>
                 </RtlPorts>
             </InterfaceSummary>
@@ -414,16 +486,16 @@
                 <hwRef type="port" interface="points_in_q0" name="points_in_q0" usage="data" direction="in"/>
             </hwRefs>
         </Arg>
-        <Arg ArgName="stream_out" index="1" direction="out" srcType="stream&lt;unsigned int, 0&gt;&amp;" srcSize="32">
+        <Arg ArgName="stream_out" index="1" direction="out" srcType="stream&lt;hls::axis&lt;ap_uint&lt;32&gt;, 0, 0, 0&gt;, 0&gt;&amp;" srcSize="96">
             <hwRefs>
-                <hwRef type="interface" interface="stream_out_V" name="" usage="data" direction="out"/>
+                <hwRef type="interface" interface="stream_out" name="" usage="data" direction="out"/>
             </hwRefs>
         </Arg>
     </Args>
     <Interfaces>
         <Interface InterfaceName="ap_clk" type="clock" busTypeName="clock" mode="slave">
             <busParams>
-                <busParam busParamName="ASSOCIATED_BUSIF">stream_out_V</busParam>
+                <busParam busParamName="ASSOCIATED_BUSIF">stream_out</busParam>
                 <busParam busParamName="ASSOCIATED_RESET">ap_rst_n</busParam>
             </busParams>
             <portMaps>
@@ -480,11 +552,14 @@
                 <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="points_in"/>
             </constraints>
         </Interface>
-        <Interface InterfaceName="stream_out_V" type="axi4stream" busTypeName="axis" mode="master" dataWidth="32" portPrefix="stream_out_V_">
+        <Interface InterfaceName="stream_out" type="axi4stream" busTypeName="axis" mode="master" dataWidth="32" portPrefix="stream_out_">
             <ports>
-                <port>stream_out_V_TDATA</port>
-                <port>stream_out_V_TREADY</port>
-                <port>stream_out_V_TVALID</port>
+                <port>stream_out_TDATA</port>
+                <port>stream_out_TKEEP</port>
+                <port>stream_out_TLAST</port>
+                <port>stream_out_TREADY</port>
+                <port>stream_out_TSTRB</port>
+                <port>stream_out_TVALID</port>
             </ports>
             <constraints>
                 <constraint constraint_type="pragma interface" mode="axis" register_option="0" register_mode="both" argName="stream_out"/>
@@ -495,8 +570,8 @@
         <section name="HW Interfaces" level="0">
             <item name="AXIS">
                 <table>
-                    <keys size="5">Interface, Register Mode, TDATA, TREADY, TVALID</keys>
-                    <column name="stream_out_V">both, 32, 1, 1</column>
+                    <keys size="8">Interface, Register Mode, TDATA, TKEEP, TLAST, TREADY, TSTRB, TVALID</keys>
+                    <column name="stream_out">both, 32, 4, 1, 1, 4, 1</column>
                 </table>
             </item>
             <item name="AP_MEMORY">
@@ -522,7 +597,7 @@
                 <table isCollapsed="1">
                     <keys size="3">Argument, Direction, Datatype</keys>
                     <column name="points_in">in, ap_uint&lt;128&gt;*</column>
-                    <column name="stream_out">out, stream&lt;unsigned int 0&gt;&amp;</column>
+                    <column name="stream_out">out, stream&lt;hls::axis&lt;ap_uint&lt;32&gt; 0 0 0&gt; 0&gt;&amp;</column>
                 </table>
             </item>
             <item name="SW-to-HW Mapping">
@@ -531,7 +606,7 @@
                     <column name="points_in">points_in_address0, port, offset</column>
                     <column name="points_in">points_in_ce0, port, </column>
                     <column name="points_in">points_in_q0, port, </column>
-                    <column name="stream_out">stream_out_V, interface, </column>
+                    <column name="stream_out">stream_out, interface, </column>
                 </table>
             </item>
         </section>

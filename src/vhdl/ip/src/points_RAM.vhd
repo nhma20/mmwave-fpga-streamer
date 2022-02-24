@@ -47,8 +47,8 @@ entity points_RAM is
            i_data_in    : in STD_LOGIC_VECTOR (127 downto 0);
            i_point_addr : in STD_LOGIC_VECTOR(4 downto 0); -- select one of 32 stored points          
            i_set_and_rdy: in std_logic_vector(1 downto 0);
-           i_ce_dummy   : in std_logic;
-           i_idle    : in std_logic;
+           i_ce         : in std_logic; -- use to block switching of pingpong buffers while reading
+           --i_idle    : in std_logic;
            --o_data_rdy   : out STD_LOGIC;
            --o_num_points : out STD_LOGIC_VECTOR(4 downto 0);
            --o_test       : out std_logic_vector(7 downto 0);
@@ -106,7 +106,7 @@ begin
                         points_stored := points_stored + 1;
                     end if;
                 end if;
-                if new_set_shift_reg = ena_rising and i_idle = '0' then  -- and i_idle = '0' 
+                if new_set_shift_reg = ena_rising and i_ce = '0' then  -- and i_idle = '0' 
                     s_data_rdy <= '1';
                     num_points_out <= points_stored; 
                     points_stored := 0;
@@ -124,7 +124,7 @@ begin
                         points_stored := points_stored + 1;
                     end if;
                 end if;
-                if new_set_shift_reg = ena_rising and i_idle = '0' then  -- and i_idle = '0' 
+                if new_set_shift_reg = ena_rising and i_ce = '0' then  -- and i_idle = '0' 
                     s_data_rdy <= '1';
                     num_points_out <= points_stored;
                     points_stored := 0;
@@ -189,3 +189,4 @@ begin
 --    RAM_val_7 <= ram_0(7) when ram_selector = '0' else ram_1(7);
     
 end Behavioral;
+

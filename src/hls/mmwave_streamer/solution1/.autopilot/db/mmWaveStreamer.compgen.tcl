@@ -117,16 +117,73 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
     id 3 \
-    name stream_out_V \
+    name stream_out_V_data_V \
     reset_level 0 \
     sync_rst true \
-    corename {} \
+    corename {stream_out} \
     metadata {  } \
     op interface \
-    ports { stream_out_V_TDATA { O 32 vector } stream_out_V_TVALID { O 1 bit } stream_out_V_TREADY { I 1 bit } } \
+    ports { stream_out_TDATA { O 32 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'stream_out_V'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'stream_out_V_data_V'"
+}
+}
+
+
+# Native AXIS:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
+eval "::AESL_LIB_XILADAPTER::native_axis_add { \
+    id 4 \
+    name stream_out_V_keep_V \
+    reset_level 0 \
+    sync_rst true \
+    corename {stream_out} \
+    metadata {  } \
+    op interface \
+    ports { stream_out_TKEEP { O 4 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'stream_out_V_keep_V'"
+}
+}
+
+
+# Native AXIS:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
+eval "::AESL_LIB_XILADAPTER::native_axis_add { \
+    id 5 \
+    name stream_out_V_strb_V \
+    reset_level 0 \
+    sync_rst true \
+    corename {stream_out} \
+    metadata {  } \
+    op interface \
+    ports { stream_out_TSTRB { O 4 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'stream_out_V_strb_V'"
+}
+}
+
+
+# Native AXIS:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
+eval "::AESL_LIB_XILADAPTER::native_axis_add { \
+    id 6 \
+    name stream_out_V_last_V \
+    reset_level 0 \
+    sync_rst true \
+    corename {stream_out} \
+    metadata {  } \
+    op interface \
+    ports { stream_out_TVALID { O 1 bit } stream_out_TREADY { I 1 bit } stream_out_TLAST { O 1 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'stream_out_V_last_V'"
 }
 }
 
@@ -196,7 +253,76 @@ if {${::AESL::PGuard_autoexp_gen}} {
 
 
 # RegSlice definition:
-set ID 4
+set ID 7
+set RegSliceName mmWaveStreamer_regslice_both
+set RegSliceInstName mmWaveStreamer_regslice_both_U
+set CoreName ap_simcore_mmWaveStreamer_regslice_both
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $RegSliceName
+}
+
+
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
+    name ${RegSliceName} \
+    prefix mmWaveStreamer_ \
+    sliceTypeList 0\
+}"
+} else {
+puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
+}
+}
+
+
+# RegSlice definition:
+set ID 8
+set RegSliceName mmWaveStreamer_regslice_both
+set RegSliceInstName mmWaveStreamer_regslice_both_U
+set CoreName ap_simcore_mmWaveStreamer_regslice_both
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $RegSliceName
+}
+
+
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
+    name ${RegSliceName} \
+    prefix mmWaveStreamer_ \
+    sliceTypeList 0\
+}"
+} else {
+puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
+}
+}
+
+
+# RegSlice definition:
+set ID 9
+set RegSliceName mmWaveStreamer_regslice_both
+set RegSliceInstName mmWaveStreamer_regslice_both_U
+set CoreName ap_simcore_mmWaveStreamer_regslice_both
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $RegSliceName
+}
+
+
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
+    name ${RegSliceName} \
+    prefix mmWaveStreamer_ \
+    sliceTypeList 0\
+}"
+} else {
+puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
+}
+}
+
+
+# RegSlice definition:
+set ID 10
 set RegSliceName mmWaveStreamer_regslice_both
 set RegSliceInstName mmWaveStreamer_regslice_both_U
 set CoreName ap_simcore_mmWaveStreamer_regslice_both

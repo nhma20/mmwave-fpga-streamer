@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Feb 24 10:25:54 2022
+# Process ID: 216250
+# Current directory: /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.sim/sim_1/synth/func/xsim
+# Command line: wbtcv -mode batch -source /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.sim/sim_1/synth/func/xsim/xsim.dir/sim_wrapper_func_synth/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.sim/sim_1/synth/func/xsim/webtalk.log
+# Journal file: /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.sim/sim_1/synth/func/xsim/webtalk.jou
+#-----------------------------------------------------------
+source /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.sim/sim_1/synth/func/xsim/xsim.dir/sim_wrapper_func_synth/webtalk/xsim_webtalk.tcl -notrace

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="mmwave_streamer_NOT_gate_0_0_synth_1" LaunchDir="/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/mmwave_streamer_NOT_gate_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="mmwave_streamer_stream_controller_0_0_synth_1" LaunchDir="/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/mmwave_streamer_stream_controller_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="mmwave_streamer_points_RAM_0_0_synth_1" LaunchDir="/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/mmwave_streamer_points_RAM_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="mmwave_streamer_data_parser_0_0_synth_1" LaunchDir="/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/mmwave_streamer_data_parser_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="mmwave_streamer_UART_RX_0_0_synth_1" LaunchDir="/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/mmwave_streamer_UART_RX_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="mmwave_streamer_NOT_gate_0_0_synth_1"/>
+		<Parent Id="mmwave_streamer_stream_controller_0_0_synth_1"/>
+		<Parent Id="mmwave_streamer_points_RAM_0_0_synth_1"/>
+		<Parent Id="mmwave_streamer_data_parser_0_0_synth_1"/>
+		<Parent Id="mmwave_streamer_UART_RX_0_0_synth_1"/>
+	</Run>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+		<Parameter Name="runs.enableClusterConf" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+

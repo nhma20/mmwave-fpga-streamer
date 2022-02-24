@@ -1,3 +1,6 @@
 mmWaveStreamer_points_buffer_V
 mmWaveStreamer_regslice_both
+mmWaveStreamer_regslice_both
+mmWaveStreamer_regslice_both
+mmWaveStreamer_regslice_both
 mmWaveStreamer

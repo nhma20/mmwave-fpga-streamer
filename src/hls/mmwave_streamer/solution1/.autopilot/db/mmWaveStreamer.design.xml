@@ -34,14 +34,14 @@
 <PipelineII>1</PipelineII>
 <PipelineDepth>2</PipelineDepth>
 </points_in_loop>
-<stream_points_inner_loop>
-<Name>stream_points_inner_loop</Name>
+<stream_points_outer_loop>
+<Name>stream_points_outer_loop</Name>
 <TripCount>32</TripCount>
 <Latency>129</Latency>
 <AbsoluteTimeLatency>1.290 us</AbsoluteTimeLatency>
 <PipelineII>4</PipelineII>
 <PipelineDepth>6</PipelineDepth>
-</stream_points_inner_loop>
+</stream_points_outer_loop>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 <AreaEstimates>
@@ -49,10 +49,10 @@
 <BRAM_18K>4</BRAM_18K>
 <AVAIL_BRAM>432</AVAIL_BRAM>
 <UTIL_BRAM>~0</UTIL_BRAM>
-<FF>135</FF>
+<FF>136</FF>
 <AVAIL_FF>141120</AVAIL_FF>
 <UTIL_FF>~0</UTIL_FF>
-<LUT>226</LUT>
+<LUT>250</LUT>
 <AVAIL_LUT>70560</AVAIL_LUT>
 <UTIL_LUT>~0</UTIL_LUT>
 <DSP>0</DSP>
@@ -167,8 +167,8 @@
 <CType>int</CType>
 </RtlPorts>
 <RtlPorts>
-<name>stream_out_V_TDATA</name>
-<Object>stream_out_V</Object>
+<name>stream_out_TDATA</name>
+<Object>stream_out_V_data_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -179,8 +179,8 @@
 <CType>int</CType>
 </RtlPorts>
 <RtlPorts>
-<name>stream_out_V_TVALID</name>
-<Object>stream_out_V</Object>
+<name>stream_out_TVALID</name>
+<Object>stream_out_V_last_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -191,8 +191,8 @@
 <CType>int</CType>
 </RtlPorts>
 <RtlPorts>
-<name>stream_out_V_TREADY</name>
-<Object>stream_out_V</Object>
+<name>stream_out_TREADY</name>
+<Object>stream_out_V_last_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -200,6 +200,42 @@
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>control</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
+<name>stream_out_TLAST</name>
+<Object>stream_out_V_last_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>data</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
+<name>stream_out_TKEEP</name>
+<Object>stream_out_V_keep_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>4</Bits>
+<Attribute>data</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
+<name>stream_out_TSTRB</name>
+<Object>stream_out_V_strb_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>4</Bits>
+<Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>
 </InterfaceSummary>

@@ -1,0 +1,251 @@
+
+*** Running vivado
+    with args -log mmwave_streamer_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source mmwave_streamer_wrapper.tcl
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source mmwave_streamer_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/hls'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/vhdl/interface_definitions'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2020.2/data/ip'.
+Command: synth_design -top mmwave_streamer_wrapper -part xczu3eg-sbva484-1-i
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu3eg'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu3eg'
+INFO: [Device 21-403] Loading part xczu3eg-sbva484-1-i
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 220121
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2484.820 ; gain = 29.906 ; free physical = 8527 ; free virtual = 19881
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'mmwave_streamer_wrapper' [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/hdl/mmwave_streamer_wrapper.vhd:28]
+INFO: [Synth 8-3491] module 'mmwave_streamer' declared at '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/synth/mmwave_streamer.vhd:185' bound to instance 'mmwave_streamer_i' of component 'mmwave_streamer' [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/hdl/mmwave_streamer_wrapper.vhd:43]
+INFO: [Synth 8-638] synthesizing module 'mmwave_streamer' [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/synth/mmwave_streamer.vhd:203]
+INFO: [Synth 8-638] synthesizing module 'hier_0_imp_1GALSVT' [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/synth/mmwave_streamer.vhd:28]
+INFO: [Synth 8-3491] module 'mmwave_streamer_NOT_gate_0_0' declared at '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/synth_1/.Xil/Vivado-219827-nm/realtime/mmwave_streamer_NOT_gate_0_0_stub.vhdl:5' bound to instance 'NOT_gate_0' of component 'mmwave_streamer_NOT_gate_0_0' [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/synth/mmwave_streamer.vhd:123]
+INFO: [Synth 8-638] synthesizing module 'mmwave_streamer_NOT_gate_0_0' [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/synth_1/.Xil/Vivado-219827-nm/realtime/mmwave_streamer_NOT_gate_0_0_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'mmwave_streamer_UART_RX_0_0' declared at '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/synth_1/.Xil/Vivado-219827-nm/realtime/mmwave_streamer_UART_RX_0_0_stub.vhdl:5' bound to instance 'UART_RX_0' of component 'mmwave_streamer_UART_RX_0_0' [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/synth/mmwave_streamer.vhd:128]
+INFO: [Synth 8-638] synthesizing module 'mmwave_streamer_UART_RX_0_0' [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/synth_1/.Xil/Vivado-219827-nm/realtime/mmwave_streamer_UART_RX_0_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'mmwave_streamer_data_parser_0_0' declared at '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/synth_1/.Xil/Vivado-219827-nm/realtime/mmwave_streamer_data_parser_0_0_stub.vhdl:5' bound to instance 'data_parser_0' of component 'mmwave_streamer_data_parser_0_0' [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/synth/mmwave_streamer.vhd:135]
+INFO: [Synth 8-638] synthesizing module 'mmwave_streamer_data_parser_0_0' [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/synth_1/.Xil/Vivado-219827-nm/realtime/mmwave_streamer_data_parser_0_0_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'mmwave_streamer_mmWaveStreamer_0_0' declared at '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/synth_1/.Xil/Vivado-219827-nm/realtime/mmwave_streamer_mmWaveStreamer_0_0_stub.vhdl:5' bound to instance 'mmWaveStreamer_0' of component 'mmwave_streamer_mmWaveStreamer_0_0' [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/synth/mmwave_streamer.vhd:144]
+INFO: [Synth 8-638] synthesizing module 'mmwave_streamer_mmWaveStreamer_0_0' [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/synth_1/.Xil/Vivado-219827-nm/realtime/mmwave_streamer_mmWaveStreamer_0_0_stub.vhdl:26]
+INFO: [Synth 8-3491] module 'mmwave_streamer_points_RAM_0_0' declared at '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/synth_1/.Xil/Vivado-219827-nm/realtime/mmwave_streamer_points_RAM_0_0_stub.vhdl:5' bound to instance 'points_RAM_0' of component 'mmwave_streamer_points_RAM_0_0' [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/synth/mmwave_streamer.vhd:162]
+INFO: [Synth 8-638] synthesizing module 'mmwave_streamer_points_RAM_0_0' [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/synth_1/.Xil/Vivado-219827-nm/realtime/mmwave_streamer_points_RAM_0_0_stub.vhdl:18]
+INFO: [Synth 8-3491] module 'mmwave_streamer_stream_controller_0_0' declared at '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/synth_1/.Xil/Vivado-219827-nm/realtime/mmwave_streamer_stream_controller_0_0_stub.vhdl:5' bound to instance 'stream_controller_0' of component 'mmwave_streamer_stream_controller_0_0' [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/synth/mmwave_streamer.vhd:172]
+INFO: [Synth 8-638] synthesizing module 'mmwave_streamer_stream_controller_0_0' [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/synth_1/.Xil/Vivado-219827-nm/realtime/mmwave_streamer_stream_controller_0_0_stub.vhdl:16]
+INFO: [Synth 8-256] done synthesizing module 'hier_0_imp_1GALSVT' (1#1) [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/synth/mmwave_streamer.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'mmwave_streamer' (2#1) [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/synth/mmwave_streamer.vhd:203]
+INFO: [Synth 8-256] done synthesizing module 'mmwave_streamer_wrapper' (3#1) [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/hdl/mmwave_streamer_wrapper.vhd:28]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2526.758 ; gain = 71.844 ; free physical = 9253 ; free virtual = 20608
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2543.602 ; gain = 88.688 ; free physical = 9248 ; free virtual = 20603
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2543.602 ; gain = 88.688 ; free physical = 9248 ; free virtual = 20603
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2543.602 ; gain = 0.000 ; free physical = 9241 ; free virtual = 20597
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/ip/mmwave_streamer_NOT_gate_0_0/mmwave_streamer_NOT_gate_0_0/mmwave_streamer_NOT_gate_0_0_in_context.xdc] for cell 'mmwave_streamer_i/hier_0/NOT_gate_0'
+Finished Parsing XDC File [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/ip/mmwave_streamer_NOT_gate_0_0/mmwave_streamer_NOT_gate_0_0/mmwave_streamer_NOT_gate_0_0_in_context.xdc] for cell 'mmwave_streamer_i/hier_0/NOT_gate_0'
+Parsing XDC File [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/ip/mmwave_streamer_points_RAM_0_0/mmwave_streamer_points_RAM_0_0/mmwave_streamer_points_RAM_0_0_in_context.xdc] for cell 'mmwave_streamer_i/hier_0/points_RAM_0'
+Finished Parsing XDC File [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/ip/mmwave_streamer_points_RAM_0_0/mmwave_streamer_points_RAM_0_0/mmwave_streamer_points_RAM_0_0_in_context.xdc] for cell 'mmwave_streamer_i/hier_0/points_RAM_0'
+Parsing XDC File [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/ip/mmwave_streamer_mmWaveStreamer_0_0/mmwave_streamer_mmWaveStreamer_0_0/sim_mmWaveStreamer_0_0_in_context.xdc] for cell 'mmwave_streamer_i/hier_0/mmWaveStreamer_0'
+Finished Parsing XDC File [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/ip/mmwave_streamer_mmWaveStreamer_0_0/mmwave_streamer_mmWaveStreamer_0_0/sim_mmWaveStreamer_0_0_in_context.xdc] for cell 'mmwave_streamer_i/hier_0/mmWaveStreamer_0'
+Parsing XDC File [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/ip/mmwave_streamer_UART_RX_0_0/mmwave_streamer_UART_RX_0_0/mmwave_streamer_UART_RX_0_0_in_context.xdc] for cell 'mmwave_streamer_i/hier_0/UART_RX_0'
+Finished Parsing XDC File [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/ip/mmwave_streamer_UART_RX_0_0/mmwave_streamer_UART_RX_0_0/mmwave_streamer_UART_RX_0_0_in_context.xdc] for cell 'mmwave_streamer_i/hier_0/UART_RX_0'
+Parsing XDC File [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/ip/mmwave_streamer_data_parser_0_0/mmwave_streamer_data_parser_0_0/mmwave_streamer_data_parser_0_0_in_context.xdc] for cell 'mmwave_streamer_i/hier_0/data_parser_0'
+Finished Parsing XDC File [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/ip/mmwave_streamer_data_parser_0_0/mmwave_streamer_data_parser_0_0/mmwave_streamer_data_parser_0_0_in_context.xdc] for cell 'mmwave_streamer_i/hier_0/data_parser_0'
+Parsing XDC File [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/ip/mmwave_streamer_stream_controller_0_0/mmwave_streamer_stream_controller_0_0/mmwave_streamer_stream_controller_0_0_in_context.xdc] for cell 'mmwave_streamer_i/hier_0/stream_controller_0'
+Finished Parsing XDC File [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/ip/mmwave_streamer_stream_controller_0_0/mmwave_streamer_stream_controller_0_0/mmwave_streamer_stream_controller_0_0_in_context.xdc] for cell 'mmwave_streamer_i/hier_0/stream_controller_0'
+Parsing XDC File [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2598.430 ; gain = 0.000 ; free physical = 9244 ; free virtual = 20599
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2598.430 ; gain = 0.000 ; free physical = 9244 ; free virtual = 20599
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2598.430 ; gain = 143.516 ; free physical = 9287 ; free virtual = 20642
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu3eg-sbva484-1-i
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2598.430 ; gain = 143.516 ; free physical = 9287 ; free virtual = 20642
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for mmwave_streamer_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for mmwave_streamer_i/hier_0/NOT_gate_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for mmwave_streamer_i/hier_0/points_RAM_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for mmwave_streamer_i/hier_0/mmWaveStreamer_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for mmwave_streamer_i/hier_0/UART_RX_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for mmwave_streamer_i/hier_0/data_parser_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for mmwave_streamer_i/hier_0/stream_controller_0. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2598.430 ; gain = 143.516 ; free physical = 9287 ; free virtual = 20642
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2598.430 ; gain = 143.516 ; free physical = 9289 ; free virtual = 20645
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 360 (col length:72)
+BRAMs: 432 (col length: RAMB18 72 RAMB36 36)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2598.430 ; gain = 143.516 ; free physical = 9286 ; free virtual = 20644
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:24 . Memory (MB): peak = 3040.875 ; gain = 585.961 ; free physical = 8730 ; free virtual = 20088
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:24 . Memory (MB): peak = 3040.875 ; gain = 585.961 ; free physical = 8730 ; free virtual = 20088
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:24 . Memory (MB): peak = 3059.906 ; gain = 604.992 ; free physical = 8728 ; free virtual = 20087
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 3065.844 ; gain = 610.930 ; free physical = 8728 ; free virtual = 20087
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 3065.844 ; gain = 610.930 ; free physical = 8728 ; free virtual = 20087
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 3065.844 ; gain = 610.930 ; free physical = 8728 ; free virtual = 20087
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 3065.844 ; gain = 610.930 ; free physical = 8728 ; free virtual = 20087
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 3065.844 ; gain = 610.930 ; free physical = 8728 ; free virtual = 20087
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 3065.844 ; gain = 610.930 ; free physical = 8728 ; free virtual = 20087
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------------------------------+----------+
+|      |BlackBox name                         |Instances |
++------+--------------------------------------+----------+
+|1     |mmwave_streamer_NOT_gate_0_0          |         1|
+|2     |mmwave_streamer_UART_RX_0_0           |         1|
+|3     |mmwave_streamer_data_parser_0_0       |         1|
+|4     |mmwave_streamer_mmWaveStreamer_0_0    |         1|
+|5     |mmwave_streamer_points_RAM_0_0        |         1|
+|6     |mmwave_streamer_stream_controller_0_0 |         1|
++------+--------------------------------------+----------+
+
+Report Cell Usage: 
++------+-------------------------------------------+------+
+|      |Cell                                       |Count |
++------+-------------------------------------------+------+
+|1     |mmwave_streamer_NOT_gate_0_0_bbox          |     1|
+|2     |mmwave_streamer_UART_RX_0_0_bbox           |     1|
+|3     |mmwave_streamer_data_parser_0_0_bbox       |     1|
+|4     |mmwave_streamer_mmWaveStreamer_0_0_bbox    |     1|
+|5     |mmwave_streamer_points_RAM_0_0_bbox        |     1|
+|6     |mmwave_streamer_stream_controller_0_0_bbox |     1|
+|7     |IBUF                                       |     4|
+|8     |OBUF                                       |    42|
++------+-------------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 3065.844 ; gain = 610.930 ; free physical = 8728 ; free virtual = 20087
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 3065.844 ; gain = 556.102 ; free physical = 8768 ; free virtual = 20127
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 3065.852 ; gain = 610.930 ; free physical = 8768 ; free virtual = 20127
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3072.781 ; gain = 0.000 ; free physical = 8854 ; free virtual = 20212
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3086.656 ; gain = 0.000 ; free physical = 8797 ; free virtual = 20156
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4 instances were transformed.
+  IBUF => IBUF (IBUFCTRL, INBUF): 4 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+38 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:34 . Memory (MB): peak = 3086.656 ; gain = 651.703 ; free physical = 8935 ; free virtual = 20294
+INFO: [Common 17-1381] The checkpoint '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/synth_1/mmwave_streamer_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file mmwave_streamer_wrapper_utilization_synth.rpt -pb mmwave_streamer_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Feb 24 10:33:30 2022...

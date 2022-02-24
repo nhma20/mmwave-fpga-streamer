@@ -9,7 +9,8 @@ add_files point_streamer.cpp
 open_solution "solution1" -flow_target vivado
 set_part {xczu3eg-sbva484-1-i}
 create_clock -period 10 -name default
-#source "./mmwave_streamer/solution1/directives.tcl"
+config_export -format ip_catalog -rtl verilog
+source "./mmwave_streamer/solution1/directives.tcl"
 #csim_design
 csynth_design
 #cosim_design

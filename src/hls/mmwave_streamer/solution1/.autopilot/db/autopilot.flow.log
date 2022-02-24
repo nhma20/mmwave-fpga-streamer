@@ -1,4 +1,4 @@
-INFO-FLOW: Workspace /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1 opened at Tue Feb 22 21:43:18 CET 2022
+INFO-FLOW: Workspace /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1 opened at Thu Feb 24 09:22:01 CET 2022
 Execute     ap_set_clock -name default -period 10 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 Execute     import_lib /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/zynquplus/zynquplus 
@@ -37,13 +37,31 @@ Execute       source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/
 Execute       source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
 Execute       source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
 Execute       source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Execute     import_lib /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/zynquplus/zynquplus 
+Execute       source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute         source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.hlp 
+Execute         source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute       source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.hlp 
+Execute     source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute       source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute       source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
 Execute     set_part xczu3eg-sbva484-1-i 
 INFO-FLOW: DBG:set_part: XILINX_VIVADO=/tools/Xilinx/Vivado/2020.2
 INFO-FLOW: DBG:set_part: RDI_DATADIR=/tools/Xilinx/Vivado/2020.2/data:/tools/Xilinx/Vitis_HLS/2020.2/data
 Execute       ap_part_info -name xczu3eg-sbva484-1-i -data single -quiet 
 DBG:HLSDevice: Trying to load device library: /tools/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o/librdi_hlsvwrap.so
 DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /tools/Xilinx/Vivado/2020.2/data/parts/arch.xml
-Command       ap_part_info done; 0.42 sec.
+Command       ap_part_info done; 0.41 sec.
 Execute       ap_part_info -name xczu3eg-sbva484-1-i -data info 
 Execute       add_library xilinx/zynquplus/zynquplus:xczu3eg:-sbva484:-1-i 
 Execute         get_default_platform 
@@ -76,10 +94,11 @@ Execute           source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx
 Execute           source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
 Execute           source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
 Execute           source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       add_library done; 0.11 sec.
 INFO: [HLS 200-10] Setting target device to 'xczu3eg-sbva484-1-i'
 Execute       ap_part_info -name xczu3eg-sbva484-1-i -data info 
 Execute       config_compile -quiet -complex-mul-dsp=0 
-Command     set_part done; 0.53 sec.
+Command     set_part done; 0.52 sec.
 Execute     ap_part_info -data single -name xczu3eg-sbva484-1-i 
 Execute     ap_part_info -name xczu3eg-sbva484-1-i -data resources 
 Execute     config_chip_info -resource {SLICE 8820} {LUT 70560} {FF 141120} {DSP 360} {BRAM 432} {URAM 0} 
@@ -93,7 +112,13 @@ Execute     get_config_interface -m_axi_max_widen_bitwidth
 Execute     get_config_interface -default_interface 
 Execute     get_config_interface -m_axi_offset 
 Execute     get_config_rtl -register_reset_num 
-Command   open_solution done; 0.69 sec.
+Execute     send_msg_by_id INFO @200-1464@%s config_export -format=ip_catalog 
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+Execute     config_export -format=ip_catalog 
+Execute     send_msg_by_id INFO @200-1464@%s config_export -rtl=verilog 
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+Execute     config_export -rtl=verilog 
+Command   open_solution done; 0.8 sec.
 Execute   set_part xczu3eg-sbva484-1-i 
 INFO: [HLS 200-1510] Running: set_part xczu3eg-sbva484-1-i 
 INFO-FLOW: DBG:set_part: XILINX_VIVADO=/tools/Xilinx/Vivado/2020.2
@@ -133,11 +158,14 @@ Execute         source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/i
 Execute         source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
 Execute     ap_part_info -name xczu3eg-sbva484-1-i -data info 
 Execute     config_compile -quiet -complex-mul-dsp=0 
-Command   set_part done; 0.11 sec.
 Execute   create_clock -period 10 -name default 
 INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
-Execute     ap_set_clock -name default -period 10 -default=false 
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute   config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
+Execute   source ./mmwave_streamer/solution1/directives.tcl 
+Execute     set_directive_top -name mmWaveStreamer mmWaveStreamer 
+INFO: [HLS 200-1510] Running: set_directive_top -name mmWaveStreamer mmWaveStreamer 
+INFO-FLOW: Setting directive 'TOP' name=mmWaveStreamer 
 Execute   csynth_design 
 INFO: [HLS 200-1510] Running: csynth_design 
 Execute     get_config_compile -effort 
@@ -150,7 +178,7 @@ Execute     get_config_compile -skip_syncheck
 Execute     get_config_compile -skip_transform 
 Execute     get_config_compile -keep_printf 
 Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0 seconds; current allocated memory: 74.350 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0.01 seconds. Elapsed time: 0 seconds; current allocated memory: 74.430 MB.
 INFO: [HLS 200-10] Analyzing design file 'point_streamer.cpp' ... 
 INFO-FLOW: Compiling one TU...
 Execute       get_config_compile -pragma_strict_mode 
@@ -159,26 +187,30 @@ Execute       ap_part_info -name xczu3eg-sbva484-1-i -data info
 INFO-FLOW: Running: GCC PP 39
 INFO-FLOW: Source preprocessing
 Execute       ap_eval exec -ignorestderr /tools/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/clang point_streamer.cpp -foptimization-record-file=/home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/clang.point_streamer.cpp.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -gcc-toolchain /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0 -fhls -fno-exceptions -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -fno-threadsafe-statics -fno-use-cxa-atexit -I /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/39 -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot -I /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -o /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/point_streamer.pp.0.cpp > /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/clang.point_streamer.cpp.out.log 2> /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/clang.point_streamer.cpp.err.log 
+Command       ap_eval done; 0.12 sec.
 INFO-FLOW: Done: GCC PP 39 time: 0.1 seconds per iteration
 Execute       set_directive_top mmWaveStreamer -name=mmWaveStreamer 
+INFO-FLOW: Setting directive 'TOP' name=mmWaveStreamer 
+INFO-FLOW: Setting directive 'TOP' name=mmWaveStreamer 
 INFO-FLOW: Setting directive 'TOP' name=mmWaveStreamer 
 INFO-FLOW: Setting directive 'TOP' name=mmWaveStreamer 
 Execute       source /tools/Xilinx/Vitis_HLS/2020.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
 Execute       source /tools/Xilinx/Vitis_HLS/2020.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
 Execute         source /tools/Xilinx/Vitis_HLS/2020.2/tps/tcl/tcllib1.11.1/try/try.tcl 
 INFO-FLOW: Setting directive 'TOP' name=mmWaveStreamer 
+INFO-FLOW: Setting directive 'TOP' name=mmWaveStreamer 
 Execute       list_core -type functional_unit 
 Execute       clang_tidy xilinx-systemc-detector /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/point_streamer.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/.systemc_flag 
 INFO-FLOW: exec /tools/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/.systemc_flag -fix-errors /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/point_streamer.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 0.32 sec.
+Command       clang_tidy done; 0.57 sec.
 INFO-FLOW: Running: clang-tidy CDT preprocess 39
 Execute       clang_tidy xilinx-directive2pragma /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/point_streamer.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/all.directive.json 
 INFO-FLOW: exec /tools/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/all.directive.json -fix-errors /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/point_streamer.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 0.47 sec.
+Command       clang_tidy done; 0.45 sec.
 Execute       clang_tidy xilinx-constantarray-param,xilinx-remove-assert /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/point_streamer.pp.0.cpp std=gnu++14 -target fpga  
 INFO-FLOW: exec /tools/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-remove-assert -fix-errors /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/point_streamer.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 0.5 sec.
-INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 1 seconds per iteration
+Command       clang_tidy done; 0.46 sec.
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.9 seconds per iteration
 INFO-FLOW: Calling xilinx-label-all-loops ... 
 Execute       clang_tidy -errorcheck xilinx-label-all-loops,xilinx-top-parameters,xilinx-array-stream-check,xilinx-warn-mayneed-no-ctor-attribute /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/point_streamer.pp.0.cpp std=gnu++14 -target fpga  
 Execute         ap_eval exec -ignorestderr /tools/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/clang-tidy.point_streamer.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-top-parameters,xilinx-array-stream-check,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/point_streamer.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/clang-tidy.point_streamer.pp.0.cpp.out.log 2> /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/clang-tidy.point_streamer.pp.0.cpp.err.log 
@@ -188,12 +220,12 @@ Execute           source /tools/Xilinx/Vitis_HLS/2020.2/tps/tcl/tcllib1.11.1/cmd
 Command       clang_tidy done; 0.54 sec.
 Execute       get_config_dataflow -strict_mode 
 Execute       ap_eval exec -ignorestderr /tools/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/xilinx-dataflow-lawyer.point_streamer.pp.0.cpp.diag.yml /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/point_streamer.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/xilinx-dataflow-lawyer.point_streamer.pp.0.cpp.out.log 2> /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/xilinx-dataflow-lawyer.point_streamer.pp.0.cpp.err.log 
-Command       ap_eval done; 0.28 sec.
+Command       ap_eval done; 0.31 sec.
 Execute       ap_part_info -name xczu3eg-sbva484-1-i -data info 
 INFO-FLOW: compiling source code to llvm bc
 Execute       ap_eval exec -ignorestderr /tools/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/clang.point_streamer.pp.0.cpp.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/point_streamer.pp.0.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot -I /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/point_streamer.bc > /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/clang.point_streamer.pp.0.cpp.out.log 2> /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/clang.point_streamer.pp.0.cpp.err.log 
 Command       ap_eval done; 0.32 sec.
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 3.04 seconds. CPU system time: 0.28 seconds. Elapsed time: 2.5 seconds; current allocated memory: 75.469 MB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 3.17 seconds. CPU system time: 0.27 seconds. Elapsed time: 2.79 seconds; current allocated memory: 75.608 MB.
 INFO-FLOW: Linking Debug ...
 INFO-FLOW: Linking dut bc code.
 Execute       run_link_or_opt -out /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.g.ld.0.bc -args  "/home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/point_streamer.g.bc"  
@@ -205,14 +237,14 @@ INFO-FLOW:
 INFO-FLOW: Linking math bc lib
 Execute       run_link_or_opt -out /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.g.ld.2.m1.bc -args /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed /tools/Xilinx/Vitis_HLS/2020.2/lnx64/lib/libhlsm_39.bc /tools/Xilinx/Vitis_HLS/2020.2/lnx64/lib/libhlsmc++_39.bc 
 Execute         ap_eval exec -ignorestderr /tools/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed /tools/Xilinx/Vitis_HLS/2020.2/lnx64/lib/libhlsm_39.bc /tools/Xilinx/Vitis_HLS/2020.2/lnx64/lib/libhlsmc++_39.bc -o /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.g.ld.2.m1.bc > /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/llvm-link.a.g.ld.2.m1.bc.out.log 2> /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/llvm-link.a.g.ld.2.m1.bc.err.log 
-Command         ap_eval done; 1.82 sec.
+Command         ap_eval done; 1.59 sec.
 INFO-FLOW: 
-Command       run_link_or_opt done; 1.82 sec.
+Command       run_link_or_opt done; 1.6 sec.
 Execute       run_link_or_opt -opt -out /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.g.ld.3.fpc.bc -args /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=mmWaveStreamer -reflow-float-conversion 
 Execute         ap_eval exec -ignorestderr /tools/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.diag.yml /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=mmWaveStreamer -reflow-float-conversion -o /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.g.ld.3.fpc.bc > /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.out.log 2> /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.err.log 
-Command         ap_eval done; 0.62 sec.
+Command         ap_eval done; 0.56 sec.
 INFO-FLOW: 
-Command       run_link_or_opt done; 0.63 sec.
+Command       run_link_or_opt done; 0.56 sec.
 Execute       run_link_or_opt -out /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.g.ld.4.m2.bc -args /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /tools/Xilinx/Vitis_HLS/2020.2/lnx64/lib/libfloatconversion_39.bc 
 Execute         ap_eval exec -ignorestderr /tools/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /tools/Xilinx/Vitis_HLS/2020.2/lnx64/lib/libfloatconversion_39.bc -o /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.g.ld.4.m2.bc > /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/llvm-link.a.g.ld.4.m2.bc.out.log 2> /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/llvm-link.a.g.ld.4.m2.bc.err.log 
 INFO-FLOW: 
@@ -257,18 +289,25 @@ INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
 Execute       is_m_axi_addr64 
 INFO-FLOW: Doing LTO.
 Execute       ap_eval exec -ignorestderr /tools/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/clang.a.g.ld.0.bc.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=mmWaveStreamer -mllvm -hls-db-dir -mllvm /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=/home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=/home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=false -mllvm -default-maxi-offset=off -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -assume-maxi-align=0 -mllvm -no-unaligned-maxi-accesses -mllvm -reflow-pipeline-style-llvm-setting=0 -mllvm -disable-inlined-alloca-merging=true -x ir /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.g.ld.5.gdce.bc -o /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.g.lto.bc > /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/clang.a.g.ld.0.bc.out.log 2> /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/clang.a.g.ld.0.bc.err.log 
-INFO: [HLS 214-131] Inlining function 'hls::stream<unsigned int, 0>::write(unsigned int const&)' into 'stream_points(hls::stream<unsigned int, 0>&, ap_uint<128>*)' (point_streamer.cpp:23:15)
-INFO: [HLS 214-178] Inlining function 'load_buffer(ap_uint<128>*, ap_uint<128>*)' into 'mmWaveStreamer(ap_uint<128>*, hls::stream<unsigned int, 0>&)' (point_streamer.cpp:29:0)
-INFO: [HLS 214-178] Inlining function 'stream_points(hls::stream<unsigned int, 0>&, ap_uint<128>*)' into 'mmWaveStreamer(ap_uint<128>*, hls::stream<unsigned int, 0>&)' (point_streamer.cpp:29:0)
+Command       ap_eval done; 0.11 sec.
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<32>, 0ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<32>, 0ul, 0ul, 0ul> const&)' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_axi_sdata.h:304:51)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<32>, 0ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<32>, 0ul, 0ul, 0ul> const&)' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_axi_sdata.h:307:26)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<32>, 0ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<32>, 0ul, 0ul, 0ul> const&)' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_axi_sdata.h:306:68)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<32>, 0ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<32>, 0ul, 0ul, 0ul> const&)' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_axi_sdata.h:306:37)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<32>, 0ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<32>, 0ul, 0ul, 0ul> const&)' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_axi_sdata.h:305:40)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<32>, 0ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<32>, 0ul, 0ul, 0ul> const&)' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_axi_sdata.h:305:24)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<32>, 0ul, 0ul, 0ul> const&)' into 'stream_points(hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul>, 0>&, ap_uint<128>*)' (point_streamer.cpp:29:15)
+INFO: [HLS 214-178] Inlining function 'load_buffer(ap_uint<128>*, ap_uint<128>*)' into 'mmWaveStreamer(ap_uint<128>*, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul>, 0>&)' (point_streamer.cpp:38:0)
+INFO: [HLS 214-178] Inlining function 'stream_points(hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul>, 0>&, ap_uint<128>*)' into 'mmWaveStreamer(ap_uint<128>*, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul>, 0>&)' (point_streamer.cpp:38:0)
 INFO-FLOW: DBG:CMD: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/kernel.internal.xml
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 2.48 seconds. CPU system time: 0.16 seconds. Elapsed time: 2.64 seconds; current allocated memory: 77.115 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 77.116 MB.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 2.35 seconds. CPU system time: 0.15 seconds. Elapsed time: 2.58 seconds; current allocated memory: 77.570 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 77.571 MB.
 Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
 Execute         cleanup_all_models 
 INFO: [HLS 200-10] Starting code transformations ...
 INFO-FLOW: Running Standard Transforms...
 Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top mmWaveStreamer -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.g.0.bc -o /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 78.682 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 84.243 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO-FLOW: Checking Synthesizability 1/2..
 Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.g.1.bc -o /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.g.2.prechk.bc -f 
@@ -276,28 +315,28 @@ INFO-FLOW: Checking Synthesizability 2/2..
 Execute         transform -syn-check /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.g.2.prechk.bc -o /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
 WARNING: [SYNCHK 200-23] /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_int_ref.h:708: variable-indexed range selection may cause suboptimal QoR.
 INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 78.445 MB.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 92.630 MB.
 INFO-FLOW: Compiler optimizing ...
 INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.g.1.bc to /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.o.1.bc
 INFO-FLOW: Presyn 1...
 Execute         transform -hls -tmp /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db -interface-port-rename -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -function-uniquify -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -directive-preproc -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.o.1.bc -o /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.o.1.tmp.bc -f 
-INFO: [XFORM 203-510] Pipelining loop 'points_in_loop' (point_streamer.cpp:11) in function 'mmWaveStreamer' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'stream_points_inner_loop' (point_streamer.cpp:18) in function 'mmWaveStreamer' automatically.
-INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'stream_points_inner_loop' (point_streamer.cpp:18) in function 'mmWaveStreamer' for pipelining.
-INFO: [HLS 200-489] Unrolling loop 'stream_points_outer_loop' (point_streamer.cpp:20) in function 'mmWaveStreamer' completely with a factor of 4.
+INFO: [XFORM 203-510] Pipelining loop 'points_in_loop' (point_streamer.cpp:13) in function 'mmWaveStreamer' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'stream_points_outer_loop' (point_streamer.cpp:20) in function 'mmWaveStreamer' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'stream_points_outer_loop' (point_streamer.cpp:20) in function 'mmWaveStreamer' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'stream_points_inner_loop' (point_streamer.cpp:22) in function 'mmWaveStreamer' completely with a factor of 4.
 INFO-FLOW: Presyn 2...
 Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -barrier -norm-name /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.o.1.tmp.bc -o /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 99.379 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.11 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.14 seconds; current allocated memory: 122.756 MB.
 Execute         get_config_compile -enable_loop_extract 
 Execute         get_config_compile -disable_auto_rewind 
 Execute         get_config_compile -enable_auto_rewind 
 INFO-FLOW: Building ssdm...
 Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin2 -bitwidthmin2 -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -float-op-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.o.2.bc -o /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
-INFO: [HLS 200-472] Inferring partial write operation for 'points_buffer.V' (point_streamer.cpp:12:20)
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 91.941 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'points_buffer.V' (point_streamer.cpp:14:20)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 119.442 MB.
 INFO-FLOW: Finish building internal data model.
-Command       opt_and_import_c done; 0.17 sec.
-Command     elaborate done; 5.32 sec.
+Command       opt_and_import_c done; 0.32 sec.
+Command     elaborate done; 5.69 sec.
 Execute     autosyn -from_csynth_design=1 
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO-FLOW: Synthesizing C/C++ design ...
@@ -324,13 +363,13 @@ Execute       schedule -model mmWaveStreamer
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'points_in_loop'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'points_in_loop'
-INFO: [SCHED 204-61] Pipelining loop 'stream_points_inner_loop'.
-WARNING: [HLS 200-880] The II Violation in module 'mmWaveStreamer' (loop 'stream_points_inner_loop'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between axis write on port 'stream_out_V' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174) and axis write on port 'stream_out_V' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174).
-WARNING: [HLS 200-880] The II Violation in module 'mmWaveStreamer' (loop 'stream_points_inner_loop'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between axis write on port 'stream_out_V' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174) and axis write on port 'stream_out_V' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174).
-WARNING: [HLS 200-880] The II Violation in module 'mmWaveStreamer' (loop 'stream_points_inner_loop'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between axis write on port 'stream_out_V' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174) and axis write on port 'stream_out_V' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174).
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 4, Depth = 6, loop 'stream_points_inner_loop'
+INFO: [SCHED 204-61] Pipelining loop 'stream_points_outer_loop'.
+WARNING: [HLS 200-880] The II Violation in module 'mmWaveStreamer' (loop 'stream_points_outer_loop'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between axis write on port 'stream_out_V_data_V' and axis write on port 'stream_out_V_data_V'.
+WARNING: [HLS 200-880] The II Violation in module 'mmWaveStreamer' (loop 'stream_points_outer_loop'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between axis write on port 'stream_out_V_data_V' and axis write on port 'stream_out_V_data_V'.
+WARNING: [HLS 200-880] The II Violation in module 'mmWaveStreamer' (loop 'stream_points_outer_loop'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between axis write on port 'stream_out_V_data_V' and axis write on port 'stream_out_V_data_V'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 4, Depth = 6, loop 'stream_points_outer_loop'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 92.307 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 119.746 MB.
 Execute       syn_report -verbosereport -o /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/mmWaveStreamer.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -343,7 +382,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 92.583 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 120.038 MB.
 Execute       syn_report -verbosereport -o /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/mmWaveStreamer.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -362,10 +401,13 @@ Execute       get_config_rtl -module_auto_prefix
 Execute       create_rtl_model mmWaveStreamer -top_prefix  -sub_prefix mmWaveStreamer_ -mg_file /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/mmWaveStreamer.compgen.tcl 
 WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
 INFO: [RTGEN 206-500] Setting interface mode on port 'mmWaveStreamer/points_in' to 'ap_memory'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'mmWaveStreamer/stream_out_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmWaveStreamer/stream_out_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmWaveStreamer/stream_out_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmWaveStreamer/stream_out_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmWaveStreamer/stream_out_V_last_V' to 'axis' (register, both mode).
 INFO: [RTGEN 206-500] Setting interface mode on function 'mmWaveStreamer' to 'ap_ctrl_hs'.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'mmWaveStreamer'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 93.321 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 120.816 MB.
 Execute       source /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/mmWaveStreamer.rtl_wrap.cfg.tcl 
 Execute       gen_rtl mmWaveStreamer -istop -style xilinx -f -lang vhdl -o /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/syn/vhdl/mmWaveStreamer 
 Execute       gen_rtl mmWaveStreamer -istop -style xilinx -f -lang vlog -o /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/syn/verilog/mmWaveStreamer 
@@ -402,10 +444,19 @@ INFO-FLOW: Found component mmWaveStreamer_points_buffer_V.
 INFO-FLOW: Append model mmWaveStreamer_points_buffer_V
 INFO-FLOW: Found component mmWaveStreamer_regslice_both.
 INFO-FLOW: Append model mmWaveStreamer_regslice_both
+INFO-FLOW: Found component mmWaveStreamer_regslice_both.
+INFO-FLOW: Append model mmWaveStreamer_regslice_both
+INFO-FLOW: Found component mmWaveStreamer_regslice_both.
+INFO-FLOW: Append model mmWaveStreamer_regslice_both
+INFO-FLOW: Found component mmWaveStreamer_regslice_both.
+INFO-FLOW: Append model mmWaveStreamer_regslice_both
 INFO-FLOW: Append model mmWaveStreamer
 INFO-FLOW: Generating RTL model list ...
-INFO-FLOW: All models in this session: mmWaveStreamer_points_buffer_V mmWaveStreamer_regslice_both mmWaveStreamer
+INFO-FLOW: All models in this session: mmWaveStreamer_points_buffer_V mmWaveStreamer_regslice_both mmWaveStreamer_regslice_both mmWaveStreamer_regslice_both mmWaveStreamer_regslice_both mmWaveStreamer
 INFO-FLOW: To file: write model mmWaveStreamer_points_buffer_V
+INFO-FLOW: To file: write model mmWaveStreamer_regslice_both
+INFO-FLOW: To file: write model mmWaveStreamer_regslice_both
+INFO-FLOW: To file: write model mmWaveStreamer_regslice_both
 INFO-FLOW: To file: write model mmWaveStreamer_regslice_both
 INFO-FLOW: To file: write model mmWaveStreamer
 INFO-FLOW: Finished generating RTL model list.
@@ -550,9 +601,9 @@ Execute       ap_part_info -name xczu3eg-sbva484-1-i -data names -quiet
 Execute       ap_part_info -name xczu3eg-sbva484-1-i -data info -quiet 
 Execute       source /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/mmWaveStreamer.constraint.tcl 
 Execute       source /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/mmWaveStreamer.tbgen.tcl 
-INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=6
-INFO-FLOW: DBG:CMD: Skipping loadAnalyze_DB, #g_database=2
-INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=1 #modelList=3 #gSsdmPorts=6
+INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=12
+INFO-FLOW: DBG:CMD: Skipping loadAnalyze_DB, #g_database=5
+INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=1 #modelList=6 #gSsdmPorts=12
 Execute       source /tools/Xilinx/Vitis_HLS/2020.2/tps/tcl/tcllib1.11.1/fileutil/fileutil.tcl 
 Execute       source /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/global.setting.tcl 
 Execute       source /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/global.setting.tcl 
@@ -577,7 +628,7 @@ Execute       sc_get_clocks mmWaveStreamer
 Execute       source /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/global.setting.tcl 
 Execute       get_config_debug -directory 
 INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.64 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.68 seconds; current allocated memory: 101.347 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.63 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.65 seconds; current allocated memory: 129.216 MB.
 INFO: [VHDL 208-304] Generating VHDL RTL for mmWaveStreamer.
 INFO: [VLOG 209-307] Generating Verilog RTL for mmWaveStreamer.
 INFO-FLOW: DBG:CMD:       update_csynth_xml_report append design.xml content design_xml=/home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/mmWaveStreamer.design.xml
@@ -586,12 +637,12 @@ INFO-FLOW: DBG:CMD:       update_csynth_xml_report done
 Execute       syn_report -model mmWaveStreamer -printsummary 
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
 INFO: [HLS 200-789] **** Estimated Fmax: 369.82 MHz
-Command     autosyn done; 0.85 sec.
-Command   csynth_design done; 6.17 sec.
-INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 6.5 seconds. CPU system time: 0.51 seconds. Elapsed time: 6.17 seconds; current allocated memory: 101.474 MB.
-Command ap_source done; 6.98 sec.
+Command     autosyn done; 0.82 sec.
+Command   csynth_design done; 6.51 sec.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 6.58 seconds. CPU system time: 0.48 seconds. Elapsed time: 6.51 seconds; current allocated memory: 129.352 MB.
+Command ap_source done; 7.42 sec.
 Execute cleanup_all 
-INFO-FLOW: Workspace /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1 opened at Tue Feb 22 21:43:38 CET 2022
+INFO-FLOW: Workspace /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1 opened at Thu Feb 24 09:22:35 CET 2022
 Execute     ap_set_clock -name default -period 10 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 Execute     import_lib /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/zynquplus/zynquplus 
@@ -636,7 +687,7 @@ INFO-FLOW: DBG:set_part: RDI_DATADIR=/tools/Xilinx/Vivado/2020.2/data:/tools/Xil
 Execute       ap_part_info -name xczu3eg-sbva484-1-i -data single -quiet 
 DBG:HLSDevice: Trying to load device library: /tools/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o/librdi_hlsvwrap.so
 DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /tools/Xilinx/Vivado/2020.2/data/parts/arch.xml
-Command       ap_part_info done; 0.49 sec.
+Command       ap_part_info done; 0.42 sec.
 Execute       ap_part_info -name xczu3eg-sbva484-1-i -data info 
 Execute       add_library xilinx/zynquplus/zynquplus:xczu3eg:-sbva484:-1-i 
 Execute         get_default_platform 
@@ -669,11 +720,10 @@ Execute           source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx
 Execute           source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
 Execute           source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
 Execute           source /tools/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
-Command       add_library done; 0.11 sec.
 INFO: [HLS 200-10] Setting target device to 'xczu3eg-sbva484-1-i'
 Execute       ap_part_info -name xczu3eg-sbva484-1-i -data info 
 Execute       config_compile -quiet -complex-mul-dsp=0 
-Command     set_part done; 0.61 sec.
+Command     set_part done; 0.52 sec.
 Execute     ap_part_info -data single -name xczu3eg-sbva484-1-i 
 Execute     ap_part_info -name xczu3eg-sbva484-1-i -data resources 
 Execute     config_chip_info -resource {SLICE 8820} {LUT 70560} {FF 141120} {DSP 360} {BRAM 432} {URAM 0} 
@@ -687,7 +737,13 @@ Execute     get_config_interface -m_axi_max_widen_bitwidth
 Execute     get_config_interface -default_interface 
 Execute     get_config_interface -m_axi_offset 
 Execute     get_config_rtl -register_reset_num 
-Command   open_solution done; 0.8 sec.
+Execute     send_msg_by_id INFO @200-1464@%s config_export -format=ip_catalog 
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+Execute     config_export -format=ip_catalog 
+Execute     send_msg_by_id INFO @200-1464@%s config_export -rtl=verilog 
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+Execute     config_export -rtl=verilog 
+Command   open_solution done; 0.7 sec.
 Execute   set_part xczu3eg-sbva484-1-i 
 INFO: [HLS 200-1510] Running: set_part xczu3eg-sbva484-1-i 
 INFO-FLOW: DBG:set_part: XILINX_VIVADO=/tools/Xilinx/Vivado/2020.2
@@ -729,8 +785,12 @@ Execute     ap_part_info -name xczu3eg-sbva484-1-i -data info
 Execute     config_compile -quiet -complex-mul-dsp=0 
 Execute   create_clock -period 10 -name default 
 INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
-Execute     ap_set_clock -name default -period 10 -default=false 
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute   config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
+Execute   source ./mmwave_streamer/solution1/directives.tcl 
+Execute     set_directive_top -name mmWaveStreamer mmWaveStreamer 
+INFO: [HLS 200-1510] Running: set_directive_top -name mmWaveStreamer mmWaveStreamer 
+INFO-FLOW: Setting directive 'TOP' name=mmWaveStreamer 
 Execute   export_design -rtl verilog -format ip_catalog 
 INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog 
 Execute     get_config_export -clock_margin 
@@ -858,15 +918,18 @@ Execute     ap_part_info -name xczu3eg-sbva484-1-i -data names -quiet
 Execute     ap_part_info -name xczu3eg-sbva484-1-i -data info -quiet 
 Execute     source /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/mmWaveStreamer.constraint.tcl 
 Execute     source /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/mmWaveStreamer.tbgen.tcl 
-INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=6
+INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=12
 INFO-FLOW: DBG:CMD:       copying IP vlog from /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/impl/verilog
 INFO-FLOW: DBG:CMD:       copying IP vhdl from /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/impl/vhdl
 Execute     get_config_export -format 
-INFO-FLOW: DBG:CMD:       generate_ip_script #gSsdmPorts=6 g_lang=vlog is_sdaccel=false is_sdsoc=true xo_file=
+INFO-FLOW: DBG:CMD:       generate_ip_script #gSsdmPorts=12 g_lang=vlog is_sdaccel=false is_sdsoc=true xo_file=
 Execute     ap_part_info -name xczu3eg-sbva484-1-i -data names -quiet 
 Execute     ap_part_info -name xczu3eg-sbva484-1-i -data info -quiet 
 Execute     ap_part_info -name xczu3eg-sbva484-1-i -data names -quiet 
 Execute     ap_part_info -name xczu3eg-sbva484-1-i -data info -quiet 
+Execute     source /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/mmWaveStreamer.tbgen.tcl 
+Execute     source /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/mmWaveStreamer.tbgen.tcl 
+Execute     source /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/mmWaveStreamer.tbgen.tcl 
 Execute     source /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/mmWaveStreamer.tbgen.tcl 
 Execute     source /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/mmWaveStreamer.tbgen.tcl 
 Execute     source /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/.autopilot/db/global.setting.tcl 
@@ -955,7 +1018,7 @@ INFO-FLOW: DBG:CMD:     exec /home/nm/mmwave-fpga-streamer/src/hls/mmwave_stream
 Execute     get_config_export -output 
 Execute     send_msg_by_id INFO @200-802@%s mmwave_streamer/solution1/impl/export.zip 
 INFO: [HLS 200-802] Generated output file mmwave_streamer/solution1/impl/export.zip
-Command   export_design done; 18.08 sec.
-INFO: [HLS 200-111] Finished Command export_design CPU user time: 9.47 seconds. CPU system time: 1.21 seconds. Elapsed time: 18.08 seconds; current allocated memory: 82.508 MB.
-Command ap_source done; 18.98 sec.
+Command   export_design done; 10.7 sec.
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 9.05 seconds. CPU system time: 1.05 seconds. Elapsed time: 10.7 seconds; current allocated memory: 82.994 MB.
+Command ap_source done; 11.5 sec.
 Execute cleanup_all 

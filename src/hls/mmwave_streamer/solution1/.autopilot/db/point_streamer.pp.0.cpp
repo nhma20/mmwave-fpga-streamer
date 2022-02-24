@@ -5995,10 +5995,431 @@ typedef __intmax_t intmax_t;
 typedef __uintmax_t uintmax_t;
 # 64 "/tools/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/lib/clang/7.0.0/include/stdint.h" 2 3
 # 4 "point_streamer.cpp" 2
+# 1 "/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_axi_sdata.h" 1
+# 87 "/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_axi_sdata.h"
+# 1 "/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/climits" 1 3
+# 40 "/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/climits" 3
+
+# 1 "/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/x86_64-pc-linux-gnu/bits/c++config.h" 1 3
+# 196 "/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/x86_64-pc-linux-gnu/bits/c++config.h" 3
+namespace std
+{
+  typedef long unsigned int size_t;
+  typedef long int ptrdiff_t;
+
+
+  typedef decltype(nullptr) nullptr_t;
+
+}
+# 218 "/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/x86_64-pc-linux-gnu/bits/c++config.h" 3
+namespace std
+{
+  inline namespace __cxx11 __attribute__((__abi_tag__ ("cxx11"))) { }
+}
+namespace __gnu_cxx
+{
+  inline namespace __cxx11 __attribute__((__abi_tag__ ("cxx11"))) { }
+}
+# 495 "/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/x86_64-pc-linux-gnu/bits/c++config.h" 3
+# 1 "/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/x86_64-pc-linux-gnu/bits/os_defines.h" 1 3
+# 496 "/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/x86_64-pc-linux-gnu/bits/c++config.h" 2 3
+
+
+# 1 "/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/x86_64-pc-linux-gnu/bits/cpu_defines.h" 1 3
+# 499 "/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/x86_64-pc-linux-gnu/bits/c++config.h" 2 3
+# 42 "/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/climits" 2 3
+# 1 "/tools/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/lib/clang/7.0.0/include/limits.h" 1 3
+# 37 "/tools/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/lib/clang/7.0.0/include/limits.h" 3
+# 1 "/usr/include/limits.h" 1 3 4
+# 26 "/usr/include/limits.h" 3 4
+# 1 "/usr/include/bits/libc-header-start.h" 1 3 4
+# 27 "/usr/include/limits.h" 2 3 4
+# 183 "/usr/include/limits.h" 3 4
+# 1 "/usr/include/bits/posix1_lim.h" 1 3 4
+# 27 "/usr/include/bits/posix1_lim.h" 3 4
+# 1 "/usr/include/bits/wordsize.h" 1 3 4
+# 28 "/usr/include/bits/posix1_lim.h" 2 3 4
+# 161 "/usr/include/bits/posix1_lim.h" 3 4
+# 1 "/usr/include/bits/local_lim.h" 1 3 4
+# 38 "/usr/include/bits/local_lim.h" 3 4
+# 1 "/usr/include/linux/limits.h" 1 3 4
+# 39 "/usr/include/bits/local_lim.h" 2 3 4
+# 162 "/usr/include/bits/posix1_lim.h" 2 3 4
+# 184 "/usr/include/limits.h" 2 3 4
+
+
+
+# 1 "/usr/include/bits/posix2_lim.h" 1 3 4
+# 188 "/usr/include/limits.h" 2 3 4
+
+
+
+# 1 "/usr/include/bits/xopen_lim.h" 1 3 4
+# 64 "/usr/include/bits/xopen_lim.h" 3 4
+# 1 "/usr/include/bits/uio_lim.h" 1 3 4
+# 65 "/usr/include/bits/xopen_lim.h" 2 3 4
+# 192 "/usr/include/limits.h" 2 3 4
+# 38 "/tools/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/lib/clang/7.0.0/include/limits.h" 2 3
+# 43 "/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/climits" 2 3
+# 88 "/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_axi_sdata.h" 2
+# 1 "/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_int.h" 1
+# 89 "/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_axi_sdata.h" 2
+
+template <int _AP_W, int _AP_I, ap_q_mode _AP_Q, ap_o_mode _AP_O, int _AP_N>
+struct ap_fixed;
+template <int _AP_W, int _AP_I, ap_q_mode _AP_Q, ap_o_mode _AP_O, int _AP_N>
+struct ap_ufixed;
+
+namespace hls {
+
+template <typename T> constexpr std::size_t bitwidth = sizeof(T) * 8;
+
+template <std::size_t W> constexpr std::size_t bitwidth<ap_int<W>> = W;
+template <std::size_t W> constexpr std::size_t bitwidth<ap_uint<W>> = W;
+template <int _AP_W, int _AP_I, ap_q_mode _AP_Q, ap_o_mode _AP_O, int _AP_N>
+constexpr std::size_t bitwidth<ap_fixed<_AP_W, _AP_I, _AP_Q, _AP_O, _AP_N>> = _AP_W;
+template <int _AP_W, int _AP_I, ap_q_mode _AP_Q, ap_o_mode _AP_O, int _AP_N>
+constexpr std::size_t bitwidth<ap_ufixed<_AP_W, _AP_I, _AP_Q, _AP_O, _AP_N>> = _AP_W;
+
+template <typename T>
+constexpr std::size_t bytewidth = (bitwidth<T> + 8 - 1) / 8;
+
+template <typename T, std::size_t WUser, std::size_t WId, std::size_t WDest> struct axis {
+  static constexpr std::size_t NewWUser = (WUser == 0) ? 1 : WUser;
+  static constexpr std::size_t NewWId = (WId == 0) ? 1 : WId;
+  static constexpr std::size_t NewWDest = (WDest == 0) ? 1 : WDest;
+  T data;
+  ap_uint<bytewidth<T>> keep;
+  ap_uint<bytewidth<T>> strb;
+  ap_uint<NewWUser> user;
+  ap_uint<1> last;
+  ap_uint<NewWId> id;
+  ap_uint<NewWDest> dest;
+
+  ap_uint<NewWUser> *get_user_ptr() {
+#pragma HLS inline
+ return (WUser == 0) ? nullptr : &user;
+  }
+  ap_uint<NewWId> *get_id_ptr() {
+#pragma HLS inline
+ return (WId == 0) ? nullptr : &id;
+  }
+  ap_uint<NewWDest> *get_dest_ptr() {
+#pragma HLS inline
+ return (WDest == 0) ? nullptr : &dest;
+  }
+};
+
+}
+
+template <std::size_t WData, std::size_t WUser, std::size_t WId, std::size_t WDest>
+using ap_axis = hls::axis<ap_int<WData>, WUser, WId, WDest>;
+
+template <std::size_t WData, std::size_t WUser, std::size_t WId, std::size_t WDest>
+using ap_axiu = hls::axis<ap_uint<WData>, WUser, WId, WDest>;
+
+
+template <std::size_t WData, std::size_t WUser, std::size_t WId, std::size_t WDest>
+struct qdma_axis;
+
+template <std::size_t WData> struct qdma_axis<WData, 0, 0, 0> {
+
+  static constexpr std::size_t kBytes = (WData + 7) / 8;
+
+  ap_uint<WData> data;
+  ap_uint<kBytes> keep;
+  ap_uint<1> strb;
+  ap_uint<1> user;
+  ap_uint<1> last;
+  ap_uint<1> id;
+  ap_uint<1> dest;
+
+  ap_uint<1> *get_strb_ptr() {
+#pragma HLS inline
+ return nullptr;
+  }
+  ap_uint<1> *get_user_ptr() {
+#pragma HLS inline
+ return nullptr;
+  }
+  ap_uint<1> *get_id_ptr() {
+#pragma HLS inline
+ return nullptr;
+  }
+  ap_uint<1> *get_dest_ptr() {
+#pragma HLS inline
+ return nullptr;
+  }
+
+
+  ap_uint<WData> get_data() const {
+#pragma HLS inline
+ return data;
+  }
+  ap_uint<kBytes> get_keep() const {
+#pragma HLS inline
+ return keep;
+  }
+  ap_uint<1> get_last() const {
+#pragma HLS inline
+ return last;
+  }
+
+  void set_data(const ap_uint<WData> &d) {
+#pragma HLS inline
+ data = d;
+  }
+  void set_keep(const ap_uint<kBytes> &k) {
+#pragma HLS inline
+ keep = k;
+  }
+  void set_last(const ap_uint<1> &l) {
+#pragma HLS inline
+ last = l;
+  }
+  void keep_all() {
+#pragma HLS inline
+ ap_uint<kBytes> k = 0;
+    keep = ~k;
+  }
+
+  qdma_axis() {
+#pragma HLS inline
+ ;
+  }
+  qdma_axis(ap_uint<WData> d) : data(d) {
+#pragma HLS inline
+ ;
+  }
+  qdma_axis(ap_uint<WData> d, ap_uint<kBytes> k) : data(d), keep(k) {
+#pragma HLS inline
+ ;
+  }
+  qdma_axis(ap_uint<WData> d, ap_uint<kBytes> k, ap_uint<1> l)
+      : data(d), keep(k), last(l) {
+#pragma HLS inline
+ ;
+  }
+  qdma_axis(const qdma_axis<WData, 0, 0, 0> &d)
+      : data(d.data), keep(d.keep), last(d.last) {
+#pragma HLS inline
+ ;
+  }
+  qdma_axis &operator=(const qdma_axis<WData, 0, 0, 0> &d) {
+#pragma HLS inline
+ data = d.data;
+    keep = d.keep;
+    last = d.last;
+    return *this;
+  }
+};
+
+
+
+
+namespace hls {
+
+template <typename T, std::size_t WUser, std::size_t WId, std::size_t WDest>
+class stream<axis<T, WUser, WId, WDest>> {
+  typedef axis<T, WUser, WId, WDest> __STREAM_T__;
+
+public:
+
+  inline __attribute__((always_inline)) stream() {}
+
+  inline __attribute__((always_inline)) stream(const char *name) { (void)name; }
+
+
+private:
+  inline __attribute__((always_inline)) stream(const stream<__STREAM_T__> &chn) : V(chn.V) {}
+
+public:
+
+  inline __attribute__((always_inline)) void operator>>(__STREAM_T__ &rdata) { read(rdata); }
+
+  inline __attribute__((always_inline)) void operator<<(const __STREAM_T__ &wdata) { write(wdata); }
+
+
+  bool empty() {
+#pragma HLS inline
+ bool tmp = __fpga_axis_valid(&V.data, &V.keep, &V.strb, V.get_user_ptr(),
+                                 &V.last, V.get_id_ptr(), V.get_dest_ptr());
+    return !tmp;
+  }
+
+  bool full() {
+#pragma HLS inline
+ bool tmp = __fpga_axis_ready(&V.data, &V.keep, &V.strb, V.get_user_ptr(),
+                                 &V.last, V.get_id_ptr(), V.get_dest_ptr());
+    return !tmp;
+  }
+
+
+  void read(__STREAM_T__ &dout) {
+#pragma HLS inline
+ __STREAM_T__ tmp;
+    __fpga_axis_pop(&V.data, &V.keep, &V.strb, V.get_user_ptr(), &V.last,
+                    V.get_id_ptr(), V.get_dest_ptr(), &tmp.data, &tmp.keep,
+                    &tmp.strb, tmp.get_user_ptr(), &tmp.last, tmp.get_id_ptr(),
+                    tmp.get_dest_ptr());
+    dout = tmp;
+  }
+
+  __STREAM_T__ read() {
+#pragma HLS inline
+ __STREAM_T__ tmp;
+    __fpga_axis_pop(&V.data, &V.keep, &V.strb, V.get_user_ptr(), &V.last,
+                    V.get_id_ptr(), V.get_dest_ptr(), &tmp.data, &tmp.keep,
+                    &tmp.strb, tmp.get_user_ptr(), &tmp.last, tmp.get_id_ptr(),
+                    tmp.get_dest_ptr());
+    return tmp;
+  }
+
+
+  void write(const __STREAM_T__ &din) {
+#pragma HLS inline
+ __STREAM_T__ tmp = din;
+    __fpga_axis_push(&V.data, &V.keep, &V.strb, V.get_user_ptr(), &V.last,
+                     V.get_id_ptr(), V.get_dest_ptr(), &tmp.data, &tmp.keep,
+                     &tmp.strb, tmp.get_user_ptr(), &tmp.last, tmp.get_id_ptr(),
+                     tmp.get_dest_ptr());
+  }
+
+
+  bool read_nb(__STREAM_T__ &dout) {
+#pragma HLS inline
+ __STREAM_T__ tmp;
+    if (__fpga_axis_nb_pop(&V.data, &V.keep, &V.strb, V.get_user_ptr(), &V.last,
+                           V.get_id_ptr(), V.get_dest_ptr(), &tmp.data,
+                           &tmp.keep, &tmp.strb, tmp.get_user_ptr(),
+                           &tmp.last, tmp.get_id_ptr(), tmp.get_dest_ptr())) {
+      dout = tmp;
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+
+  bool write_nb(const __STREAM_T__ &in) {
+#pragma HLS inline
+ __STREAM_T__ tmp = in;
+    bool full_n = __fpga_axis_nb_push(
+        &V.data, &V.keep, &V.strb, V.get_user_ptr(), &V.last, V.get_id_ptr(),
+        V.get_dest_ptr(), &tmp.data, &tmp.keep, &tmp.strb, tmp.get_user_ptr(),
+        &tmp.last, tmp.get_id_ptr(), tmp.get_dest_ptr());
+    return full_n;
+  }
+
+private:
+  __STREAM_T__ V __attribute__((no_ctor));
+};
+
+
+template <std::size_t WData>
+class stream<qdma_axis<WData, 0, 0, 0>> {
+  typedef qdma_axis<WData, 0, 0, 0> __STREAM_T__;
+
+public:
+
+  inline __attribute__((always_inline)) stream() {}
+
+  inline __attribute__((always_inline)) stream(const char *name) { (void)name; }
+
+
+private:
+  inline __attribute__((always_inline)) stream(const stream<__STREAM_T__> &chn) : V(chn.V) {}
+
+public:
+
+  inline __attribute__((always_inline)) void operator>>(__STREAM_T__ &rdata) { read(rdata); }
+
+  inline __attribute__((always_inline)) void operator<<(const __STREAM_T__ &wdata) { write(wdata); }
+
+
+  bool empty() {
+#pragma HLS inline
+ bool tmp = __fpga_axis_valid(&V.data, &V.keep, V.get_strb_ptr(), V.get_user_ptr(),
+                                 &V.last, V.get_id_ptr(), V.get_dest_ptr());
+    return !tmp;
+  }
+
+  bool full() {
+#pragma HLS inline
+ bool tmp = __fpga_axis_ready(&V.data, &V.keep, V.get_strb_ptr(), V.get_user_ptr(),
+                                 &V.last, V.get_id_ptr(), V.get_dest_ptr());
+    return !tmp;
+  }
+
+
+  void read(__STREAM_T__ &dout) {
+#pragma HLS inline
+ __STREAM_T__ tmp;
+    __fpga_axis_pop(&V.data, &V.keep, V.get_strb_ptr(), V.get_user_ptr(),
+                    &V.last, V.get_id_ptr(), V.get_dest_ptr(), &tmp.data,
+                    &tmp.keep, tmp.get_strb_ptr(), tmp.get_user_ptr(),
+                    &tmp.last, tmp.get_id_ptr(), tmp.get_dest_ptr());
+    dout = tmp;
+  }
+
+  __STREAM_T__ read() {
+#pragma HLS inline
+ __STREAM_T__ tmp;
+    __fpga_axis_pop(&V.data, &V.keep, V.get_strb_ptr(), V.get_user_ptr(), &V.last,
+                    V.get_id_ptr(), V.get_dest_ptr(), &tmp.data, &tmp.keep,
+                    tmp.get_strb_ptr(), tmp.get_user_ptr(), &tmp.last, tmp.get_id_ptr(),
+                    tmp.get_dest_ptr());
+    return tmp;
+  }
+
+
+  void write(const __STREAM_T__ &din) {
+#pragma HLS inline
+ __STREAM_T__ tmp = din;
+    __fpga_axis_push(&V.data, &V.keep, V.get_strb_ptr(), V.get_user_ptr(), &V.last,
+                     V.get_id_ptr(), V.get_dest_ptr(), &tmp.data, &tmp.keep,
+                     tmp.get_strb_ptr(), tmp.get_user_ptr(), &tmp.last, tmp.get_id_ptr(),
+                     tmp.get_dest_ptr());
+  }
+
+
+  bool read_nb(__STREAM_T__ &dout) {
+#pragma HLS inline
+ __STREAM_T__ tmp;
+
+    if (__fpga_axis_nb_pop(&V.data, &V.keep, &V.strb, V.get_user_ptr(), &V.last,
+                           V.get_id_ptr(), V.get_dest_ptr(), &tmp.data,
+                           &tmp.keep, &tmp.strb, tmp.get_user_ptr(),
+                           &tmp.last, tmp.get_id_ptr(), tmp.get_dest_ptr())) {
+      dout = tmp;
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+
+  bool write_nb(const __STREAM_T__ &in) {
+#pragma HLS inline
+ __STREAM_T__ tmp = in;
+    bool full_n = __fpga_axis_nb_push(
+        &V.data, &V.keep, V.get_strb_ptr(), V.get_user_ptr(), &V.last, V.get_id_ptr(),
+        V.get_dest_ptr(), &tmp.data, &tmp.keep, tmp.get_strb_ptr(), tmp.get_user_ptr(),
+        &tmp.last, tmp.get_id_ptr(), tmp.get_dest_ptr());
+    return full_n;
+  }
+
+private:
+  __STREAM_T__ V __attribute__((no_ctor));
+};
+
+}
+# 5 "point_streamer.cpp" 2
 
 
 
 typedef ap_uint<128> point_t;
+typedef ap_axiu<32, 0, 0, 0> sdata_t;
 
 void load_buffer(point_t points_in[32], point_t points_buffer[32])
 {
@@ -6006,27 +6427,35 @@ void load_buffer(point_t points_in[32], point_t points_buffer[32])
   points_buffer[i] = points_in[i];
 }
 
-void stream_points(hls::stream<uint32_t> & stream_out, point_t points_buffer[32])
+void stream_points(hls::stream<sdata_t> & stream_out, point_t points_buffer[32])
 {
 
- stream_points_inner_loop: for (int i = 0; i < 32; i++)
+ stream_points_outer_loop: for (int i = 0; i < 32; i++)
  {
-  stream_points_outer_loop: for (int j = 0; j < 4; j++)
+  stream_points_inner_loop: for (int j = 0; j < 4; j++)
   {
-   uint32_t tmp_var = (uint32_t) points_buffer[i](31+j*32, j*32);
-   stream_out.write(tmp_var);
+
+   sdata_t dout;
+   dout.data = (uint32_t) points_buffer[i](31+j*32, j*32);
+   dout.keep = -1;
+   dout.last = (ap_uint<1>)(i == 32 -1 && j == 4-1);
+   stream_out.write(dout);
+
+
+
   }
  }
 }
 
-__attribute__((sdx_kernel("mmWaveStreamer", 0))) void mmWaveStreamer(point_t points_in[32], hls::stream<uint32_t> & stream_out)
+__attribute__((sdx_kernel("mmWaveStreamer", 0))) void mmWaveStreamer(point_t points_in[32], hls::stream<sdata_t> & stream_out)
 {_ssdm_SpecArrayDimSize(points_in, 32);
 #pragma HLS TOP name=mmWaveStreamer
-# 29 "point_streamer.cpp"
+# 38 "point_streamer.cpp"
 
 #pragma HLS INTERFACE ap_ctrl_hs port=return
 #pragma HLS INTERFACE ap_memory port=points_in
 #pragma HLS INTERFACE axis port=stream_out
+
 
  point_t points_buffer[32];
 

@@ -1,0 +1,32 @@
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto 245477d5cb874d669cf02dea9b0f5e16 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip -L xpm --snapshot sim_wrapper_behav xil_defaultlib.sim_wrapper -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.NOT_gate [not_gate_default]
+Compiling architecture sim_not_gate_0_0_arch of entity xil_defaultlib.sim_NOT_gate_0_0 [sim_not_gate_0_0_default]
+Compiling architecture rtl of entity xil_defaultlib.mmWaveStreamer_points_buffer_V_ram [mmwavestreamer_points_buffer_v_r...]
+Compiling architecture arch of entity xil_defaultlib.mmWaveStreamer_points_buffer_V [mmwavestreamer_points_buffer_v_d...]
+Compiling architecture behav of entity xil_defaultlib.mmWaveStreamer_regslice_both [mmwavestreamer_regslice_both_def...]
+Compiling architecture behav of entity xil_defaultlib.mmWaveStreamer_regslice_both [\mmWaveStreamer_regslice_both(da...]
+Compiling architecture behav of entity xil_defaultlib.mmWaveStreamer_regslice_both [\mmWaveStreamer_regslice_both(da...]
+Compiling architecture behav of entity xil_defaultlib.mmWaveStreamer [mmwavestreamer_default]
+Compiling architecture sim_mmwavestreamer_0_0_arch of entity xil_defaultlib.sim_mmWaveStreamer_0_0 [sim_mmwavestreamer_0_0_default]
+Compiling architecture behavioral of entity xil_defaultlib.points_RAM [points_ram_default]
+Compiling architecture sim_points_ram_0_0_arch of entity xil_defaultlib.sim_points_RAM_0_0 [sim_points_ram_0_0_default]
+Compiling architecture behavioral of entity xil_defaultlib.stream_controller [stream_controller_default]
+Compiling architecture sim_stream_controller_0_0_arch of entity xil_defaultlib.sim_stream_controller_0_0 [sim_stream_controller_0_0_defaul...]
+Compiling architecture structure of entity xil_defaultlib.sim [sim_default]
+Compiling architecture structure of entity xil_defaultlib.sim_wrapper
+Built simulation snapshot sim_wrapper_behav

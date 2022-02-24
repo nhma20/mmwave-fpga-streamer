@@ -17,17 +17,32 @@
         <fractionWidth>0</fractionWidth>
       </RtlPort>
       <RtlPort>
-        <name>stream_out_V_TDATA</name>
+        <name>stream_out_TDATA</name>
         <type>Unsigned</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>
       <RtlPort>
-        <name>stream_out_V_TREADY</name>
+        <name>stream_out_TKEEP</name>
         <type>Unsigned</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>
       <RtlPort>
-        <name>stream_out_V_TVALID</name>
+        <name>stream_out_TLAST</name>
+        <type>Unsigned</type>
+        <fractionWidth>0</fractionWidth>
+      </RtlPort>
+      <RtlPort>
+        <name>stream_out_TREADY</name>
+        <type>Unsigned</type>
+        <fractionWidth>0</fractionWidth>
+      </RtlPort>
+      <RtlPort>
+        <name>stream_out_TSTRB</name>
+        <type>Unsigned</type>
+        <fractionWidth>0</fractionWidth>
+      </RtlPort>
+      <RtlPort>
+        <name>stream_out_TVALID</name>
         <type>Unsigned</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>

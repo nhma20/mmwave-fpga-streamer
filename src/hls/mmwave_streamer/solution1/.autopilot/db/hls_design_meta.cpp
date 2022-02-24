@@ -9,8 +9,11 @@ const Port_Property HLS_Design_Meta::port_props[]={
 	Port_Property("points_in_address0", 5, hls_out, 0, "ap_memory", "mem_address", 1),
 	Port_Property("points_in_ce0", 1, hls_out, 0, "ap_memory", "mem_ce", 1),
 	Port_Property("points_in_q0", 128, hls_in, 0, "ap_memory", "mem_dout", 1),
-	Port_Property("stream_out_V_TDATA", 32, hls_out, 1, "axis", "out_data", 1),
-	Port_Property("stream_out_V_TVALID", 1, hls_out, 1, "axis", "out_vld", 1),
-	Port_Property("stream_out_V_TREADY", 1, hls_in, 1, "axis", "out_acc", 1),
+	Port_Property("stream_out_TDATA", 32, hls_out, 1, "axis", "out_data", 1),
+	Port_Property("stream_out_TVALID", 1, hls_out, 4, "axis", "out_vld", 1),
+	Port_Property("stream_out_TREADY", 1, hls_in, 4, "axis", "out_acc", 1),
+	Port_Property("stream_out_TKEEP", 4, hls_out, 2, "axis", "out_data", 1),
+	Port_Property("stream_out_TSTRB", 4, hls_out, 3, "axis", "out_data", 1),
+	Port_Property("stream_out_TLAST", 1, hls_out, 4, "axis", "out_data", 1),
 };
 const char* HLS_Design_Meta::dut_name = "mmWaveStreamer";

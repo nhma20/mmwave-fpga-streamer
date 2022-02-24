@@ -6,8 +6,8 @@
           <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0"/>
         </hw>
       </arg>
-      <arg id="1" access_type="w" src_name="stream_out" src_type="stream&lt;unsigned int, 0&gt;&amp;" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
-        <hw hw_usage="data" hw_interface="AXI-Stream" hw_name="stream_out_V" hw_bitwidth="32" hw_size_or_depth="1">
+      <arg id="1" access_type="w" src_name="stream_out" src_type="stream&lt;hls::axis&lt;ap_uint&lt;32&gt;, 0, 0, 0&gt;, 0&gt;&amp;" src_isptr="1" src_bitwidth="96" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="AXI-Stream" hw_name="stream_out" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="axis" register_option="0" register_mode="both"/>
         </hw>
       </arg>

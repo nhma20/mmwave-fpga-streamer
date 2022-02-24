@@ -1,4 +1,4 @@
-<project xmlns="com.autoesl.autopilot.project" top="mmWaveStreamer" name="mmwave_streamer">
+<project xmlns="com.autoesl.autopilot.project" name="mmwave_streamer" top="mmWaveStreamer">
     <includePaths/>
     <libraryPaths/>
     <Simulation>

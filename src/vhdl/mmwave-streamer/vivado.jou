@@ -1,0 +1,392 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Feb 24 09:07:15 2022
+# Process ID: 194074
+# Current directory: /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer
+# Command line: vivado
+# Log file: /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/vivado.log
+# Journal file: /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project mmwave-streamer . -part xczu3eg-sbva484-1-i
+set_property target_language VHDL [current_project]
+add_files -norecurse {/home/nm/mmwave-fpga-streamer/src/vhdl/data_parser.vhd /home/nm/mmwave-fpga-streamer/src/vhdl/NOT_gate.vhd /home/nm/mmwave-fpga-streamer/src/vhdl/points_RAM.vhd /home/nm/mmwave-fpga-streamer/src/vhdl/AND_gate.vhd /home/nm/mmwave-fpga-streamer/src/vhdl/uart_RX.vhd}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property  ip_repo_paths  /home/nm/mmwave-fpga-streamer/src/hls [current_project]
+update_ip_catalog
+create_bd_design "mmwave_streamer"
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type module -reference points_RAM points_RAM_0
+create_bd_cell -type module -reference data_parser data_parser_0
+create_bd_cell -type module -reference UART_RX UART_RX_0
+create_bd_cell -type module -reference NOT_gate NOT_gate_0
+create_bd_cell -type module -reference AND_gate AND_gate_0
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:hls:mmWaveStreamer:1.0 mmWaveStreamer_0
+endgroup
+set_property location {3 783 202} [get_bd_cells points_RAM_0]
+connect_bd_net [get_bd_pins mmWaveStreamer_0/points_in_ce0] [get_bd_pins points_RAM_0/i_ce]
+connect_bd_net [get_bd_pins points_RAM_0/i_set_and_rdy] [get_bd_pins data_parser_0/o_set_and_rdy]
+connect_bd_net [get_bd_pins data_parser_0/o_data_out] [get_bd_pins points_RAM_0/i_data_in]
+connect_bd_net [get_bd_pins points_RAM_0/i_point_addr] [get_bd_pins mmWaveStreamer_0/points_in_address0]
+add_files -norecurse /home/nm/mmwave-fpga-streamer/src/vhdl/stream_controller.vhd
+update_compile_order -fileset sources_1
+create_bd_cell -type module -reference stream_controller stream_controller_0
+connect_bd_net [get_bd_pins stream_controller_0/start] [get_bd_pins mmWaveStreamer_0/ap_start]
+connect_bd_net [get_bd_pins stream_controller_0/clk] [get_bd_pins points_RAM_0/i_Clk]
+connect_bd_net [get_bd_pins mmWaveStreamer_0/ap_clk] [get_bd_pins stream_controller_0/clk]
+connect_bd_net [get_bd_pins points_RAM_0/i_Rst] [get_bd_pins NOT_gate_0/o_out]
+startgroup
+make_bd_pins_external  [get_bd_pins NOT_gate_0/i_in]
+endgroup
+startgroup
+connect_bd_net [get_bd_ports i_in_0] [get_bd_pins stream_controller_0/rst_n]
+endgroup
+connect_bd_net [get_bd_ports i_in_0] [get_bd_pins mmWaveStreamer_0/ap_rst_n]
+connect_bd_net [get_bd_pins data_parser_0/i_Rst] [get_bd_pins NOT_gate_0/o_out]
+connect_bd_net [get_bd_pins UART_RX_0/i_Clk] [get_bd_pins stream_controller_0/clk]
+connect_bd_net [get_bd_pins data_parser_0/i_Clk] [get_bd_pins stream_controller_0/clk]
+connect_bd_net [get_bd_pins data_parser_0/i_RX_Byte] [get_bd_pins UART_RX_0/o_RX_Byte]
+connect_bd_net [get_bd_pins UART_RX_0/o_RX_DV] [get_bd_pins data_parser_0/i_Ena]
+startgroup
+make_bd_pins_external  [get_bd_pins UART_RX_0/i_RX_Serial]
+endgroup
+disconnect_bd_net /Net [get_bd_pins stream_controller_0/clk]
+startgroup
+make_bd_pins_external  [get_bd_pins stream_controller_0/clk]
+endgroup
+connect_bd_net [get_bd_ports clk_0] [get_bd_pins points_RAM_0/i_Clk]
+startgroup
+make_bd_pins_external  [get_bd_pins mmWaveStreamer_0/stream_out_V_TREADY]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins mmWaveStreamer_0/ap_idle]
+endgroup
+connect_bd_net [get_bd_pins mmWaveStreamer_0/ap_idle] [get_bd_pins stream_controller_0/idle]
+startgroup
+connect_bd_net [get_bd_ports stream_out_V_TREADY_0] [get_bd_pins stream_controller_0/ready]
+endgroup
+delete_bd_objs [get_bd_cells AND_gate_0]
+connect_bd_net [get_bd_pins points_RAM_0/o_data_out] [get_bd_pins mmWaveStreamer_0/points_in_q0]
+regenerate_bd_layout
+update_ip_catalog -rebuild -scan_changes
+report_ip_status -name ip_status
+upgrade_ip [get_ips  mmwave_streamer_mmWaveStreamer_0_0] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips mmwave_streamer_mmWaveStreamer_0_0] -no_script -sync -force -quiet
+report_ip_status -name ip_status 
+startgroup
+make_bd_pins_external  [get_bd_pins mmWaveStreamer_0/stream_out_TREADY]
+endgroup
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins mmWaveStreamer_0/stream_out]
+endgroup
+delete_bd_objs [get_bd_nets stream_out_TREADY_0_1]
+delete_bd_objs [get_bd_ports stream_out_TREADY_0]
+group_bd_cells hier_0 [get_bd_cells NOT_gate_0] [get_bd_cells points_RAM_0] [get_bd_cells mmWaveStreamer_0] [get_bd_cells UART_RX_0] [get_bd_cells data_parser_0] [get_bd_cells stream_controller_0]
+regenerate_bd_layout
+set_property name i_rst_n [get_bd_ports i_in_0]
+set_property name rst_n [get_bd_ports i_rst_n]
+set_property name clk [get_bd_ports clk_0]
+set_property name i_RX_Serial [get_bd_ports i_RX_Serial_0]
+set_property name stream_out_V_TREADY [get_bd_ports stream_out_V_TREADY_0]
+delete_bd_objs [get_bd_nets stream_out_V_TREADY_0_1] [get_bd_ports stream_out_V_TREADY]
+delete_bd_objs [get_bd_nets hier_0/stream_out_V_TREADY_0_1]
+delete_bd_objs [get_bd_nets mmWaveStreamer_0_ap_idle] [get_bd_ports ap_idle_0]
+delete_bd_objs [get_bd_nets hier_0/mmWaveStreamer_0_ap_idle]
+connect_bd_net [get_bd_pins hier_0/mmWaveStreamer_0/ap_idle] [get_bd_pins hier_0/stream_controller_0/idle]
+delete_bd_objs [get_bd_pins hier_0/ap_idle_0]
+delete_bd_objs [get_bd_nets i_RX_Serial_0_1]
+undo
+delete_bd_objs [get_bd_pins hier_0/stream_out_V_TREADY_0]
+ipx::create_abstraction_definition DIII user axis_breakout_rtl 1.0
+ipx::create_bus_definition DIII user axis_breakout 1.0
+set_property xml_file_name /home/nm/mmwave-fpga-streamer/src/vhdl/interface_definitions/axis_breakout_rtl.xml [ipx::current_busabs]
+set_property xml_file_name /home/nm/mmwave-fpga-streamer/src/vhdl/interface_definitions/axis_breakout.xml [ipx::current_busdef]
+set_property bus_type_vlnv DIII:user:axis_breakout:1.0 [ipx::current_busabs]
+set_property extends_vlnv xilinx.com:interface:axis:1.0 [ipx::current_busdef]
+ipx::copy_definition_ports_from [lindex [ipx::get_ipfiles -type busabs xilinx.com:interface:axis_rtl:1.0] 0] [ipx::current_busabs]
+ipx::save_abstraction_definition [ipx::current_busabs]
+ipx::save_bus_definition [ipx::current_busdef]
+set_property  ip_repo_paths  {/home/nm/mmwave-fpga-streamer/src/hls /home/nm/mmwave-fpga-streamer/src/vhdl/interface_definitions} [current_project]
+update_ip_catalog
+ipx::remove_bus_abstraction_port TID [ipx::current_busabs]
+ipx::remove_bus_abstraction_port TDEST [ipx::current_busabs]
+ipx::remove_bus_abstraction_port TUSER [ipx::current_busabs]
+ipx::save_bus_definition [ipx::current_busdef]
+set_property bus_type_vlnv DIII:user:axis_breakout:1.0 [ipx::current_busabs]
+ipx::save_abstraction_definition [ipx::current_busabs]
+update_ip_catalog -rebuild -repo_path /home/nm/mmwave-fpga-streamer/src/vhdl/interface_definitions
+add_files -norecurse /home/nm/mmwave-fpga-streamer/src/vhdl/axis_breakout.vhd
+update_compile_order -fileset sources_1
+create_bd_cell -type module -reference axis_breakout hier_0/axis_breakout_0
+update_module_reference mmwave_streamer_axis_breakout_0_0
+ipx::remove_bus_abstraction_port TDATA [ipx::current_busabs]
+ipx::remove_bus_abstraction_port TSTRB [ipx::current_busabs]
+ipx::remove_bus_abstraction_port TKEEP [ipx::current_busabs]
+ipx::remove_bus_abstraction_port TLAST [ipx::current_busabs]
+ipx::remove_bus_abstraction_port TVALID [ipx::current_busabs]
+ipx::remove_bus_abstraction_port TREADY [ipx::current_busabs]
+ipx::save_bus_definition [ipx::current_busdef]
+set_property bus_type_vlnv DIII:user:axis_breakout:1.0 [ipx::current_busabs]
+ipx::save_abstraction_definition [ipx::current_busabs]
+update_ip_catalog -rebuild -repo_path /home/nm/mmwave-fpga-streamer/src/vhdl/interface_definitions
+delete_bd_objs [get_bd_cells hier_0/axis_breakout_0]
+update_module_reference mmwave_streamer_axis_breakout_0_0
+create_bd_cell -type module -reference axis_breakout hier_0/axis_breakout_0
+delete_bd_objs [get_bd_intf_nets hier_0/mmWaveStreamer_0_stream_out]
+connect_bd_intf_net [get_bd_intf_pins hier_0/stream_out_0] [get_bd_intf_pins hier_0/axis_breakout_0/interface_axis]
+connect_bd_net [get_bd_pins hier_0/axis_breakout_0/bo_ready] [get_bd_pins hier_0/mmWaveStreamer_0/stream_out_TREADY]
+connect_bd_net [get_bd_pins hier_0/axis_breakout_0/ready_out] [get_bd_pins hier_0/stream_controller_0/ready]
+connect_bd_net [get_bd_pins hier_0/axis_breakout_0/bo_strb] [get_bd_pins hier_0/mmWaveStreamer_0/stream_out_TSTRB]
+connect_bd_net [get_bd_pins hier_0/axis_breakout_0/bo_keep] [get_bd_pins hier_0/mmWaveStreamer_0/stream_out_TKEEP]
+connect_bd_net [get_bd_pins hier_0/axis_breakout_0/bo_last] [get_bd_pins hier_0/mmWaveStreamer_0/stream_out_TLAST]
+connect_bd_net [get_bd_pins hier_0/axis_breakout_0/bo_data] [get_bd_pins hier_0/mmWaveStreamer_0/stream_out_TDATA]
+connect_bd_net [get_bd_pins hier_0/axis_breakout_0/bo_valid] [get_bd_pins hier_0/mmWaveStreamer_0/stream_out_TVALID]
+set_property name stream_out [get_bd_intf_ports stream_out_0]
+regenerate_bd_layout
+regenerate_bd_layout
+validate_bd_design
+update_module_reference {mmwave_streamer_axis_breakout_0_0 mmwave_streamer_axis_breakout_0_1}
+connect_bd_net [get_bd_pins hier_0/clk_0] [get_bd_pins hier_0/axis_breakout_0/i_clk]
+validate_bd_design
+disconnect_bd_net /hier_0/clk_0_1 [get_bd_pins hier_0/axis_breakout_0/i_clk]
+update_module_reference mmwave_streamer_axis_breakout_0_1
+set_property CONFIG.CLK_DOMAIN clk [get_bd_intf_pins /hier_0/axis_breakout_0/interface_axis]
+set_property name clk [get_bd_pins hier_0/clk_0]
+validate_bd_design
+set_property CONFIG.CLK_DOMAIN {} [get_bd_intf_pins /hier_0/axis_breakout_0/interface_axis]
+delete_bd_objs [get_bd_nets hier_0/mmWaveStreamer_0_stream_out_TVALID] [get_bd_nets hier_0/mmWaveStreamer_0_stream_out_TDATA] [get_bd_intf_nets hier_0/axis_breakout_0_interface_axis] [get_bd_nets hier_0/mmWaveStreamer_0_stream_out_TLAST] [get_bd_nets hier_0/axis_breakout_0_bo_ready] [get_bd_nets hier_0/mmWaveStreamer_0_stream_out_TKEEP] [get_bd_nets hier_0/mmWaveStreamer_0_stream_out_TSTRB] [get_bd_nets hier_0/axis_breakout_0_ready_out] [get_bd_cells hier_0/axis_breakout_0]
+startgroup
+make_bd_pins_external  [get_bd_pins hier_0/mmWaveStreamer_0/stream_out_TREADY]
+endgroup
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins hier_0/mmWaveStreamer_0/stream_out]
+endgroup
+delete_bd_objs [get_bd_intf_nets mmWaveStreamer_0_stream_out] [get_bd_intf_ports stream_out]
+delete_bd_objs [get_bd_intf_pins hier_0/stream_out_0]
+set_property name stream_out [get_bd_intf_ports stream_out_0]
+connect_bd_net [get_bd_pins hier_0/stream_out_TREADY_0] [get_bd_pins hier_0/stream_controller_0/ready]
+save_bd_design
+validate_bd_design
+create_bd_design "sim"
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type module -reference stream_controller stream_controller_0
+create_bd_cell -type module -reference points_RAM points_RAM_0
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:hls:mmWaveStreamer:1.0 mmWaveStreamer_0
+endgroup
+connect_bd_net [get_bd_pins points_RAM_0/o_data_out] [get_bd_pins mmWaveStreamer_0/points_in_q0]
+connect_bd_net [get_bd_pins mmWaveStreamer_0/ap_clk] [get_bd_pins points_RAM_0/i_Clk]
+connect_bd_net [get_bd_pins stream_controller_0/clk] [get_bd_pins mmWaveStreamer_0/ap_clk]
+disconnect_bd_net /Net [get_bd_pins stream_controller_0/clk]
+startgroup
+make_bd_pins_external  [get_bd_pins stream_controller_0/clk]
+endgroup
+connect_bd_net [get_bd_ports clk_0] [get_bd_pins mmWaveStreamer_0/ap_clk]
+create_bd_cell -type module -reference NOT_gate NOT_gate_0
+startgroup
+make_bd_pins_external  [get_bd_pins NOT_gate_0/i_in]
+endgroup
+startgroup
+connect_bd_net [get_bd_pins NOT_gate_0/o_out] [get_bd_pins points_RAM_0/i_Rst]
+endgroup
+connect_bd_net [get_bd_ports i_in_0] [get_bd_pins mmWaveStreamer_0/ap_rst_n]
+connect_bd_net [get_bd_ports i_in_0] [get_bd_pins stream_controller_0/rst_n]
+startgroup
+make_bd_pins_external  [get_bd_pins points_RAM_0/i_data_in]
+endgroup
+connect_bd_net [get_bd_pins points_RAM_0/i_point_addr] [get_bd_pins mmWaveStreamer_0/points_in_address0]
+connect_bd_net [get_bd_pins points_RAM_0/i_ce] [get_bd_pins mmWaveStreamer_0/points_in_ce0]
+startgroup
+make_bd_pins_external  [get_bd_pins points_RAM_0/i_set_and_rdy]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins stream_controller_0/ready]
+endgroup
+connect_bd_net [get_bd_ports ready_0] [get_bd_pins mmWaveStreamer_0/stream_out_TREADY]
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins mmWaveStreamer_0/stream_out]
+endgroup
+connect_bd_net [get_bd_pins mmWaveStreamer_0/ap_start] [get_bd_pins stream_controller_0/start]
+connect_bd_net [get_bd_pins stream_controller_0/idle] [get_bd_pins mmWaveStreamer_0/ap_idle]
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins mmWaveStreamer_0/ap_ctrl]
+endgroup
+save_bd_design
+regenerate_bd_layout
+delete_bd_objs [get_bd_intf_nets ap_ctrl_0_1] [get_bd_intf_ports ap_ctrl_0]
+save_bd_design
+regenerate_bd_layout
+validate_bd_design
+set_property name rst_n [get_bd_ports i_in_0]
+set_property name clk [get_bd_ports clk_0]
+set_property name i_data_in [get_bd_ports i_data_in_0]
+set_property name i_set_and_rdy [get_bd_ports i_set_and_rdy_0]
+set_property name ready [get_bd_ports ready_0]
+set_property name stream_out [get_bd_intf_ports stream_out_0]
+save_bd_design
+make_wrapper -files [get_files /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/sim/sim.bd] -top
+add_files -norecurse /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/sim/hdl/sim_wrapper.vhd
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top sim_wrapper [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top sim_wrapper [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+current_bd_design [get_bd_designs mmwave_streamer]
+save_bd_design
+current_bd_design [get_bd_designs sim]
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+launch_simulation
+source sim_wrapper.tcl
+add_force {/sim_wrapper/clk} -radix hex {0 0ns} {1 5000ps} -repeat_every 10000ps
+add_force {/sim_wrapper/i_data_in} -radix hex {11112222333344445555666677778888 0ns}
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+add_force {/sim_wrapper/ready} -radix hex {0 0ns}
+add_force {/sim_wrapper/rst_n} -radix hex {1 0ns}
+run 10 us
+open_bd_design {/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/sim/sim.bd}
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix bin {11 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_data_in} -radix hex {99998888777766665555444433332222 0ns}
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix bin {11 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_data_in} -radix hex {77778888999944445555666611112222 0ns}
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {3 0ns}
+run 10 ns
+add_force {/sim_wrapper/ready} -radix hex {1 0ns}
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10000 ns
+open_bd_design {/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/sim/sim.bd}
+launch_simulation -mode post-synthesis -type functional
+source sim_wrapper.tcl
+add_force {/sim_wrapper/clk} -radix hex {0 0ns} {1 5000ps} -repeat_every 10000ps
+add_force {/sim_wrapper/i_data_in} -radix hex {11112222333344445555666677778888 0ns}
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+add_force {/sim_wrapper/ready} -radix hex {0 0ns}
+add_force {/sim_wrapper/rst_n} -radix hex {1 0ns}
+run 10 us
+open_bd_design {/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/sim/sim.bd}
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix bin {11 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_data_in} -radix hex {99998888777766665555444433332222 0ns}
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix bin {11 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_data_in} -radix hex {77778888999944445555666611112222 0ns}
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {3 0ns}
+run 10 ns
+add_force {/sim_wrapper/ready} -radix hex {1 0ns}
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10000 ns
+open_bd_design {/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/mmwave_streamer/mmwave_streamer.bd}
+make_wrapper -files [get_files /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/mmwave_streamer/mmwave_streamer.bd] -top
+add_files -norecurse /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/hdl/mmwave_streamer_wrapper.vhd
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top mmwave_streamer_wrapper [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+launch_runs impl_1 -jobs 16
+wait_on_run impl_1
+ipx::package_project -root_dir /home/nm/mmwave-fpga-streamer/src/vhdl/ip -vendor user.org -library user -taxonomy /UserIP -module mmwave_streamer -import_files -force
+set_property core_revision 2 [ipx::find_open_core DIII:HLS:mmwave_streamer:1.0]
+ipx::create_xgui_files [ipx::find_open_core DIII:HLS:mmwave_streamer:1.0]
+ipx::update_checksums [ipx::find_open_core DIII:HLS:mmwave_streamer:1.0]
+ipx::check_integrity [ipx::find_open_core DIII:HLS:mmwave_streamer:1.0]
+ipx::save_core [ipx::find_open_core DIII:HLS:mmwave_streamer:1.0]
+set_property  ip_repo_paths  {/home/nm/mmwave-fpga-streamer/src/vhdl/ip /home/nm/mmwave-fpga-streamer/src/hls /home/nm/mmwave-fpga-streamer/src/vhdl/interface_definitions} [current_project]
+update_ip_catalog
+ipx::check_integrity -quiet [ipx::find_open_core DIII:HLS:mmwave_streamer:1.0]
+ipx::archive_core /home/nm/mmwave-fpga-streamer/src/vhdl/ip/DIII_HLS_mmwave_streamer_1.0.zip [ipx::find_open_core DIII:HLS:mmwave_streamer:1.0]

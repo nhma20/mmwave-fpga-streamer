@@ -1,0 +1,54 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Thu Feb 24 09:23:52 2022
+| Host         : nm running 64-bit Ubuntu 20.04.3 LTS
+| Command      : upgrade_ip
+| Device       : xczu3eg-sbva484-1-i
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'mmwave_streamer_mmWaveStreamer_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of mmwave_streamer_mmWaveStreamer_0_0 (xilinx.com:hls:mmWaveStreamer:1.0) from (Rev. 2112388543) to (Rev. 2112390682)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'mmwave_streamer_mmWaveStreamer_0_0'.
+
+
+-Upgrade has removed interface 'stream_out_V'
+
+-Upgrade has added interface 'stream_out' (xilinx.com:interface:axis:1.0)
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'mmwave_streamer_mmWaveStreamer_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'stream_out_V_TDATA'
+
+-Upgrade has removed port 'stream_out_V_TREADY'
+
+-Upgrade has removed port 'stream_out_V_TVALID'
+
+-Upgrade has added port 'stream_out_TDATA'
+
+-Upgrade has added port 'stream_out_TKEEP'
+
+-Upgrade has added port 'stream_out_TLAST'
+
+-Upgrade has added port 'stream_out_TREADY'
+
+-Upgrade has added port 'stream_out_TSTRB'
+
+-Upgrade has added port 'stream_out_TVALID'
+
+

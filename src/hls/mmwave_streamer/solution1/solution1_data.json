@@ -47,11 +47,11 @@
     "stream_out": {
       "index": "1",
       "direction": "out",
-      "srcType": "stream<unsigned int, 0>&",
-      "srcSize": "32",
+      "srcType": "stream<hls::axis<ap_uint<32>, 0, 0, 0>, 0>&",
+      "srcSize": "96",
       "hwRefs": [{
           "type": "interface",
-          "interface": "stream_out_V",
+          "interface": "stream_out",
           "name": "",
           "usage": "data",
           "direction": "out"
@@ -60,7 +60,14 @@
   },
   "HlsSolution": {
     "FlowTarget": "vivado",
-    "DirectiveTcl": ["set_directive_top mmWaveStreamer -name mmWaveStreamer"],
+    "ConfigTcl": [
+      "config_export -format=ip_catalog",
+      "config_export -rtl=verilog"
+    ],
+    "DirectiveTcl": [
+      "set_directive_top mmWaveStreamer -name mmWaveStreamer",
+      "set_directive_top mmWaveStreamer -name mmWaveStreamer"
+    ],
     "ProfileOption": "0",
     "ProfileType": "none",
     "KernelName": "mmWaveStreamer"
@@ -114,7 +121,7 @@
       "busTypeName": "clock",
       "mode": "slave",
       "busParams": {
-        "ASSOCIATED_BUSIF": "stream_out_V",
+        "ASSOCIATED_BUSIF": "stream_out",
         "ASSOCIATED_RESET": "ap_rst_n"
       },
       "portMap": {"ap_clk": "CLK"},
@@ -173,16 +180,19 @@
           "argName": "points_in"
         }]
     },
-    "stream_out_V": {
+    "stream_out": {
       "type": "axi4stream",
       "busTypeName": "axis",
       "mode": "master",
       "dataWidth": "32",
-      "portPrefix": "stream_out_V_",
+      "portPrefix": "stream_out_",
       "ports": [
-        "stream_out_V_TDATA",
-        "stream_out_V_TREADY",
-        "stream_out_V_TVALID"
+        "stream_out_TDATA",
+        "stream_out_TKEEP",
+        "stream_out_TLAST",
+        "stream_out_TREADY",
+        "stream_out_TSTRB",
+        "stream_out_TVALID"
       ],
       "constraints": [{
           "constraint_type": "pragma interface",
@@ -230,17 +240,30 @@
       "dir": "in",
       "width": "128"
     },
-    "stream_out_V_TDATA": {
+    "stream_out_TDATA": {
       "dir": "out",
       "width": "32"
     },
-    "stream_out_V_TVALID": {
+    "stream_out_TVALID": {
       "dir": "out",
       "width": "1"
     },
-    "stream_out_V_TREADY": {
+    "stream_out_TREADY": {
       "dir": "in",
       "width": "1"
+    },
+    "stream_out_TLAST": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "stream_out_TKEEP": {
+      "dir": "out",
+      "width": "4"
+    },
+    "stream_out_TSTRB": {
+      "dir": "out",
+      "width": "4"
     }
   },
   "ModuleInfo": {
@@ -275,7 +298,7 @@
             "PipelineDepth": "2"
           },
           {
-            "Name": "stream_points_inner_loop",
+            "Name": "stream_points_outer_loop",
             "TripCount": "32",
             "Latency": "129",
             "PipelineII": "4",
@@ -286,10 +309,10 @@
           "BRAM_18K": "4",
           "AVAIL_BRAM": "432",
           "UTIL_BRAM": "~0",
-          "FF": "135",
+          "FF": "136",
           "AVAIL_FF": "141120",
           "UTIL_FF": "~0",
-          "LUT": "226",
+          "LUT": "250",
           "AVAIL_LUT": "70560",
           "UTIL_LUT": "~0",
           "DSP": "0",
@@ -304,7 +327,7 @@
   "GenerateBdFiles": "1",
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2022-02-22 21:43:24 CET",
+    "Time": "2022-02-24 09:22:09 CET",
     "ToolName": "vivado_hls",
     "ToolVersion": "2020.2"
   }

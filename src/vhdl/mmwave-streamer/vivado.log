@@ -1,0 +1,999 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Feb 24 09:07:15 2022
+# Process ID: 194074
+# Current directory: /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer
+# Command line: vivado
+# Log file: /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/vivado.log
+# Journal file: /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project mmwave-streamer . -part xczu3eg-sbva484-1-i
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2020.2/data/ip'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+set_property target_language VHDL [current_project]
+add_files -norecurse {/home/nm/mmwave-fpga-streamer/src/vhdl/data_parser.vhd /home/nm/mmwave-fpga-streamer/src/vhdl/NOT_gate.vhd /home/nm/mmwave-fpga-streamer/src/vhdl/points_RAM.vhd /home/nm/mmwave-fpga-streamer/src/vhdl/AND_gate.vhd /home/nm/mmwave-fpga-streamer/src/vhdl/uart_RX.vhd}
+update_compile_order -fileset sources_1
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+update_compile_order -fileset sources_1
+set_property  ip_repo_paths  /home/nm/mmwave-fpga-streamer/src/hls [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/hls'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+create_bd_design "mmwave_streamer"
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/mmwave_streamer/mmwave_streamer.bd> 
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type module -reference points_RAM points_RAM_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'i_Rst' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'i_Clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'i_Clk': Added interface parameter 'ASSOCIATED_RESET' with value 'i_Rst'.
+WARNING: [IP_Flow 19-5661] Bus Interface 'i_Clk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/hls'.
+create_bd_cell -type module -reference data_parser data_parser_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'i_Rst' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'i_Clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'i_Clk': Added interface parameter 'ASSOCIATED_RESET' with value 'i_Rst'.
+WARNING: [IP_Flow 19-5661] Bus Interface 'i_Clk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/hls'.
+create_bd_cell -type module -reference UART_RX UART_RX_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'i_Clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+WARNING: [IP_Flow 19-5661] Bus Interface 'i_Clk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/hls'.
+create_bd_cell -type module -reference NOT_gate NOT_gate_0
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/hls'.
+create_bd_cell -type module -reference AND_gate AND_gate_0
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/hls'.
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:hls:mmWaveStreamer:1.0 mmWaveStreamer_0
+endgroup
+set_property location {3 783 202} [get_bd_cells points_RAM_0]
+connect_bd_net [get_bd_pins mmWaveStreamer_0/points_in_ce0] [get_bd_pins points_RAM_0/i_ce]
+connect_bd_net [get_bd_pins points_RAM_0/i_set_and_rdy] [get_bd_pins data_parser_0/o_set_and_rdy]
+connect_bd_net [get_bd_pins data_parser_0/o_data_out] [get_bd_pins points_RAM_0/i_data_in]
+connect_bd_net [get_bd_pins points_RAM_0/i_point_addr] [get_bd_pins mmWaveStreamer_0/points_in_address0]
+add_files -norecurse /home/nm/mmwave-fpga-streamer/src/vhdl/stream_controller.vhd
+update_compile_order -fileset sources_1
+create_bd_cell -type module -reference stream_controller stream_controller_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'rst_n' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'rst_n': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+WARNING: [IP_Flow 19-3157] Bus Interface 'rst_n': Bus parameter POLARITY is ACTIVE_LOW but port 'rst_n' is not *resetn - please double check the POLARITY setting.
+WARNING: [IP_Flow 19-5661] Bus Interface 'clk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/hls'.
+connect_bd_net [get_bd_pins stream_controller_0/start] [get_bd_pins mmWaveStreamer_0/ap_start]
+WARNING: [BD 41-1306] The connection to interface pin </mmWaveStreamer_0/ap_start> is being overridden by the user with net <stream_controller_0_start>. This pin will not be connected as a part of interface connection <ap_ctrl>.
+connect_bd_net [get_bd_pins stream_controller_0/clk] [get_bd_pins points_RAM_0/i_Clk]
+connect_bd_net [get_bd_pins mmWaveStreamer_0/ap_clk] [get_bd_pins stream_controller_0/clk]
+connect_bd_net [get_bd_pins points_RAM_0/i_Rst] [get_bd_pins NOT_gate_0/o_out]
+startgroup
+make_bd_pins_external  [get_bd_pins NOT_gate_0/i_in]
+endgroup
+startgroup
+connect_bd_net [get_bd_ports i_in_0] [get_bd_pins stream_controller_0/rst_n]
+endgroup
+connect_bd_net [get_bd_ports i_in_0] [get_bd_pins mmWaveStreamer_0/ap_rst_n]
+connect_bd_net [get_bd_pins data_parser_0/i_Rst] [get_bd_pins NOT_gate_0/o_out]
+connect_bd_net [get_bd_pins UART_RX_0/i_Clk] [get_bd_pins stream_controller_0/clk]
+connect_bd_net [get_bd_pins data_parser_0/i_Clk] [get_bd_pins stream_controller_0/clk]
+connect_bd_net [get_bd_pins data_parser_0/i_RX_Byte] [get_bd_pins UART_RX_0/o_RX_Byte]
+connect_bd_net [get_bd_pins UART_RX_0/o_RX_DV] [get_bd_pins data_parser_0/i_Ena]
+startgroup
+make_bd_pins_external  [get_bd_pins UART_RX_0/i_RX_Serial]
+endgroup
+disconnect_bd_net /Net [get_bd_pins stream_controller_0/clk]
+startgroup
+make_bd_pins_external  [get_bd_pins stream_controller_0/clk]
+endgroup
+connect_bd_net [get_bd_ports clk_0] [get_bd_pins points_RAM_0/i_Clk]
+startgroup
+make_bd_pins_external  [get_bd_pins mmWaveStreamer_0/stream_out_V_TREADY]
+WARNING: [BD 41-1306] The connection to interface pin </mmWaveStreamer_0/stream_out_V_TREADY> is being overridden by the user with net <stream_out_V_TREADY_0_1>. This pin will not be connected as a part of interface connection <stream_out_V>.
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins mmWaveStreamer_0/ap_idle]
+WARNING: [BD 41-1306] The connection to interface pin </mmWaveStreamer_0/ap_idle> is being overridden by the user with net <mmWaveStreamer_0_ap_idle>. This pin will not be connected as a part of interface connection <ap_ctrl>.
+endgroup
+connect_bd_net [get_bd_pins mmWaveStreamer_0/ap_idle] [get_bd_pins stream_controller_0/idle]
+startgroup
+connect_bd_net [get_bd_ports stream_out_V_TREADY_0] [get_bd_pins stream_controller_0/ready]
+endgroup
+delete_bd_objs [get_bd_cells AND_gate_0]
+connect_bd_net [get_bd_pins points_RAM_0/o_data_out] [get_bd_pins mmWaveStreamer_0/points_in_q0]
+regenerate_bd_layout
+WARNING: [IP_Flow 19-4318] IP-XACT file does not exist: /home/nm/mmwave-fpga-streamer/src/hls/mmwave_streamer/solution1/impl/ip/component.xml. It will be created.
+update_ip_catalog -rebuild -scan_changes
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/hls'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+report_ip_status -name ip_status
+upgrade_ip [get_ips  mmwave_streamer_mmWaveStreamer_0_0] -log ip_upgrade.log
+Upgrading '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/mmwave_streamer/mmwave_streamer.bd'
+INFO: [IP_Flow 19-3422] Upgraded mmwave_streamer_mmWaveStreamer_0_0 (Mmwavestreamer 1.0) from revision 2112388543 to revision 2112390682
+WARNING: [IP_Flow 19-4699] Upgrade has removed interface 'stream_out_V'
+WARNING: [IP_Flow 19-4697] Upgrade has added interface 'stream_out' (xilinx.com:interface:axis:1.0)
+WARNING: [IP_Flow 19-3670] Detected external interface differences while upgrading 'mmwave_streamer_mmWaveStreamer_0_0'.
+WARNING: [IP_Flow 19-4700] Upgrade has removed port 'stream_out_V_TDATA'
+WARNING: [IP_Flow 19-4700] Upgrade has removed port 'stream_out_V_TREADY'
+WARNING: [IP_Flow 19-4700] Upgrade has removed port 'stream_out_V_TVALID'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'stream_out_TDATA'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'stream_out_TKEEP'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'stream_out_TLAST'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'stream_out_TREADY'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'stream_out_TSTRB'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'stream_out_TVALID'
+WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading 'mmwave_streamer_mmWaveStreamer_0_0'. These changes may impact your design.
+CRITICAL WARNING: [BD 41-1167] The pin 'stream_out_V_TREADY' is not found on the upgraded version of the cell '/mmWaveStreamer_0'. Its connection to the net 'stream_out_V_TREADY_0_1' has been removed.
+CRITICAL WARNING: [Coretcl 2-1279] The upgrade of 'mmwave_streamer_mmWaveStreamer_0_0' has identified issues that may require user intervention. Please review the upgrade log '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/ip_upgrade.log', and verify that the upgraded IP is correctly configured.
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/mmwave_streamer/mmwave_streamer.bd> 
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/mmwave_streamer/ui/bd_d2c25bd3.ui> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips mmwave_streamer_mmWaveStreamer_0_0] -no_script -sync -force -quiet
+report_ip_status -name ip_status 
+startgroup
+make_bd_pins_external  [get_bd_pins mmWaveStreamer_0/stream_out_TREADY]
+WARNING: [BD 41-1306] The connection to interface pin </mmWaveStreamer_0/stream_out_TREADY> is being overridden by the user with net <stream_out_TREADY_0_1>. This pin will not be connected as a part of interface connection <stream_out>.
+endgroup
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins mmWaveStreamer_0/stream_out]
+endgroup
+delete_bd_objs [get_bd_nets stream_out_TREADY_0_1]
+delete_bd_objs [get_bd_ports stream_out_TREADY_0]
+group_bd_cells hier_0 [get_bd_cells NOT_gate_0] [get_bd_cells points_RAM_0] [get_bd_cells mmWaveStreamer_0] [get_bd_cells UART_RX_0] [get_bd_cells data_parser_0] [get_bd_cells stream_controller_0]
+WARNING: [BD 41-1306] The connection to interface pin </hier_0/mmWaveStreamer_0/ap_idle> is being overridden by the user with net <mmWaveStreamer_0_ap_idle>. This pin will not be connected as a part of interface connection <ap_ctrl>.
+regenerate_bd_layout
+set_property name i_rst_n [get_bd_ports i_in_0]
+set_property name rst_n [get_bd_ports i_rst_n]
+set_property name clk [get_bd_ports clk_0]
+set_property name i_RX_Serial [get_bd_ports i_RX_Serial_0]
+set_property name stream_out_V_TREADY [get_bd_ports stream_out_V_TREADY_0]
+delete_bd_objs [get_bd_nets stream_out_V_TREADY_0_1] [get_bd_ports stream_out_V_TREADY]
+delete_bd_objs [get_bd_nets hier_0/stream_out_V_TREADY_0_1]
+delete_bd_objs [get_bd_nets mmWaveStreamer_0_ap_idle] [get_bd_ports ap_idle_0]
+delete_bd_objs [get_bd_nets hier_0/mmWaveStreamer_0_ap_idle]
+connect_bd_net [get_bd_pins hier_0/mmWaveStreamer_0/ap_idle] [get_bd_pins hier_0/stream_controller_0/idle]
+WARNING: [BD 41-1306] The connection to interface pin </hier_0/mmWaveStreamer_0/ap_idle> is being overridden by the user with net <mmWaveStreamer_0_ap_idle>. This pin will not be connected as a part of interface connection <ap_ctrl>.
+delete_bd_objs [get_bd_pins hier_0/ap_idle_0]
+delete_bd_objs [get_bd_nets i_RX_Serial_0_1]
+undo
+INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_nets i_RX_Serial_0_1]'
+delete_bd_objs [get_bd_pins hier_0/stream_out_V_TREADY_0]
+ipx::create_abstraction_definition DIII user axis_breakout_rtl 1.0
+ipx::create_bus_definition DIII user axis_breakout 1.0
+set_property xml_file_name /home/nm/mmwave-fpga-streamer/src/vhdl/interface_definitions/axis_breakout_rtl.xml [ipx::current_busabs]
+set_property xml_file_name /home/nm/mmwave-fpga-streamer/src/vhdl/interface_definitions/axis_breakout.xml [ipx::current_busdef]
+set_property bus_type_vlnv DIII:user:axis_breakout:1.0 [ipx::current_busabs]
+set_property extends_vlnv xilinx.com:interface:axis:1.0 [ipx::current_busdef]
+ipx::copy_definition_ports_from [lindex [ipx::get_ipfiles -type busabs xilinx.com:interface:axis_rtl:1.0] 0] [ipx::current_busabs]
+ipx::save_abstraction_definition [ipx::current_busabs]
+ipx::save_bus_definition [ipx::current_busdef]
+set_property  ip_repo_paths  {/home/nm/mmwave-fpga-streamer/src/hls /home/nm/mmwave-fpga-streamer/src/vhdl/interface_definitions} [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/hls'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/vhdl/interface_definitions'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+ipx::remove_bus_abstraction_port TID [ipx::current_busabs]
+ipx::remove_bus_abstraction_port TDEST [ipx::current_busabs]
+ipx::remove_bus_abstraction_port TUSER [ipx::current_busabs]
+ipx::save_bus_definition [ipx::current_busdef]
+set_property bus_type_vlnv DIII:user:axis_breakout:1.0 [ipx::current_busabs]
+ipx::save_abstraction_definition [ipx::current_busabs]
+update_ip_catalog -rebuild -repo_path /home/nm/mmwave-fpga-streamer/src/vhdl/interface_definitions
+INFO: [IP_Flow 19-725] Reloaded user IP repository '/home/nm/mmwave-fpga-streamer/src/vhdl/interface_definitions'
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+add_files -norecurse /home/nm/mmwave-fpga-streamer/src/vhdl/axis_breakout.vhd
+update_compile_order -fileset sources_1
+create_bd_cell -type module -reference axis_breakout hier_0/axis_breakout_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'user_axis_breakout' of definition 'DIII:user:axis_breakout:1.0' (from User Repositories).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'interface_axis' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+WARNING: [IP_Flow 19-3158] Bus Interface 'interface_axis': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+CRITICAL WARNING: [IP_Flow 19-3834] Port 'TDATA': Port mapped to the logical port 'TDATA' of 'xilinx.com:interface:axis:1.0' interface must have a width of multiples of 8 bits.  The current port width is '1'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/hls'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/vhdl/interface_definitions'.
+update_module_reference mmwave_streamer_axis_breakout_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'user_axis_breakout' of definition 'DIII:user:axis_breakout:1.0' (from User Repositories).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'interface_axis' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+WARNING: [IP_Flow 19-3158] Bus Interface 'interface_axis': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/hls'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/vhdl/interface_definitions'.
+Upgrading '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/mmwave_streamer/mmwave_streamer.bd'
+INFO: [IP_Flow 19-1972] Upgraded mmwave_streamer_axis_breakout_0_0 from axis_breakout_v1_0 1.0 to axis_breakout_v1_0 1.0
+WARNING: [IP_Flow 19-4706] Upgraded port 'TDATA' width 32 differs from original width 1
+WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading 'mmwave_streamer_axis_breakout_0_0'. These changes may impact your design.
+CRITICAL WARNING: [Coretcl 2-1280] The upgrade of 'mmwave_streamer_axis_breakout_0_0' has identified issues that may require user intervention. Please verify that the instance is correctly configured, and review any upgrade messages.
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/mmwave_streamer/mmwave_streamer.bd> 
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/mmwave_streamer/ui/bd_d2c25bd3.ui> 
+ipx::remove_bus_abstraction_port TDATA [ipx::current_busabs]
+ipx::remove_bus_abstraction_port TSTRB [ipx::current_busabs]
+ipx::remove_bus_abstraction_port TKEEP [ipx::current_busabs]
+ipx::remove_bus_abstraction_port TLAST [ipx::current_busabs]
+ipx::remove_bus_abstraction_port TVALID [ipx::current_busabs]
+ipx::remove_bus_abstraction_port TREADY [ipx::current_busabs]
+ipx::save_bus_definition [ipx::current_busdef]
+set_property bus_type_vlnv DIII:user:axis_breakout:1.0 [ipx::current_busabs]
+ipx::save_abstraction_definition [ipx::current_busabs]
+update_ip_catalog -rebuild -repo_path /home/nm/mmwave-fpga-streamer/src/vhdl/interface_definitions
+INFO: [IP_Flow 19-725] Reloaded user IP repository '/home/nm/mmwave-fpga-streamer/src/vhdl/interface_definitions'
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+delete_bd_objs [get_bd_cells hier_0/axis_breakout_0]
+update_module_reference mmwave_streamer_axis_breakout_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'interface_axis' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+WARNING: [IP_Flow 19-3158] Bus Interface 'interface_axis': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/hls'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/vhdl/interface_definitions'.
+WARNING: [Coretcl 2-176] No IPs found
+ERROR: [Common 17-69] Command failed: No IP specified.  Please specify IP with 'objects'
+create_bd_cell -type module -reference axis_breakout hier_0/axis_breakout_0
+delete_bd_objs [get_bd_intf_nets hier_0/mmWaveStreamer_0_stream_out]
+connect_bd_intf_net [get_bd_intf_pins hier_0/stream_out_0] [get_bd_intf_pins hier_0/axis_breakout_0/interface_axis]
+connect_bd_net [get_bd_pins hier_0/axis_breakout_0/bo_ready] [get_bd_pins hier_0/mmWaveStreamer_0/stream_out_TREADY]
+WARNING: [BD 41-1306] The connection to interface pin </hier_0/mmWaveStreamer_0/stream_out_TREADY> is being overridden by the user with net <axis_breakout_0_bo_ready>. This pin will not be connected as a part of interface connection <stream_out>.
+connect_bd_net [get_bd_pins hier_0/axis_breakout_0/ready_out] [get_bd_pins hier_0/stream_controller_0/ready]
+connect_bd_net [get_bd_pins hier_0/axis_breakout_0/bo_strb] [get_bd_pins hier_0/mmWaveStreamer_0/stream_out_TSTRB]
+WARNING: [BD 41-1306] The connection to interface pin </hier_0/mmWaveStreamer_0/stream_out_TSTRB> is being overridden by the user with net <mmWaveStreamer_0_stream_out_TSTRB>. This pin will not be connected as a part of interface connection <stream_out>.
+connect_bd_net [get_bd_pins hier_0/axis_breakout_0/bo_keep] [get_bd_pins hier_0/mmWaveStreamer_0/stream_out_TKEEP]
+WARNING: [BD 41-1306] The connection to interface pin </hier_0/mmWaveStreamer_0/stream_out_TKEEP> is being overridden by the user with net <mmWaveStreamer_0_stream_out_TKEEP>. This pin will not be connected as a part of interface connection <stream_out>.
+connect_bd_net [get_bd_pins hier_0/axis_breakout_0/bo_last] [get_bd_pins hier_0/mmWaveStreamer_0/stream_out_TLAST]
+WARNING: [BD 41-1306] The connection to interface pin </hier_0/mmWaveStreamer_0/stream_out_TLAST> is being overridden by the user with net <mmWaveStreamer_0_stream_out_TLAST>. This pin will not be connected as a part of interface connection <stream_out>.
+connect_bd_net [get_bd_pins hier_0/axis_breakout_0/bo_data] [get_bd_pins hier_0/mmWaveStreamer_0/stream_out_TDATA]
+WARNING: [BD 41-1306] The connection to interface pin </hier_0/mmWaveStreamer_0/stream_out_TDATA> is being overridden by the user with net <mmWaveStreamer_0_stream_out_TDATA>. This pin will not be connected as a part of interface connection <stream_out>.
+connect_bd_net [get_bd_pins hier_0/axis_breakout_0/bo_valid] [get_bd_pins hier_0/mmWaveStreamer_0/stream_out_TVALID]
+WARNING: [BD 41-1306] The connection to interface pin </hier_0/mmWaveStreamer_0/stream_out_TVALID> is being overridden by the user with net <mmWaveStreamer_0_stream_out_TVALID>. This pin will not be connected as a part of interface connection <stream_out>.
+set_property name stream_out [get_bd_intf_ports stream_out_0]
+regenerate_bd_layout
+regenerate_bd_layout
+validate_bd_design
+CRITICAL WARNING: [BD 41-968] AXI interface port /stream_out is not associated to any clock port. It may not work correctly. Please update ASSOCIATED_BUSIF parameter of a clock port to include this interface port. If this is a user packaged IP please update the IP in the IP Packager.
+CRITICAL WARNING: [BD 41-967] AXI interface pin /hier_0/axis_breakout_0/interface_axis is not associated to any clock pin. It may not work correctly.
+update_module_reference {mmwave_streamer_axis_breakout_0_0 mmwave_streamer_axis_breakout_0_1}
+INFO: [IP_Flow 19-5107] Inferred bus interface 'interface_axis' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'i_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+WARNING: [IP_Flow 19-3158] Bus Interface 'interface_axis': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+WARNING: [IP_Flow 19-5661] Bus Interface 'i_clk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/hls'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/vhdl/interface_definitions'.
+Upgrading '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/mmwave_streamer/mmwave_streamer.bd'
+INFO: [IP_Flow 19-1972] Upgraded mmwave_streamer_axis_breakout_0_1 from axis_breakout_v1_0 1.0 to axis_breakout_v1_0 1.0
+WARNING: [IP_Flow 19-4697] Upgrade has added interface 'i_clk' (xilinx.com:signal:clock:1.0)
+WARNING: [IP_Flow 19-3670] Detected external interface differences while upgrading 'mmwave_streamer_axis_breakout_0_1'.
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'i_clk'
+WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading 'mmwave_streamer_axis_breakout_0_1'. These changes may impact your design.
+CRITICAL WARNING: [Coretcl 2-1280] The upgrade of 'mmwave_streamer_axis_breakout_0_1' has identified issues that may require user intervention. Please verify that the instance is correctly configured, and review any upgrade messages.
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/mmwave_streamer/mmwave_streamer.bd> 
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/mmwave_streamer/ui/bd_d2c25bd3.ui> 
+connect_bd_net [get_bd_pins hier_0/clk_0] [get_bd_pins hier_0/axis_breakout_0/i_clk]
+validate_bd_design
+CRITICAL WARNING: [BD 41-968] AXI interface port /stream_out is not associated to any clock port. It may not work correctly. Please update ASSOCIATED_BUSIF parameter of a clock port to include this interface port. If this is a user packaged IP please update the IP in the IP Packager.
+CRITICAL WARNING: [BD 41-967] AXI interface pin /hier_0/axis_breakout_0/interface_axis is not associated to any clock pin. It may not work correctly.
+disconnect_bd_net /hier_0/clk_0_1 [get_bd_pins hier_0/axis_breakout_0/i_clk]
+update_module_reference mmwave_streamer_axis_breakout_0_1
+INFO: [IP_Flow 19-5107] Inferred bus interface 'interface_axis' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+WARNING: [IP_Flow 19-3158] Bus Interface 'interface_axis': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/hls'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/vhdl/interface_definitions'.
+Upgrading '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/mmwave_streamer/mmwave_streamer.bd'
+INFO: [IP_Flow 19-1972] Upgraded mmwave_streamer_axis_breakout_0_1 from axis_breakout_v1_0 1.0 to axis_breakout_v1_0 1.0
+WARNING: [IP_Flow 19-4699] Upgrade has removed interface 'i_clk'
+WARNING: [IP_Flow 19-3670] Detected external interface differences while upgrading 'mmwave_streamer_axis_breakout_0_1'.
+WARNING: [IP_Flow 19-4700] Upgrade has removed port 'i_clk'
+WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading 'mmwave_streamer_axis_breakout_0_1'. These changes may impact your design.
+CRITICAL WARNING: [Coretcl 2-1280] The upgrade of 'mmwave_streamer_axis_breakout_0_1' has identified issues that may require user intervention. Please verify that the instance is correctly configured, and review any upgrade messages.
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/mmwave_streamer/mmwave_streamer.bd> 
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/mmwave_streamer/ui/bd_d2c25bd3.ui> 
+set_property CONFIG.CLK_DOMAIN clk [get_bd_intf_pins /hier_0/axis_breakout_0/interface_axis]
+set_property name clk [get_bd_pins hier_0/clk_0]
+validate_bd_design
+CRITICAL WARNING: [BD 41-968] AXI interface port /stream_out is not associated to any clock port. It may not work correctly. Please update ASSOCIATED_BUSIF parameter of a clock port to include this interface port. If this is a user packaged IP please update the IP in the IP Packager.
+CRITICAL WARNING: [BD 41-967] AXI interface pin /hier_0/axis_breakout_0/interface_axis is not associated to any clock pin. It may not work correctly.
+set_property CONFIG.CLK_DOMAIN {} [get_bd_intf_pins /hier_0/axis_breakout_0/interface_axis]
+delete_bd_objs [get_bd_nets hier_0/mmWaveStreamer_0_stream_out_TVALID] [get_bd_nets hier_0/mmWaveStreamer_0_stream_out_TDATA] [get_bd_intf_nets hier_0/axis_breakout_0_interface_axis] [get_bd_nets hier_0/mmWaveStreamer_0_stream_out_TLAST] [get_bd_nets hier_0/axis_breakout_0_bo_ready] [get_bd_nets hier_0/mmWaveStreamer_0_stream_out_TKEEP] [get_bd_nets hier_0/mmWaveStreamer_0_stream_out_TSTRB] [get_bd_nets hier_0/axis_breakout_0_ready_out] [get_bd_cells hier_0/axis_breakout_0]
+startgroup
+make_bd_pins_external  [get_bd_pins hier_0/mmWaveStreamer_0/stream_out_TREADY]
+WARNING: [BD 41-1306] The connection to interface pin </hier_0/mmWaveStreamer_0/stream_out_TREADY> is being overridden by the user with net <stream_out_TREADY_0_1>. This pin will not be connected as a part of interface connection <stream_out>.
+endgroup
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins hier_0/mmWaveStreamer_0/stream_out]
+endgroup
+delete_bd_objs [get_bd_intf_nets mmWaveStreamer_0_stream_out] [get_bd_intf_ports stream_out]
+delete_bd_objs [get_bd_intf_pins hier_0/stream_out_0]
+set_property name stream_out [get_bd_intf_ports stream_out_0]
+connect_bd_net [get_bd_pins hier_0/stream_out_TREADY_0] [get_bd_pins hier_0/stream_controller_0/ready]
+save_bd_design
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/mmwave_streamer/mmwave_streamer.bd> 
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/mmwave_streamer/ui/bd_d2c25bd3.ui> 
+validate_bd_design
+create_bd_design "sim"
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/sim/sim.bd> 
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type module -reference stream_controller stream_controller_0
+create_bd_cell -type module -reference points_RAM points_RAM_0
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:hls:mmWaveStreamer:1.0 mmWaveStreamer_0
+endgroup
+connect_bd_net [get_bd_pins points_RAM_0/o_data_out] [get_bd_pins mmWaveStreamer_0/points_in_q0]
+connect_bd_net [get_bd_pins mmWaveStreamer_0/ap_clk] [get_bd_pins points_RAM_0/i_Clk]
+connect_bd_net [get_bd_pins stream_controller_0/clk] [get_bd_pins mmWaveStreamer_0/ap_clk]
+disconnect_bd_net /Net [get_bd_pins stream_controller_0/clk]
+startgroup
+make_bd_pins_external  [get_bd_pins stream_controller_0/clk]
+endgroup
+connect_bd_net [get_bd_ports clk_0] [get_bd_pins mmWaveStreamer_0/ap_clk]
+create_bd_cell -type module -reference NOT_gate NOT_gate_0
+startgroup
+make_bd_pins_external  [get_bd_pins NOT_gate_0/i_in]
+endgroup
+startgroup
+connect_bd_net [get_bd_pins NOT_gate_0/o_out] [get_bd_pins points_RAM_0/i_Rst]
+endgroup
+connect_bd_net [get_bd_ports i_in_0] [get_bd_pins mmWaveStreamer_0/ap_rst_n]
+connect_bd_net [get_bd_ports i_in_0] [get_bd_pins stream_controller_0/rst_n]
+startgroup
+make_bd_pins_external  [get_bd_pins points_RAM_0/i_data_in]
+endgroup
+connect_bd_net [get_bd_pins points_RAM_0/i_point_addr] [get_bd_pins mmWaveStreamer_0/points_in_address0]
+connect_bd_net [get_bd_pins points_RAM_0/i_ce] [get_bd_pins mmWaveStreamer_0/points_in_ce0]
+startgroup
+make_bd_pins_external  [get_bd_pins points_RAM_0/i_set_and_rdy]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins stream_controller_0/ready]
+endgroup
+connect_bd_net [get_bd_ports ready_0] [get_bd_pins mmWaveStreamer_0/stream_out_TREADY]
+WARNING: [BD 41-1306] The connection to interface pin </mmWaveStreamer_0/stream_out_TREADY> is being overridden by the user with net </ready_0_1>. This pin will not be connected as a part of interface connection <stream_out>.
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins mmWaveStreamer_0/stream_out]
+endgroup
+connect_bd_net [get_bd_pins mmWaveStreamer_0/ap_start] [get_bd_pins stream_controller_0/start]
+WARNING: [BD 41-1306] The connection to interface pin </mmWaveStreamer_0/ap_start> is being overridden by the user with net <stream_controller_0_start>. This pin will not be connected as a part of interface connection <ap_ctrl>.
+connect_bd_net [get_bd_pins stream_controller_0/idle] [get_bd_pins mmWaveStreamer_0/ap_idle]
+WARNING: [BD 41-1306] The connection to interface pin </mmWaveStreamer_0/ap_idle> is being overridden by the user with net <mmWaveStreamer_0_ap_idle>. This pin will not be connected as a part of interface connection <ap_ctrl>.
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins mmWaveStreamer_0/ap_ctrl]
+endgroup
+save_bd_design
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/sim/sim.bd> 
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/sim/ui/bd_ce55f177.ui> 
+regenerate_bd_layout
+delete_bd_objs [get_bd_intf_nets ap_ctrl_0_1] [get_bd_intf_ports ap_ctrl_0]
+save_bd_design
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/sim/sim.bd> 
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/sim/ui/bd_ce55f177.ui> 
+regenerate_bd_layout
+validate_bd_design
+set_property name rst_n [get_bd_ports i_in_0]
+set_property name clk [get_bd_ports clk_0]
+set_property name i_data_in [get_bd_ports i_data_in_0]
+set_property name i_set_and_rdy [get_bd_ports i_set_and_rdy_0]
+set_property name ready [get_bd_ports ready_0]
+set_property name stream_out [get_bd_intf_ports stream_out_0]
+save_bd_design
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/sim/sim.bd> 
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/sim/ui/bd_ce55f177.ui> 
+make_wrapper -files [get_files /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/sim/sim.bd] -top
+WARNING: [BD 41-2121] Port clk associated reset port i_in_0 does not exist
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/sim/sim.bd> 
+VHDL Output written to : /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/sim/synth/sim.vhd
+VHDL Output written to : /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/sim/sim/sim.vhd
+VHDL Output written to : /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/sim/hdl/sim_wrapper.vhd
+add_files -norecurse /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/sim/hdl/sim_wrapper.vhd
+update_compile_order -fileset sources_1
+set_property top sim_wrapper [current_fileset]
+set_property top sim_wrapper [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sources_1
+current_bd_design [get_bd_designs mmwave_streamer]
+save_bd_design
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/mmwave_streamer/mmwave_streamer.bd> 
+current_bd_design [get_bd_designs sim]
+launch_runs synth_1 -jobs 16
+INFO: [BD 41-1662] The design 'sim.bd' is already validated. Therefore parameter propagation will not be re-run.
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/sim/sim.bd> 
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/sim/ui/bd_ce55f177.ui> 
+VHDL Output written to : /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/sim/synth/sim.vhd
+VHDL Output written to : /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/sim/sim/sim.vhd
+VHDL Output written to : /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/sim/hdl/sim_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block stream_controller_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block points_RAM_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block mmWaveStreamer_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block NOT_gate_0 .
+Exporting to file /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/sim/hw_handoff/sim.hwh
+Generated Block Design Tcl file /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/sim/hw_handoff/sim_bd.tcl
+Generated Hardware Definition File /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/sim/synth/sim.hwdef
+[Thu Feb 24 10:15:51 2022] Launched sim_points_RAM_0_0_synth_1, sim_stream_controller_0_0_synth_1, sim_mmWaveStreamer_0_0_synth_1, sim_NOT_gate_0_0_synth_1...
+Run output will be captured here:
+sim_points_RAM_0_0_synth_1: /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/sim_points_RAM_0_0_synth_1/runme.log
+sim_stream_controller_0_0_synth_1: /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/sim_stream_controller_0_0_synth_1/runme.log
+sim_mmWaveStreamer_0_0_synth_1: /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/sim_mmWaveStreamer_0_0_synth_1/runme.log
+sim_NOT_gate_0_0_synth_1: /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/sim_NOT_gate_0_0_synth_1/runme.log
+[Thu Feb 24 10:15:51 2022] Launched synth_1...
+Run output will be captured here: /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:18 ; elapsed = 00:00:07 . Memory (MB): peak = 8340.227 ; gain = 101.047 ; free physical = 12462 ; free virtual = 23734
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'sim_wrapper' in fileset 'sim_1'...
+WARNING: [SIM-utils-52] IP component XML file does not exist: '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/ip/mmwave_streamer_AND_gate_0_0/mmwave_streamer_AND_gate_0_0.xml'
+WARNING: [SIM-utils-52] IP component XML file does not exist: '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/ip/mmwave_streamer_axis_breakout_0_0/mmwave_streamer_axis_breakout_0_0.xml'
+WARNING: [SIM-utils-52] IP component XML file does not exist: '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/ip/mmwave_streamer_axis_breakout_0_1/mmwave_streamer_axis_breakout_0_1.xml'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj sim_wrapper_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/nm/mmwave-fpga-streamer/src/vhdl/stream_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'stream_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/nm/mmwave-fpga-streamer/src/vhdl/points_RAM.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'points_RAM'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/nm/mmwave-fpga-streamer/src/vhdl/NOT_gate.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'NOT_gate'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.ip_user_files/bd/sim/ip/sim_stream_controller_0_0/sim/sim_stream_controller_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'sim_stream_controller_0_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.ip_user_files/bd/sim/ip/sim_points_RAM_0_0/sim/sim_points_RAM_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'sim_points_RAM_0_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/sim/ipshared/6361/hdl/vhdl/mmWaveStreamer_points_buffer_V.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mmWaveStreamer_points_buffer_V_ram'
+INFO: [VRFC 10-3107] analyzing entity 'mmWaveStreamer_points_buffer_V'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/sim/ipshared/6361/hdl/vhdl/mmWaveStreamer_regslice_both.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mmWaveStreamer_regslice_both'
+INFO: [VRFC 10-3107] analyzing entity 'mmWaveStreamer_regslice_both_w1'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/sim/ipshared/6361/hdl/vhdl/mmWaveStreamer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mmWaveStreamer'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.ip_user_files/bd/sim/ip/sim_mmWaveStreamer_0_0/sim/sim_mmWaveStreamer_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'sim_mmWaveStreamer_0_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.ip_user_files/bd/sim/ip/sim_NOT_gate_0_0/sim/sim_NOT_gate_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'sim_NOT_gate_0_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.ip_user_files/bd/sim/sim/sim.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'sim'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/sim/hdl/sim_wrapper.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'sim_wrapper'
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.sim/sim_1/behav/xsim'
+xelab -wto 245477d5cb874d669cf02dea9b0f5e16 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip -L xpm --snapshot sim_wrapper_behav xil_defaultlib.sim_wrapper -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto 245477d5cb874d669cf02dea9b0f5e16 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip -L xpm --snapshot sim_wrapper_behav xil_defaultlib.sim_wrapper -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.NOT_gate [not_gate_default]
+Compiling architecture sim_not_gate_0_0_arch of entity xil_defaultlib.sim_NOT_gate_0_0 [sim_not_gate_0_0_default]
+Compiling architecture rtl of entity xil_defaultlib.mmWaveStreamer_points_buffer_V_ram [mmwavestreamer_points_buffer_v_r...]
+Compiling architecture arch of entity xil_defaultlib.mmWaveStreamer_points_buffer_V [mmwavestreamer_points_buffer_v_d...]
+Compiling architecture behav of entity xil_defaultlib.mmWaveStreamer_regslice_both [mmwavestreamer_regslice_both_def...]
+Compiling architecture behav of entity xil_defaultlib.mmWaveStreamer_regslice_both [\mmWaveStreamer_regslice_both(da...]
+Compiling architecture behav of entity xil_defaultlib.mmWaveStreamer_regslice_both [\mmWaveStreamer_regslice_both(da...]
+Compiling architecture behav of entity xil_defaultlib.mmWaveStreamer [mmwavestreamer_default]
+Compiling architecture sim_mmwavestreamer_0_0_arch of entity xil_defaultlib.sim_mmWaveStreamer_0_0 [sim_mmwavestreamer_0_0_default]
+Compiling architecture behavioral of entity xil_defaultlib.points_RAM [points_ram_default]
+Compiling architecture sim_points_ram_0_0_arch of entity xil_defaultlib.sim_points_RAM_0_0 [sim_points_ram_0_0_default]
+Compiling architecture behavioral of entity xil_defaultlib.stream_controller [stream_controller_default]
+Compiling architecture sim_stream_controller_0_0_arch of entity xil_defaultlib.sim_stream_controller_0_0 [sim_stream_controller_0_0_defaul...]
+Compiling architecture structure of entity xil_defaultlib.sim [sim_default]
+Compiling architecture structure of entity xil_defaultlib.sim_wrapper
+Built simulation snapshot sim_wrapper_behav
+
+****** Webtalk v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.sim/sim_1/behav/xsim/xsim.dir/sim_wrapper_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Feb 24 10:17:50 2022...
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sim_wrapper_behav -key {Behavioral:sim_1:Functional:sim_wrapper} -tclbatch {sim_wrapper.tcl} -protoinst "protoinst_files/sim.protoinst" -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/sim.protoinst
+INFO: [Wavedata 42-564]   Found protocol instance at /sim_wrapper/sim_i//mmWaveStreamer_0/stream_out
+Time resolution is 1 ps
+source sim_wrapper.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sim_wrapper_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 8515.777 ; gain = 86.824 ; free physical = 12324 ; free virtual = 23621
+add_force {/sim_wrapper/clk} -radix hex {0 0ns} {1 5000ps} -repeat_every 10000ps
+add_force {/sim_wrapper/i_data_in} -radix hex {11112222333344445555666677778888 0ns}
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+add_force {/sim_wrapper/ready} -radix hex {0 0ns}
+add_force {/sim_wrapper/rst_n} -radix hex {1 0ns}
+run 10 us
+open_bd_design {/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/sim/sim.bd}
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix bin {11 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_data_in} -radix hex {99998888777766665555444433332222 0ns}
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix bin {11 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_data_in} -radix hex {77778888999944445555666611112222 0ns}
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {3 0ns}
+run 10 ns
+add_force {/sim_wrapper/ready} -radix hex {1 0ns}
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+run 10000 ns
+open_bd_design {/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/sim/sim.bd}
+launch_simulation -mode post-synthesis -type functional
+Command: launch_simulation -mode post-synthesis -type functional
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.sim/sim_1/synth/func/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xczu3eg-sbva484-1-i
+INFO: [Device 21-403] Loading part xczu3eg-sbva484-1-i
+INFO: [Project 1-454] Reading design checkpoint '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/sim/ip/sim_NOT_gate_0_0/sim_NOT_gate_0_0.dcp' for cell 'sim_i/NOT_gate_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/sim/ip/sim_mmWaveStreamer_0_0/sim_mmWaveStreamer_0_0.dcp' for cell 'sim_i/mmWaveStreamer_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/sim/ip/sim_points_RAM_0_0/sim_points_RAM_0_0.dcp' for cell 'sim_i/points_RAM_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/sim/ip/sim_stream_controller_0_0/sim_stream_controller_0_0.dcp' for cell 'sim_i/stream_controller_0'
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 8708.062 ; gain = 0.000 ; free physical = 11803 ; free virtual = 23101
+INFO: [Netlist 29-17] Analyzing 1803 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-43] Netlist 'sim_wrapper' is not ideal for floorplanning, since the cellview 'sim_points_RAM_0_0_points_RAM' defined in file 'sim_points_RAM_0_0.edf' contains large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-479] Netlist was created with Vivado 2020.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 8740.078 ; gain = 0.000 ; free physical = 11703 ; free virtual = 23001
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 261 instances were transformed.
+  IBUF => IBUF (IBUFCTRL, INBUF): 133 instances
+  RAM32X1S => RAM32X1S (RAMS32): 128 instances
+
+open_run: Time (s): cpu = 00:00:17 ; elapsed = 00:00:11 . Memory (MB): peak = 9007.227 ; gain = 491.449 ; free physical = 11537 ; free virtual = 22835
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-26] write_vhdl -mode funcsim -nolib -force -file "/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.sim/sim_1/synth/func/xsim/sim_wrapper_func_synth.vhd"
+INFO: [SIM-utils-36] Netlist generated:/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.sim/sim_1/synth/func/xsim/sim_wrapper_func_synth.vhd
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.sim/sim_1/synth/func/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'sim_wrapper' in fileset 'sim_1'...
+WARNING: [SIM-utils-52] IP component XML file does not exist: '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/ip/mmwave_streamer_AND_gate_0_0/mmwave_streamer_AND_gate_0_0.xml'
+WARNING: [SIM-utils-52] IP component XML file does not exist: '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/ip/mmwave_streamer_axis_breakout_0_0/mmwave_streamer_axis_breakout_0_0.xml'
+WARNING: [SIM-utils-52] IP component XML file does not exist: '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/ip/mmwave_streamer_axis_breakout_0_1/mmwave_streamer_axis_breakout_0_1.xml'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.sim/sim_1/synth/func/xsim'
+xvhdl --incr --relax -prj sim_wrapper_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.sim/sim_1/synth/func/xsim/sim_wrapper_func_synth.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'sim_NOT_gate_0_0'
+INFO: [VRFC 10-3107] analyzing entity 'sim_mmWaveStreamer_0_0_mmWaveStreamer_points_buffer_V_ram'
+INFO: [VRFC 10-3107] analyzing entity 'sim_mmWaveStreamer_0_0_mmWaveStreamer_regslice_both'
+INFO: [VRFC 10-3107] analyzing entity '\sim_mmWaveStreamer_0_0_mmWaveStreamer_regslice_both__parameterized3\'
+INFO: [VRFC 10-3107] analyzing entity 'sim_points_RAM_0_0_points_RAM'
+INFO: [VRFC 10-3107] analyzing entity 'sim_stream_controller_0_0_stream_controller'
+INFO: [VRFC 10-3107] analyzing entity 'sim_mmWaveStreamer_0_0_mmWaveStreamer_points_buffer_V'
+INFO: [VRFC 10-3107] analyzing entity 'sim_points_RAM_0_0'
+INFO: [VRFC 10-3107] analyzing entity 'sim_stream_controller_0_0'
+INFO: [VRFC 10-3107] analyzing entity 'sim_mmWaveStreamer_0_0_mmWaveStreamer'
+INFO: [VRFC 10-3107] analyzing entity 'sim_mmWaveStreamer_0_0'
+INFO: [VRFC 10-3107] analyzing entity 'sim'
+INFO: [VRFC 10-3107] analyzing entity 'sim_wrapper'
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.sim/sim_1/synth/func/xsim'
+xelab -wto 245477d5cb874d669cf02dea9b0f5e16 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot sim_wrapper_func_synth xil_defaultlib.sim_wrapper -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto 245477d5cb874d669cf02dea9b0f5e16 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot sim_wrapper_func_synth xil_defaultlib.sim_wrapper -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling architecture ibuf_v of entity unisim.IBUF [\IBUF(1,9)(1,1)(1,4)(1,7)\]
+Compiling architecture lut1_v of entity unisim.LUT1 [\LUT1(init="0001")(0,3)\]
+Compiling architecture structure of entity xil_defaultlib.sim_NOT_gate_0_0 [sim_not_gate_0_0_default]
+Compiling architecture gnd_v of entity unisim.GND [gnd_default]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="0100010101110101")(0...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00110011010110101100...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="01000111011101001000...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="11111011000010000000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11000011110011001010...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11100010111000100001...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="01110111011101110101...]
+Compiling architecture fdre_v of entity unisim.FDRE [fdre_default]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="11111111010011000100...]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="10000000")(0,7)\]
+Compiling architecture fdse_v of entity unisim.FDSE [fdse_default]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="01110111011101110111...]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="01000000")(0,7)\]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2(init="0010")(0,3)\]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11001111111111111010...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1010101001101010")(0...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="10100110101010101010...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00000000000000000000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="01110000011101110111...]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="10111111")(0,7)\]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2(init="0110")(0,3)\]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2(init="1000")(0,3)\]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="01101010")(0,7)\]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00000000100000000000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00000000000000000111...]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="10111000")(0,7)\]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00000000000000000000...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="11111111101111110000...]
+Compiling architecture ram32x1s_v of entity unisim.RAM32X1S [ram32x1s_default]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="00001000")(0,7)\]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11101010001010101110...]
+Compiling architecture structure of entity xil_defaultlib.sim_mmWaveStreamer_0_0_mmWaveStreamer_points_buffer_V_ram [sim_mmwavestreamer_0_0_mmwavestr...]
+Compiling architecture structure of entity xil_defaultlib.sim_mmWaveStreamer_0_0_mmWaveStreamer_points_buffer_V [sim_mmwavestreamer_0_0_mmwavestr...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="10101111101111111111...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="10111000101110111011...]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="01000101")(0,7)\]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="10001010")(0,7)\]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="01111000")(0,7)\]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="10001010101010101000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="10101010101010101010...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="0001111111111111")(0...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1110000000000000")(0...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1011101111111011")(0...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="11111011000000000000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="10001111000000001111...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11111111111111111111...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11111111111111111000...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00000000000000000100...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11111111111111110001...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="10101010101110101010...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11110000111110001111...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="0000100010001000")(0...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="10101010100010101010...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="01110111011100000000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11011101000000011100...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1010101010001010")(0...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1010001000100010")(0...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="10101010101010100000...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="0100000000000000")(0...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00000000000000000000...]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="11101010")(0,7)\]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="10101100")(0,7)\]
+Compiling architecture structure of entity xil_defaultlib.sim_mmWaveStreamer_0_0_mmWaveStreamer_regslice_both [sim_mmwavestreamer_0_0_mmwavestr...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11111000111111111111...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="10001111111111111000...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="10100010101010101000...]
+Compiling architecture structure of entity xil_defaultlib.\sim_mmWaveStreamer_0_0_mmWaveStreamer_regslice_both__parameterized3\ [\sim_mmWaveStreamer_0_0_mmWaveSt...]
+Compiling architecture structure of entity xil_defaultlib.sim_mmWaveStreamer_0_0_mmWaveStreamer [sim_mmwavestreamer_0_0_mmwavestr...]
+Compiling architecture vcc_v of entity unisim.VCC [vcc_default]
+Compiling architecture structure of entity xil_defaultlib.sim_mmWaveStreamer_0_0 [sim_mmwavestreamer_0_0_default]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="01000100010101000100...]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2(init="0111")(0,3)\]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00000000111111010000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="10101010110011001010...]
+Compiling architecture muxf8_v of entity unisim.MUXF8 [muxf8_default]
+Compiling architecture muxf7_v of entity unisim.MUXF7 [muxf7_default]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="10101111101000001100...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00000000000000000010...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00000000000000001000...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="0000000000000001")(0...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="0000000100000000")(0...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="0001000000000000")(0...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="0000000000000100")(0...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="0000010000000000")(0...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00000000000000000000...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1000000000000000")(0...]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="11111101")(0,7)\]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00000000000000000000...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00000000000000010000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00000000000010000000...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1110111100000000")(0...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="0101010001010101")(0...]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2(init="0001")(0,3)\]
+Compiling architecture carry8_v of entity unisim.CARRY8 [\CARRY8(1,10)\]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11111111111111111111...]
+Compiling architecture fdre_v of entity unisim.FDRE [\FDRE(init='1')\]
+Compiling architecture structure of entity xil_defaultlib.sim_points_RAM_0_0_points_RAM [sim_points_ram_0_0_points_ram_de...]
+Compiling architecture structure of entity xil_defaultlib.sim_points_RAM_0_0 [sim_points_ram_0_0_default]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="0111111110000000")(0...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="01111111111111111000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="01111111111111111111...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="0000000000001000")(0...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00000000000000010001...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="10000000000000000000...]
+Compiling architecture fdce_v of entity unisim.FDCE [fdce_default]
+Compiling architecture ldce_v of entity unisim.LDCE [\LDCE(init='1')\]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11111111111111111111...]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="00010000")(0,7)\]
+Compiling architecture ldce_v of entity unisim.LDCE [ldce_default]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="0111011110000000")(0...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11111111101010001010...]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="00011111")(0,7)\]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11111111111111111111...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1111111111111101")(0...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11111111111011111111...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="0000001010010000")(0...]
+Compiling architecture structure of entity xil_defaultlib.sim_stream_controller_0_0_stream_controller [sim_stream_controller_0_0_stream...]
+Compiling architecture structure of entity xil_defaultlib.sim_stream_controller_0_0 [sim_stream_controller_0_0_defaul...]
+Compiling architecture structure of entity xil_defaultlib.sim [sim_default]
+Compiling architecture obuf_v of entity unisim.OBUF [\OBUF(1,9)(1,7)(1,4)\]
+Compiling architecture structure of entity xil_defaultlib.sim_wrapper
+Built simulation snapshot sim_wrapper_func_synth
+
+****** Webtalk v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.sim/sim_1/synth/func/xsim/xsim.dir/sim_wrapper_func_synth/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Feb 24 10:25:54 2022...
+run_program: Time (s): cpu = 00:00:42 ; elapsed = 00:00:18 . Memory (MB): peak = 9754.297 ; gain = 747.070 ; free physical = 10656 ; free virtual = 21990
+INFO: [USF-XSim-69] 'elaborate' step finished in '19' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.sim/sim_1/synth/func/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sim_wrapper_func_synth -key {Post-Synthesis:sim_1:Functional:sim_wrapper} -tclbatch {sim_wrapper.tcl} -protoinst "protoinst_files/sim.protoinst" -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/sim.protoinst
+INFO: [Wavedata 42-564]   Found protocol instance at /sim_wrapper/sim_i//mmWaveStreamer_0/stream_out
+Time resolution is 1 ps
+source sim_wrapper.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sim_wrapper_func_synth' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:01:14 ; elapsed = 00:00:35 . Memory (MB): peak = 10307.594 ; gain = 1791.816 ; free physical = 10374 ; free virtual = 21709
+add_force {/sim_wrapper/clk} -radix hex {0 0ns} {1 5000ps} -repeat_every 10000ps
+force31
+add_force {/sim_wrapper/i_data_in} -radix hex {11112222333344445555666677778888 0ns}
+force32
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+force33
+add_force {/sim_wrapper/ready} -radix hex {0 0ns}
+force34
+add_force {/sim_wrapper/rst_n} -radix hex {1 0ns}
+force35
+run 10 us
+open_bd_design {/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/sim/sim.bd}
+sim
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+force36
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+force37
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+force38
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+force39
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix bin {11 0ns}
+force40
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+force41
+run 10 ns
+add_force {/sim_wrapper/i_data_in} -radix hex {99998888777766665555444433332222 0ns}
+force42
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+force43
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+force44
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+force45
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+force46
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix bin {11 0ns}
+force47
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+force48
+run 10 ns
+add_force {/sim_wrapper/i_data_in} -radix hex {77778888999944445555666611112222 0ns}
+force49
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+force50
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+force51
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+force52
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+force53
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {3 0ns}
+force54
+run 10 ns
+add_force {/sim_wrapper/ready} -radix hex {1 0ns}
+force55
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+force56
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+force57
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+force58
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {1 0ns}
+force59
+run 10 ns
+add_force {/sim_wrapper/i_set_and_rdy} -radix hex {0 0ns}
+force60
+run 10000 ns
+open_bd_design {/home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/mmwave_streamer/mmwave_streamer.bd}
+make_wrapper -files [get_files /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/mmwave_streamer/mmwave_streamer.bd] -top
+INFO: [BD 41-1662] The design 'mmwave_streamer.bd' is already validated. Therefore parameter propagation will not be re-run.
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/mmwave_streamer/mmwave_streamer.bd> 
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/mmwave_streamer/ui/bd_d2c25bd3.ui> 
+VHDL Output written to : /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/synth/mmwave_streamer.vhd
+VHDL Output written to : /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/sim/mmwave_streamer.vhd
+VHDL Output written to : /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/hdl/mmwave_streamer_wrapper.vhd
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/hls'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/vhdl/interface_definitions'.
+add_files -norecurse /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/hdl/mmwave_streamer_wrapper.vhd
+update_compile_order -fileset sources_1
+set_property top mmwave_streamer_wrapper [current_fileset]
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+INFO: [BD 41-1662] The design 'mmwave_streamer.bd' is already validated. Therefore parameter propagation will not be re-run.
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/mmwave_streamer/mmwave_streamer.bd> 
+Wrote  : </home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.srcs/sources_1/bd/mmwave_streamer/ui/bd_d2c25bd3.ui> 
+VHDL Output written to : /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/synth/mmwave_streamer.vhd
+VHDL Output written to : /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/sim/mmwave_streamer.vhd
+VHDL Output written to : /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/hdl/mmwave_streamer_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block hier_0/mmWaveStreamer_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block hier_0/points_RAM_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block hier_0/data_parser_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block hier_0/UART_RX_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block hier_0/NOT_gate_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block hier_0/stream_controller_0 .
+Exporting to file /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/hw_handoff/mmwave_streamer.hwh
+Generated Block Design Tcl file /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/hw_handoff/mmwave_streamer_bd.tcl
+Generated Hardware Definition File /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.gen/sources_1/bd/mmwave_streamer/synth/mmwave_streamer.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP mmwave_streamer_mmWaveStreamer_0_0, cache-ID = 6af582433eeb581c; cache size = 0.600 MB.
+[Thu Feb 24 10:31:58 2022] Launched mmwave_streamer_NOT_gate_0_0_synth_1, mmwave_streamer_stream_controller_0_0_synth_1, mmwave_streamer_points_RAM_0_0_synth_1, mmwave_streamer_data_parser_0_0_synth_1, mmwave_streamer_UART_RX_0_0_synth_1...
+Run output will be captured here:
+mmwave_streamer_NOT_gate_0_0_synth_1: /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/mmwave_streamer_NOT_gate_0_0_synth_1/runme.log
+mmwave_streamer_stream_controller_0_0_synth_1: /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/mmwave_streamer_stream_controller_0_0_synth_1/runme.log
+mmwave_streamer_points_RAM_0_0_synth_1: /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/mmwave_streamer_points_RAM_0_0_synth_1/runme.log
+mmwave_streamer_data_parser_0_0_synth_1: /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/mmwave_streamer_data_parser_0_0_synth_1/runme.log
+mmwave_streamer_UART_RX_0_0_synth_1: /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/mmwave_streamer_UART_RX_0_0_synth_1/runme.log
+[Thu Feb 24 10:31:59 2022] Launched synth_1...
+Run output will be captured here: /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:20 ; elapsed = 00:00:10 . Memory (MB): peak = 10415.641 ; gain = 53.051 ; free physical = 10490 ; free virtual = 21828
+launch_runs impl_1 -jobs 16
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Thu Feb 24 10:34:41 2022] Launched impl_1...
+Run output will be captured here: /home/nm/mmwave-fpga-streamer/src/vhdl/mmwave-streamer/mmwave-streamer.runs/impl_1/runme.log
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+ipx::package_project -root_dir /home/nm/mmwave-fpga-streamer/src/vhdl/ip -vendor user.org -library user -taxonomy /UserIP -module mmwave_streamer -import_files -force
+INFO: [BD 41-1637] Generated targets are already up-to-date for block design 'mmwave_streamer' - hence not re-generating.
+CRITICAL WARNING: [IP_Flow 19-5234] Found an invalid attribute: 'Misformed interface info attr: xilinx.com:interface:axis:1.0 stream_out'
+CRITICAL WARNING: [IP_Flow 19-5234] Found an invalid attribute: 'Misformed interface info attr: xilinx.com:interface:axis:1.0 stream_out'
+CRITICAL WARNING: [IP_Flow 19-5234] Found an invalid attribute: 'Misformed interface info attr: xilinx.com:interface:axis:1.0 stream_out'
+CRITICAL WARNING: [IP_Flow 19-5234] Found an invalid attribute: 'Misformed interface info attr: xilinx.com:interface:axis:1.0 stream_out'
+CRITICAL WARNING: [IP_Flow 19-5234] Found an invalid attribute: 'Misformed interface info attr: xilinx.com:interface:axis:1.0 stream_out'
+INFO: [IP_Flow 19-7067] Note that bus interface 'CLK.CLK' has a fixed FREQ_HZ of '100000000'. This value will be respected whenever this IP is instantiated in IP Integrator.
+INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
+INFO: [IP_Flow 19-2187] The Product Guide file is missing.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+set_property core_revision 2 [ipx::find_open_core DIII:HLS:mmwave_streamer:1.0]
+ipx::create_xgui_files [ipx::find_open_core DIII:HLS:mmwave_streamer:1.0]
+ipx::update_checksums [ipx::find_open_core DIII:HLS:mmwave_streamer:1.0]
+ipx::check_integrity [ipx::find_open_core DIII:HLS:mmwave_streamer:1.0]
+INFO: [IP_Flow 19-7067] Note that bus interface 'CLK.CLK' has a fixed FREQ_HZ of '100000000'. This value will be respected whenever this IP is instantiated in IP Integrator.
+INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
+INFO: [IP_Flow 19-2187] The Product Guide file is missing.
+INFO: [Ipptcl 7-1486] check_integrity: Integrity check passed.
+ipx::save_core [ipx::find_open_core DIII:HLS:mmwave_streamer:1.0]
+set_property  ip_repo_paths  {/home/nm/mmwave-fpga-streamer/src/vhdl/ip /home/nm/mmwave-fpga-streamer/src/hls /home/nm/mmwave-fpga-streamer/src/vhdl/interface_definitions} [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/vhdl/ip'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/hls'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nm/mmwave-fpga-streamer/src/vhdl/interface_definitions'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+ipx::check_integrity -quiet [ipx::find_open_core DIII:HLS:mmwave_streamer:1.0]
+ipx::archive_core /home/nm/mmwave-fpga-streamer/src/vhdl/ip/DIII_HLS_mmwave_streamer_1.0.zip [ipx::find_open_core DIII:HLS:mmwave_streamer:1.0]

@@ -1,0 +1,17 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../stream_controller.vhd" \
+"../../../../../points_RAM.vhd" \
+"../../../../../NOT_gate.vhd" \
+"../../../../mmwave-streamer.ip_user_files/bd/sim/ip/sim_stream_controller_0_0/sim/sim_stream_controller_0_0.vhd" \
+"../../../../mmwave-streamer.ip_user_files/bd/sim/ip/sim_points_RAM_0_0/sim/sim_points_RAM_0_0.vhd" \
+"../../../../mmwave-streamer.gen/sources_1/bd/sim/ipshared/6361/hdl/vhdl/mmWaveStreamer_points_buffer_V.vhd" \
+"../../../../mmwave-streamer.gen/sources_1/bd/sim/ipshared/6361/hdl/vhdl/mmWaveStreamer_regslice_both.vhd" \
+"../../../../mmwave-streamer.gen/sources_1/bd/sim/ipshared/6361/hdl/vhdl/mmWaveStreamer.vhd" \
+"../../../../mmwave-streamer.ip_user_files/bd/sim/ip/sim_mmWaveStreamer_0_0/sim/sim_mmWaveStreamer_0_0.vhd" \
+"../../../../mmwave-streamer.ip_user_files/bd/sim/ip/sim_NOT_gate_0_0/sim/sim_NOT_gate_0_0.vhd" \
+"../../../../mmwave-streamer.ip_user_files/bd/sim/sim/sim.vhd" \
+"../../../../mmwave-streamer.gen/sources_1/bd/sim/hdl/sim_wrapper.vhd" \
+
+# Do not sort compile order
+nosort

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mmWaveStreamer'" level="0">
-<item name = "Date">Tue Feb 22 21:43:24 2022
+<item name = "Date">Thu Feb 24 09:22:08 2022
 </item>
 <item name = "Version">2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)</item>
 <item name = "Project">mmwave_streamer</item>
@@ -36,7 +36,7 @@
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- points_in_loop">32, 32, 2, 1, 1, 32, yes</column>
-<column name="- stream_points_inner_loop">129, 129, 6, 4, 1, 32, yes</column>
+<column name="- stream_points_outer_loop">129, 129, 6, 4, 1, 32, yes</column>
 </table>
 </item>
 </section>

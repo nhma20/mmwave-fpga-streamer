@@ -1,0 +1,46 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.817492",
+   "Default View_TopLeft":"-373,-263",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port stream_out -pg 1 -lvl 2 -x 1770 -y 382 -defaultsOSRD
+preplace port rst_n -pg 1 -lvl 0 -x -170 -y 60 -defaultsOSRD
+preplace port i_RX_Serial -pg 1 -lvl 0 -x -170 -y 100 -defaultsOSRD
+preplace port clk -pg 1 -lvl 0 -x -170 -y 80 -defaultsOSRD
+preplace port stream_out_TREADY_0 -pg 1 -lvl 0 -x -170 -y 442 -defaultsOSRD
+preplace inst hier_0 -pg 1 -lvl 1 -x 160 -y 82 -defaultsOSRD
+preplace inst hier_0|NOT_gate_0 -pg 1 -lvl 1 -x 210 -y 342 -defaultsOSRD
+preplace inst hier_0|points_RAM_0 -pg 1 -lvl 3 -x 970 -y 322 -defaultsOSRD
+preplace inst hier_0|mmWaveStreamer_0 -pg 1 -lvl 4 -x 1380 -y 422 -defaultsOSRD
+preplace inst hier_0|UART_RX_0 -pg 1 -lvl 1 -x 210 -y 212 -defaultsOSRD
+preplace inst hier_0|data_parser_0 -pg 1 -lvl 2 -x 550 -y 192 -defaultsOSRD
+preplace inst hier_0|stream_controller_0 -pg 1 -lvl 3 -x 970 -y 112 -defaultsOSRD
+preplace netloc i_in_0_1 1 0 1 -130J 60n
+preplace netloc clk_0_1 1 0 1 -140J 80n
+preplace netloc i_RX_Serial_0_1 1 0 1 -150J 100n
+preplace netloc stream_out_TREADY_0_1 1 0 1 -140 402n
+preplace netloc hier_0_stream_out_1 1 1 1 1750 382n
+preplace netloc hier_0|NOT_gate_0_o_out 1 1 2 380 292 NJ
+preplace netloc hier_0|data_parser_0_o_data_out 1 2 1 750 182n
+preplace netloc hier_0|mmWaveStreamer_0_points_in_address0 1 2 3 780 532 NJ 532 1590
+preplace netloc hier_0|data_parser_0_o_set_and_rdy 1 2 1 720 202n
+preplace netloc hier_0|mmWaveStreamer_0_points_in_ce0 1 2 3 790 542 NJ 542 1600
+preplace netloc hier_0|points_RAM_0_o_data_out 1 3 1 1150 322n
+preplace netloc hier_0|stream_controller_0_start 1 3 1 1170 112n
+preplace netloc hier_0|UART_RX_0_o_RX_DV 1 1 1 N 202
+preplace netloc hier_0|UART_RX_0_o_RX_Byte 1 1 1 360 162n
+preplace netloc hier_0|i_in_0_1 1 0 4 50 402 NJ 402 730 452 NJ
+preplace netloc hier_0|clk_0_1 1 0 4 60 282 370 282 740 432 NJ
+preplace netloc hier_0|i_RX_Serial_0_1 1 0 1 N 222
+preplace netloc hier_0|mmWaveStreamer_0_ap_idle 1 2 2 770 462 1170
+preplace netloc hier_0|stream_out_TREADY_0_1 1 0 5 40J 412 NJ 412 760 442 1160J 312 1600
+preplace netloc hier_0|Conn1 1 4 1 N 392
+levelinfo -pg 1 -170 160 1770
+levelinfo -hier hier_0 * 210 550 970 1380 *
+pagesize -pg 1 -db -bbox -sgen -390 -10 1900 650
+pagesize -hier hier_0 -db -bbox -sgen 10 22 1630 552
+"
+}
+

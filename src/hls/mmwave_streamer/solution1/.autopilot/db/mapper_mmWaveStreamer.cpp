@@ -34,8 +34,9 @@ class AESL_RUNTIME_BC {
 };
 unsigned int ap_apatb_stream_out_V_cap_bc;
 static AESL_RUNTIME_BC __xlx_stream_out_V_size_Reader("../tv/stream_size/stream_size_out_stream_out_V.dat");
+struct __cosim_sC__ { char data[12]; };
 struct __cosim_s10__ { char data[16]; };
-extern "C" void mmWaveStreamer(__cosim_s10__*, int*);
+extern "C" void mmWaveStreamer(__cosim_s10__*, __cosim_sC__*);
 extern "C" void apatb_mmWaveStreamer_hw(volatile void * __xlx_apatb_param_points_in, volatile void * __xlx_apatb_param_stream_out) {
   // Collect __xlx_points_in__tmp_vec
   vector<sc_bv<128> >__xlx_points_in__tmp_vec;
@@ -55,7 +56,7 @@ extern "C" void apatb_mmWaveStreamer_hw(volatile void * __xlx_apatb_param_points
   }
   //Create input buffer for stream_out
   ap_apatb_stream_out_V_cap_bc = __xlx_stream_out_V_size_Reader.read_size();
-  int* __xlx_stream_out_input_buffer= new int[ap_apatb_stream_out_V_cap_bc];
+  __cosim_sC__* __xlx_stream_out_input_buffer= new __cosim_sC__[ap_apatb_stream_out_V_cap_bc];
   // DUT call
   mmWaveStreamer(__xlx_points_in__input_buffer, __xlx_stream_out_input_buffer);
 // print __xlx_apatb_param_points_in
@@ -70,5 +71,5 @@ extern "C" void apatb_mmWaveStreamer_hw(volatile void * __xlx_apatb_param_points
     ((long long*)__xlx_apatb_param_points_in)[i*2+1] = __xlx_points_in_output_buffer[i].range(127, 64).to_uint64();
   }
   for (unsigned i = 0; i <ap_apatb_stream_out_V_cap_bc; ++i)
-    ((hls::stream<int>*)__xlx_apatb_param_stream_out)->write(__xlx_stream_out_input_buffer[i]);
+    ((hls::stream<__cosim_sC__>*)__xlx_apatb_param_stream_out)->write(__xlx_stream_out_input_buffer[i]);
 }

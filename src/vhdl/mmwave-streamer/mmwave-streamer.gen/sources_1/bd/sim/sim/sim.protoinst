@@ -1,0 +1,22 @@
+{
+	"version": "1.0",
+	"modules": {
+		"sim": {
+			"proto_instances": {
+				"/mmWaveStreamer_0/stream_out": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "ap_clk"},
+						"ARESETN": { "actual": "ap_rst_n"},
+						"TDATA": { "actual": "stream_out_TDATA"},
+						"TKEEP": { "actual": "stream_out_TKEEP"},
+						"TLAST": { "actual": "stream_out_TLAST"},
+						"TREADY": { "actual": "stream_out_TREADY"},
+						"TSTRB": { "actual": "stream_out_TSTRB"},
+						"TVALID": { "actual": "stream_out_TVALID"}
+					}
+				}
+			}
+		}
+	}
+}
