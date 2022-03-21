@@ -13,12 +13,12 @@ Partially derived from: https://github.com/nhma20/ultra96_mmwave_interface
 - Xilinx tools (Vivado, HLS, Vitis)
 
 
-
-
 Tested with:
 - `Ubuntu 20.04.3 LTS (host PC - R3950X+32GB+RTX2070Super)`
 - `Vivado / Vitis / Vitis HLS 2020.2` (with Y2K22 bug patch)
 
+
+![Screenshot_diagram](https://user-images.githubusercontent.com/76950970/159242135-1279e784-d13b-465b-a819-e5658b1294f8.png)
 
 
 ## Flow
